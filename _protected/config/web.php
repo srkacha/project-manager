@@ -11,7 +11,7 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '',
+            'cookieValidationKey' => '7OQAFfUMIOfQx_8DFqcBdEjinuTWV-yA',
         ],
         // you can set your theme here - template comes with: 'light' and 'dark'
         'view' => [
