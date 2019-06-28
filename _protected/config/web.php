@@ -21,7 +21,7 @@ $config = [
             ],
         ],
         'assetManager' => [
-            'bundles' => [
+            'bundles' => [  
                 // we will use bootstrap css from our theme
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => [], // do not use yii default one
@@ -87,6 +87,8 @@ $config = [
     ],
     'params' => $params,
 ];
+
+$config['modules']['gridview'] = ['class' => '\kartik\grid\Module'];
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
