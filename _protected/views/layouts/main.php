@@ -34,8 +34,8 @@ AppAsset::register($this);
         ],
     ]);
 
-    // everyone can see Home page
-    $menuItems[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
+    // pages that everyone can see
+    $menuItems[] = ['label' => Yii::t('app', 'Projects'), 'url' => ['/site/projects']];
 
     // we do not need to display About and Contact pages to employee+ roles
     if (!Yii::$app->user->can('employee')) {
