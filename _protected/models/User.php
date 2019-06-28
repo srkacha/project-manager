@@ -1,11 +1,9 @@
 <?php
 namespace app\models;
-
 use app\rbac\models\Role;
 use kartik\password\StrengthValidator;
 use yii\behaviors\TimestampBehavior;
 use Yii;
-
 /**
  * This is the user model class extending UserIdentity.
  * Here you can implement your custom user solutions.
@@ -19,7 +17,6 @@ class User extends UserIdentity
     const STATUS_ACTIVE   = 10;
     const STATUS_INACTIVE = 1;
     const STATUS_DELETED  = 0;   
-
     /**
      * List of names for each status.
      * @var array
@@ -29,18 +26,15 @@ class User extends UserIdentity
         self::STATUS_INACTIVE => 'Inactive',
         self::STATUS_DELETED  => 'Deleted'
     ];
-
     /**
      * We made this property so we do not pull hashed password from db when updating
      * @var string
      */
     public $password;
-
     /**
      * @var \app\rbac\models\Role
      */
     public $item_name;
-
     /**
      * Returns the validation rules for attributes.
      *
@@ -58,24 +52,20 @@ class User extends UserIdentity
                 'message' => Yii::t('app', 'It\'s impossible to have that username.')],          
             ['username', 'unique', 
                 'message' => Yii::t('app', 'This username has already been taken.')],
-
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 
                 'message' => Yii::t('app', 'This email address has already been taken.')],
-
             // password field is required on 'create' scenario
             ['password', 'required', 'on' => 'create'],
             // use passwordStrengthRule() method to determine password strength
             $this->passwordStrengthRule(),
-
             ['status', 'required'],
             ['item_name', 'string', 'min' => 3, 'max' => 64]
         ];
     }
-
     /**
      * Set password rule based on our setting value (Force Strong Password).
      *
@@ -85,18 +75,14 @@ class User extends UserIdentity
     {
         // get setting value for 'Force Strong Password'
         $fsp = Yii::$app->params['fsp'];
-
         // password strength rule is determined by StrengthValidator 
         // presets are located in: vendor/kartik-v/yii2-password/presets.php
         $strong = [['password'], StrengthValidator::className(), 'preset'=>'normal'];
-
         // normal yii rule
         $normal = ['password', 'string', 'min' => 6];
-
         // if 'Force Strong Password' is set to 'true' use $strong rule, else use $normal rule
         return ($fsp) ? $strong : $normal;
     }
-
     /**
      * Returns a list of behaviors that this component should behave as.
      *
@@ -108,7 +94,6 @@ class User extends UserIdentity
             TimestampBehavior::className(),
         ];
     }
-
     /**
      * Returns the attribute labels.
      *
@@ -127,7 +112,6 @@ class User extends UserIdentity
             'item_name' => Yii::t('app', 'Role'),
         ];
     }
-
     /**
      * Relation with Role model.
      *
@@ -138,11 +122,9 @@ class User extends UserIdentity
         // User has_one Role via Role.user_id -> id
         return $this->hasOne(Role::className(), ['user_id' => 'id']);
     }
-
 //------------------------------------------------------------------------------------------------//
 // USER FINDERS
 //------------------------------------------------------------------------------------------------//
-
     /**
      * Finds user by username.
      *
@@ -164,7 +146,6 @@ class User extends UserIdentity
     {
         return static::findOne(['email' => $email]);
     } 
-
     /**
      * Finds user by password reset token.
      *
@@ -176,13 +157,11 @@ class User extends UserIdentity
         if (!static::isPasswordResetTokenValid($token)) {
             return null;
         }
-
         return static::findOne([
             'password_reset_token' => $token,
             'status' => User::STATUS_ACTIVE,
         ]);
     }
-
     /**
      * Finds user by account activation token.
      *
@@ -200,7 +179,6 @@ class User extends UserIdentity
 //------------------------------------------------------------------------------------------------//
 // HELPERS
 //------------------------------------------------------------------------------------------------//
-
     /**
      * Returns the user status in nice format.
      *
@@ -211,7 +189,6 @@ class User extends UserIdentity
     {
         return $this->statusList[$status];
     }
-
     /**
      * Returns the role name.
      * If user has any custom role associated with him we will return it's name, 
@@ -229,7 +206,6 @@ class User extends UserIdentity
         // user does not have role assigned, but if he is authenticated '@'
         return '@uthenticated';
     }
-
     /**
      * Generates new password reset token.
      */
@@ -245,7 +221,6 @@ class User extends UserIdentity
     {
         $this->password_reset_token = null;
     }
-
     /**
      * Finds out if password reset token is valid.
      * 
@@ -257,12 +232,10 @@ class User extends UserIdentity
         if (empty($token)) {
             return false;
         }
-
         $timestamp = (int) substr($token, strrpos($token, '_') + 1);
         $expire = Yii::$app->params['user.passwordResetTokenExpire'];
         return $timestamp + $expire >= time();
     }
-
     /**
      * Generates new account activation token.
      */
@@ -270,7 +243,6 @@ class User extends UserIdentity
     {
         $this->account_activation_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
-
     /**
      * Removes account activation token.
      */

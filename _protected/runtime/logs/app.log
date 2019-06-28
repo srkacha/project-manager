@@ -1,0 +1,653 @@
+2019-06-27 16:56:11 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:695
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(695): PDO->__construct('mysql:host=pisi...', 'srdjanj', '34655', NULL)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(621): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:632
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2019-06-27 16:56:10 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\sjovic\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'RTRKBL23'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\sjovic'
+    'LOCALAPPDATA' => 'C:\\Users\\sjovic\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DC-BL1-1'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\sjovic\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'USERDNSDOMAIN' => 'DOMAIN.LOCAL'
+    'USERDOMAIN' => 'DOMAIN'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DOMAIN'
+    'USERNAME' => 'sjovic'
+    'USERPROFILE' => 'C:\\Users\\sjovic'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1561647370.6946
+    'REQUEST_TIME' => 1561647370
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2019-06-27 16:58:11 [-][-][-][error][yii\db\Exception] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: No such host is known.  in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:695
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(695): PDO->__construct('mysql:host=http...', 'srdjanj', '34655', NULL)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(621): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#23 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known.  in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:695
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(695): PDO->__construct('mysql:host=http...', 'srdjanj', '34655', NULL)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(621): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known.  in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:632
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2019-06-27 16:58:09 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\sjovic\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'RTRKBL23'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\sjovic'
+    'LOCALAPPDATA' => 'C:\\Users\\sjovic\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DC-BL1-1'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\sjovic\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'USERDNSDOMAIN' => 'DOMAIN.LOCAL'
+    'USERDOMAIN' => 'DOMAIN'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DOMAIN'
+    'USERNAME' => 'sjovic'
+    'USERPROFILE' => 'C:\\Users\\sjovic'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1561647489.0496
+    'REQUEST_TIME' => 1561647489
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2019-06-27 16:58:35 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:695
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(695): PDO->__construct('mysql:host=pisi...', 'srdjanj', '34655', NULL)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(621): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:632
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2019-06-27 16:58:34 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\sjovic\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'RTRKBL23'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\sjovic'
+    'LOCALAPPDATA' => 'C:\\Users\\sjovic\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DC-BL1-1'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\sjovic\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'USERDNSDOMAIN' => 'DOMAIN.LOCAL'
+    'USERDOMAIN' => 'DOMAIN'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DOMAIN'
+    'USERNAME' => 'sjovic'
+    'USERPROFILE' => 'C:\\Users\\sjovic'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1561647514.1028
+    'REQUEST_TIME' => 1561647514
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2019-06-27 17:02:21 [-][-][-][error][yii\db\Exception] PDOException: PDO::__construct(): The server requested authentication method unknown to the client [caching_sha2_password] in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:695
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(695): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(621): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#23 {main}
+
+Next PDOException: SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:695
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(695): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(621): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:632
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2019-06-27 17:02:21 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\sjovic\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'RTRKBL23'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\sjovic'
+    'LOCALAPPDATA' => 'C:\\Users\\sjovic\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DC-BL1-1'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\sjovic\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'USERDNSDOMAIN' => 'DOMAIN.LOCAL'
+    'USERDOMAIN' => 'DOMAIN'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DOMAIN'
+    'USERNAME' => 'sjovic'
+    'USERPROFILE' => 'C:\\Users\\sjovic'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1561647741.73
+    'REQUEST_TIME' => 1561647741
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2019-06-27 17:03:56 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'project_manager' in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:695
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(695): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(621): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'project_manager' in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php:632
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(1012): yii\db\Connection->open()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Connection.php(999): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\xampp\htdocs\project-manager\_protected\yii(20): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2019-06-27 17:03:56 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\sjovic\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'RTRKBL23'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\sjovic'
+    'LOCALAPPDATA' => 'C:\\Users\\sjovic\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DC-BL1-1'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\sjovic\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\sjovic\\AppData\\Local\\Temp'
+    'USERDNSDOMAIN' => 'DOMAIN.LOCAL'
+    'USERDOMAIN' => 'DOMAIN'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DOMAIN'
+    'USERNAME' => 'sjovic'
+    'USERPROFILE' => 'C:\\Users\\sjovic'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1561647836.2028
+    'REQUEST_TIME' => 1561647836
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\project-manager\\_protected\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
