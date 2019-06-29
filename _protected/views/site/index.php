@@ -6,61 +6,30 @@ $this->title = Yii::t('app', Yii::$app->name);
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <div class="row">
+            <div class="col-md-6">
+            <img src="https://image.flaticon.com/icons/svg/1055/1055646.svg" style="width:70%">
+       
+            </div>
+            <div class="col-md-6">
+                <ul class="text-left h3 pt-5">
+                    <li class="pb-2">Create and manage projects</li>
+                    <li class="pb-2">Add tasks to projects</li>
+                    <li class="pb-2">Manage task activities</li>
+                    <li class="pb-2">Follow the project progress</li>
+                    <li class="pb-2">And much more...</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <h1>Welcome to Projectory!</h1>
+        <h3 class="text-secondary">The leading project managment application</h3>
 
-        <p class="lead">You have successfully installed Yii2 improved application template</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.freetuts.org/tutorial/view?id=6">Read our tutorial</a></p>
     </div>
 
     <div class="body-content">
 
-        <div class="row">
-            <div class="col-lg-3">
-                <h3>Yii documentation</h3>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h3>Yii forum</h3>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h3>Yii extensions</h3>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h3>Freetuts.org</h3>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.freetuts.org/">Freetuts.org &raquo;</a></p>
-            </div>
-        </div>
+        
 
     </div>
 </div>
