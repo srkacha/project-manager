@@ -23,7 +23,7 @@ $this->title = Yii::t('app', Yii::$app->name);
         </div>
         <br>
         <h1>Welcome to Projectory!</h1>
-        <h3 class="text-secondary">The leading project managment application</h3>
+        <h3 class="text-secondary">The leading project management application</h3>
 
     </div>
 
