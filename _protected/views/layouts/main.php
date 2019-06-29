@@ -34,21 +34,23 @@ AppAsset::register($this);
         ],
     ]);
 
-    // pages that everyone can see
-    $menuItems[] = ['label' => Yii::t('app', 'Projects'), 'url' => ['/site/projects']];
+    // pages that everyone can sees
 
-    // we do not need to display About and Contact pages to employee+ roles
-    if (!Yii::$app->user->can('employee')) {
-        $menuItems[] = ['label' => Yii::t('app', 'About'), 'url' => ['/site/about']];
-        $menuItems[] = ['label' => Yii::t('app', 'Contact'), 'url' => ['/site/contact']];
-    }
 
-    // display Users to admin+ roles
+    // here we will display links for admin role
     if (Yii::$app->user->can('admin')){
         $menuItems[] = ['label' => Yii::t('app', 'Users'), 'url' => ['/user/index']];
+        $menuItems[] = ['label' => Yii::t('app', 'Projects'), 'url' => ['/project/index']];
+    }
+    //here we will display links for regular user role
+    elseif (Yii::$app->user->can('employee')){
+        $menuItems[] = ['label' => Yii::t('app', 'Projects'), 'url' => ['/user/index']];
     }
     
-    // display Logout to logged in users
+    //if the user is guest then he can only see the Login link
+    if (Yii::$app->user->isGuest) {
+        $menuItems[] = ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']];
+    }
     if (!Yii::$app->user->isGuest) {
         $menuItems[] = [
             'label' => Yii::t('app', 'Logout'). ' (' . Yii::$app->user->identity->username . ')',
@@ -57,11 +59,7 @@ AppAsset::register($this);
         ];
     }
 
-    // display Signup and Login pages to guests of the site
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => Yii::t('app', 'Signup'), 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']];
-    }
+   
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -82,8 +80,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Yii::t('app', Yii::$app->name) ?> <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="text-center">&copy; <?= Yii::t('app', Yii::$app->name) ?> <?= date('Y') ?></p>
     </div>
 </footer>
 
