@@ -16,7 +16,7 @@ $config = [
         // you can set your theme here - template comes with: 'light' and 'dark'
         'view' => [
             'theme' => [
-                'pathMap' => ['@app/views' => '@webroot/themes/light/views'],
+                'pathMap' => ['@app/views' => '@webroot/light/views'],
                 'baseUrl' => '@web/themes/light',
             ],
         ],
@@ -24,7 +24,8 @@ $config = [
             'bundles' => [  
                 // we will use bootstrap css from our theme
                 'yii\bootstrap\BootstrapAsset' => [
-                    'css' => [], // do not use yii default one
+                   // 'sourcePath' => '@webroot',
+                    'css' => [] //this will use the custom css hopefully
                 ],
             ],
         ],
