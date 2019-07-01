@@ -53,6 +53,7 @@ class ProjectController extends Controller
         //preparing the data, filtering only the projects that the logged in user is on
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $filteredModels = array_filter($dataProvider->models, function($obj){
+            if($obj->active == 0) return false;
             if ($obj->manager_id == Yii::$app->user->id) {
                 return true;
             }
