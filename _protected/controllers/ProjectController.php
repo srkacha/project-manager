@@ -116,6 +116,24 @@ class ProjectController extends Controller
     }
 
     /**
+     * Updates an existing Project model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionActive($id)
+    {
+        $model = $this->findModel($id);
+        $model->active = $model->active == 1?0:1;
+
+        if ($model->update()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->redirect(['error', 'id' => $model->id]);
+        }
+    }
+
+    /**
      * Deletes an existing Project model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id

@@ -42,7 +42,7 @@ $this->registerJs($search);
                 'attribute' => 'manager_id',
                 'label' => 'Manager',
                 'value' => function($model){                   
-                    return $model->manager->name;                   
+                    return $model->manager->name.' '.$model->manager->surname;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\app\models\User::find()->asArray()->all(), 'id', 'name'),

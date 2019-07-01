@@ -18,12 +18,14 @@ $this->params['breadcrumbs'][] = $this->title;
             <h2><?=Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
-            
+            <?php 
+                $active = $model->active;
+            ?>
             <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+            <?= Html::a($active?"Deactivate":"Activate", ['active', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => 'Are you sure you want to delete this item?',
+                    
                     'method' => 'post',
                 ],
             ])
