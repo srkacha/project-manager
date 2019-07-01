@@ -30,7 +30,12 @@ $this->registerJs($search);
         ['attribute' => 'id', 'visible' => false],
         'name',
         'description',
-        'active',
+        [
+            'value'=> function($model){                   
+                return $model->active == '1'?'Yes':'No';                   
+            },
+            'label' => 'Active'
+        ],
         'started',
         'deadline',
         [

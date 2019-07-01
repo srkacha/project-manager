@@ -34,11 +34,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
 <?php 
     $managerNameAndSurname = $model->manager->name .' '. $model->manager->surname;
+    $active = $model->active == '1'?'Yes':'No';
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         'name',
         'description',
-        'active',
+        [
+            'value'=> $active,
+            'label' => 'Active'
+        ],
         'started',
         'deadline',
         [
@@ -83,6 +87,7 @@ if($providerParticipant->totalCount){
     ]);
 }  else echo '<p>No supervisors on this project.</p>'
 ?>
+</div>
     
     <div class="row">
 <h2>Supervisors</h2>
