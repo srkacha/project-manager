@@ -1,141 +1,56 @@
 <?php
-
+use app\helpers\CssHelper;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use kartik\grid\GridView;
-
 /* @var $this yii\web\View */
 /* @var $model app\models\User */
-
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'User', 'url' => ['index']];
+$this->title = $model->username;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Users'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
 
-    <div class="row">
-        <div class="col-sm-9">
-            <h2><?= 'User'.' '. Html::encode($this->title) ?></h2>
-        </div>
-        <div class="col-sm-3" style="margin-top: 15px">
-            
-            <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-                'class' => 'btn btn-danger',
+    <h1>
+        <?= Html::encode($this->title) ?>
+        <div class="pull-right">
+            <?= Html::a(Yii::t('app', 'Back'), ['index'], ['class' => 'btn btn-warning']) ?>
+            <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], ['class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => 'Are you sure you want to delete this item?',
+                    'confirm' => Yii::t('app', 'Are you sure you want to delete this user?'),
                     'method' => 'post',
                 ],
-            ])
-            ?>
+            ]) ?>
         </div>
-    </div>
+    </h1>
 
-    <div class="row">
-<?php 
-    $gridColumn = [
-        ['attribute' => 'id', 'visible' => false],
-        'name',
-        'surname',
-        'username',
-        'email:email',
-        'password_hash',
-        'status',
-        'auth_key',
-        'password_reset_token',
-        'account_activation_token',
-    ];
-    echo DetailView::widget([
+    <?= DetailView::widget([
         'model' => $model,
-        'attributes' => $gridColumn
-    ]);
-?>
-    </div>
-    
-    <div class="row">
-<?php
-if($providerParticipant->totalCount){
-    $gridColumnParticipant = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
+        'attributes' => [
+            'id',
+            'username',
+            'email:email',
+            //'password_hash',
             [
-                'attribute' => 'project.name',
-                'label' => 'Project'
+                'attribute'=>'status',
+                'value' => '<span class="'.CssHelper::userStatusCss($model->status).'">
+                                '.$model->getStatusName($model->status).'
+                            </span>',
+                'format' => 'raw'
             ],
-                        [
-                'attribute' => 'projectRole.name',
-                'label' => 'Project Role'
-            ],
-            'project_role_name',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerParticipant,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-participant']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Participant'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnParticipant
-    ]);
-}
-?>
-
-    </div>
-    
-    <div class="row">
-<?php
-if($providerProject->totalCount){
-    $gridColumnProject = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-            'name',
-            'description',
-            'active',
-            'started',
-            'deadline',
-                ];
-    echo Gridview::widget([
-        'dataProvider' => $providerProject,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-project']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Project'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnProject
-    ]);
-}
-?>
-
-    </div>
-    
-    <div class="row">
-<?php
-if($providerSupervisor->totalCount){
-    $gridColumnSupervisor = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
             [
-                'attribute' => 'project.name',
-                'label' => 'Project'
+                'attribute'=>'item_name',
+                'value' => '<span class="'.CssHelper::roleCss($model->getRoleName()).'">
+                                '.$model->getRoleName().'
+                            </span>',
+                'format' => 'raw'
             ],
-                ];
-    echo Gridview::widget([
-        'dataProvider' => $providerSupervisor,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-supervisor']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Supervisor'),
+            //'auth_key',
+            //'password_reset_token',
+            //'account_activation_token',
+            'created_at:date',
+            'updated_at:date',
         ],
-        'export' => false,
-        'columns' => $gridColumnSupervisor
-    ]);
-}
-?>
+    ]) ?>
 
-    </div>
 </div>

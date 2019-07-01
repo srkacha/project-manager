@@ -1,195 +1,176 @@
 <?php
-
 namespace app\controllers;
-
-use Yii;
 use app\models\User;
-use yii\data\ActiveDataProvider;
-use yii\web\Controller;
+use app\models\UserSearch;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-
+use yii\web\ServerErrorHttpException;
+use Yii;
 /**
  * UserController implements the CRUD actions for User model.
  */
-class UserController extends Controller
+class UserController extends AppController
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
+    /**
+     * How many users we want to display per page.
+     * @var int
+     */
+    protected $_pageSize = 11;
     /**
      * Lists all User models.
-     * @return mixed
+     *
+     * @return string
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => User::find(),
-        ]);
-
+        $searchModel = new UserSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $this->_pageSize);
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
-
     /**
      * Displays a single User model.
-     * @param integer $id
-     * @return mixed
+     *
+     * @param  integer $id The user id.
+     * @return string
+     *
+     * @throws NotFoundHttpException
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-        $providerParticipant = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->participants,
-        ]);
-        $providerProject = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->projects,
-        ]);
-        $providerSupervisor = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->supervisors,
-        ]);
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-            'providerParticipant' => $providerParticipant,
-            'providerProject' => $providerProject,
-            'providerSupervisor' => $providerSupervisor,
-        ]);
+        return $this->render('view', ['model' => $this->findModel($id)]);
     }
-
     /**
      * Creates a new User model.
      * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
+     *
+     * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new User();
-
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        $user = new User(['scenario' => 'create']);
+        if (!$user->load(Yii::$app->request->post())) {
+            return $this->render('create', ['user' => $user]);
         }
+        $user->setPassword($user->password);
+        $user->generateAuthKey();
+        if (!$user->save()) {
+            return $this->render('create', ['user' => $user]);
+        }
+        $auth = Yii::$app->authManager;
+        $role = $auth->getRole($user->item_name);
+        $info = $auth->assign($role, $user->getId());
+        if (!$info) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'There was some error while saving user role.'));
+        }
+        return $this->redirect('index');
     }
-
     /**
-     * Updates an existing User model.
+     * Updates an existing User and Role models.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
+     *
+     * @param  integer $id The user id.
+     * @return string|\yii\web\Response
+     *
+     * @throws NotFoundHttpException
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
-
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+        // load user data
+        $user = $this->findModel($id);
+        $auth = Yii::$app->authManager;
+        // get user role if he has one  
+        if ($roles = $auth->getRolesByUser($id)) {
+            // it's enough for us the get first assigned role name
+            $role = array_keys($roles)[0]; 
         }
+        // if user has role, set oldRole to that role name, else offer 'member' as sensitive default
+        $oldRole = (isset($role)) ? $auth->getRole($role) : $auth->getRole('member');
+        // set property item_name of User object to this role name, so we can use it in our form
+        $user->item_name = $oldRole->name;
+        if (!$user->load(Yii::$app->request->post())) {
+            return $this->render('update', ['user' => $user, 'role' => $user->item_name]);
+        }
+        // only if user entered new password we want to hash and save it
+        if ($user->password) {
+            $user->setPassword($user->password);
+        }
+        // if admin is activating user manually we want to remove account activation token
+        if ($user->status == User::STATUS_ACTIVE && $user->account_activation_token != null) {
+            $user->removeAccountActivationToken();
+        }         
+        if (!$user->save()) {
+            return $this->render('update', ['user' => $user, 'role' => $user->item_name]);
+        }
+        // take new role from the form
+        $newRole = $auth->getRole($user->item_name);
+        // get user id too
+        $userId = $user->getId();
+        
+        // we have to revoke the old role first and then assign the new one
+        // this will happen if user actually had something to revoke
+        if ($auth->revoke($oldRole, $userId)) {
+            $info = $auth->assign($newRole, $userId);
+        }
+        // in case user didn't have role assigned to him, then just assign new one
+        if (!isset($role)) {
+            $info = $auth->assign($newRole, $userId);
+        }
+        if (!$info) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'There was some error while saving user role.'));
+        }
+        return $this->redirect(['view', 'id' => $user->id]);
     }
-
     /**
      * Deletes an existing User model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
+     *
+     * @param  integer $id The user id.
+     * @return \yii\web\Response
+     *
+     * @throws NotFoundHttpException
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->deleteWithRelated();
-
+        // delete user or throw exception if could not
+        if (!$this->findModel($id)->delete()) {
+            throw new ServerErrorHttpException(Yii::t('app', 'We could not delete this user.'));
+        }
+        $auth = Yii::$app->authManager;
+        $info = true; // monitor info status
+        // get user role if he has one  
+        if ($roles = $auth->getRolesByUser($id)) {
+            // it's enough for us the get first assigned role name
+            $role = array_keys($roles)[0]; 
+        }
+        // remove role if user had it
+        if (isset($role)) {
+            $info = $auth->revoke($auth->getRole($role), $id);
+        }
+        if (!$info) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'There was some error while deleting user role.'));
+            return $this->redirect(['index']);
+        }
+        Yii::$app->session->setFlash('success', Yii::t('app', 'You have successfuly deleted user and his role.'));
+        
         return $this->redirect(['index']);
     }
-
-    
     /**
      * Finds the User model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return User the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+     *
+     * @param  integer $id The user id.
+     * @return User The loaded model.
+     *
+     * @throws NotFoundHttpException if the model cannot be found.
      */
     protected function findModel($id)
     {
-        if (($model = User::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for Participant
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddParticipant()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('Participant');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formParticipant', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for Project
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddProject()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('Project');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formProject', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for Supervisor
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddSupervisor()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('Supervisor');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formSupervisor', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
+        $model = User::findOne($id);
+        if (is_null($model)) {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        } 
+        return $model;
     }
 }

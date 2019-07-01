@@ -15,7 +15,8 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-password": "@dev",
-        "mootensai/yii2-enhanced-gii": "@dev"
+        "mootensai/yii2-enhanced-gii": "@dev",
+        "kartik-v/yii2-datecontrol": "^1.9"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
