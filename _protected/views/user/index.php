@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1>
         <?= Html::encode($this->title) ?>
         <span class="pull-right">
-            <?= Html::a(Yii::t('app', 'Create User'), ['create'], ['class' => 'btn btn-success']) ?>
+            <?= Html::a(Yii::t('app', 'Create User'), ['create'], ['class' => 'btn btn-danger']) ?>
         </span>         
     </h1>
 
@@ -23,6 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'summary' => false,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+            'name',
+            'surname',
             'username',
             'email:email',
             // status

@@ -43,6 +43,8 @@ class User extends UserIdentity
     public function rules()
     {
         return [
+            ['name', 'required'],
+            ['surname', 'required'],
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
             ['username', 'string', 'min' => 2, 'max' => 255],

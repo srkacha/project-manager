@@ -10,9 +10,14 @@ use yii\widgets\ActiveForm;
 <div class="user-form">
 
     <?php $form = ActiveForm::begin(['id' => 'form-user']); ?>
+        <?= $form->field($user, 'name')->textInput(
+                    ['placeholder' => Yii::t('app', 'Create name'), 'autofocus' => true]) ?>
+
+        <?= $form->field($user, 'surname')->textInput(
+        ['placeholder' => Yii::t('app', 'Create surname')]) ?>
 
         <?= $form->field($user, 'username')->textInput(
-                ['placeholder' => Yii::t('app', 'Create username'), 'autofocus' => true]) ?>
+                ['placeholder' => Yii::t('app', 'Create username')]) ?>
         
         <?= $form->field($user, 'email')->input('email', ['placeholder' => Yii::t('app', 'Enter e-mail')]) ?>
 
