@@ -4475,3 +4475,204 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1561964367.738
     'REQUEST_TIME' => 1561964367
 ]
+2019-07-01 09:01:43 [::1][-][88d0241u3c4hhv93rl469dm1ht][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: site/project in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('project', Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/project', Array)
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#2 {main}
+2019-07-01 09:01:43 [::1][-][88d0241u3c4hhv93rl469dm1ht][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '88d0241u3c4hhv93rl469dm1ht'
+    '_csrf' => 'a0e245d95135bc722c8f3fc622ce5f76a1c3974cd880a1afa368784bd25f4034a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Pl_uFr0hcFthvqh8NTXU2k6M99za3NGp\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=88d0241u3c4hhv93rl469dm1ht; _csrf=a0e245d95135bc722c8f3fc622ce5f76a1c3974cd880a1afa368784bd25f4034a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Pl_uFr0hcFthvqh8NTXU2k6M99za3NGp%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '49350'
+    'REDIRECT_URL' => '/project-manager/project'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1561964503.007
+    'REQUEST_TIME' => 1561964503
+]
+2019-07-01 09:01:48 [::1][-][88d0241u3c4hhv93rl469dm1ht][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user.deleted_by' in 'where clause' in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 C:\xampp\htdocs\project-manager\_protected\models\UserQuery.php(24): yii\db\ActiveQuery->all(NULL)
+#6 C:\xampp\htdocs\project-manager\_protected\views\project\index.php(41): app\models\UserQuery->all()
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', '[<span class="s...')
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\ProjectController))
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(app\controllers\ProjectController))
+#11 C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php(40): yii\base\Controller->render('index', Array)
+#12 [internal function]: app\controllers\ProjectController->actionIndex()
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/', Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#19 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user.deleted_by' in 'where clause'
+The SQL being executed was: SELECT * FROM `user` WHERE `user`.`deleted_by`=0 in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Schema.php:664
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 C:\xampp\htdocs\project-manager\_protected\models\UserQuery.php(24): yii\db\ActiveQuery->all(NULL)
+#6 C:\xampp\htdocs\project-manager\_protected\views\project\index.php(41): app\models\UserQuery->all()
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', '[<span class="s...')
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\ProjectController))
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(app\controllers\ProjectController))
+#11 C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php(40): yii\base\Controller->render('index', Array)
+#12 [internal function]: app\controllers\ProjectController->actionIndex()
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/', Array)
+#17 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'user.deleted_by' in 'where clause'
+)
+
+2019-07-01 09:01:48 [::1][-][88d0241u3c4hhv93rl469dm1ht][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '88d0241u3c4hhv93rl469dm1ht'
+    '_csrf' => 'a0e245d95135bc722c8f3fc622ce5f76a1c3974cd880a1afa368784bd25f4034a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Pl_uFr0hcFthvqh8NTXU2k6M99za3NGp\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=88d0241u3c4hhv93rl469dm1ht; _csrf=a0e245d95135bc722c8f3fc622ce5f76a1c3974cd880a1afa368784bd25f4034a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Pl_uFr0hcFthvqh8NTXU2k6M99za3NGp%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '49351'
+    'REDIRECT_URL' => '/project-manager/project/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1561964508.621
+    'REQUEST_TIME' => 1561964508
+]
