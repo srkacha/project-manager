@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1>
         <?= Html::encode($this->title) ?>
         <div class="pull-right">
-            <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a(Yii::t('app', 'Update'), ['editme', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             
         </div>
     </h1>

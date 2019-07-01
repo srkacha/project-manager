@@ -80,6 +80,7 @@ class UserController extends AppController
         }
         return $this->redirect('index');
     }
+
     /**
      * Updates an existing User and Role models.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -142,6 +143,35 @@ class UserController extends AppController
         }
         return $this->redirect(['view', 'id' => $user->id]);
     }
+
+    /**
+     * Updates an existing User and Role models.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     *
+     * @param  integer $id The user id.
+     * @return string|\yii\web\Response
+     *
+     * @throws NotFoundHttpException
+     */
+    public function actionEditme($id)
+    {
+        // load user data
+        $user = $this->findModel($id);
+        
+        if (!$user->load(Yii::$app->request->post())) {
+            return $this->render('editme', ['user' => $user, 'role' => $user->item_name]);
+        }
+        // only if user entered new password we want to hash and save it
+        if ($user->password) {
+            $user->setPassword($user->password);
+        }
+        
+        if (!$user->save()) {
+            return $this->render('editme', ['user' => $user, 'role' => $user->item_name]);
+        }
+        return $this->redirect(['my']);
+    }
+
     /**
      * Deletes an existing User model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
