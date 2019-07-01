@@ -65,12 +65,13 @@ $this->params['breadcrumbs'][] = $this->title;
 <h2>Participants</h2>
 <?php
 if($providerParticipant->totalCount){
-    
     $gridColumnParticipant = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
                         [
-                'attribute' => 'user.name',
+                'value' => function($model){                   
+                    return $model->user->name.' '.$model->user->surname;
+                },    
                 'label' => 'User'
             ],
             [
@@ -99,7 +100,9 @@ if($providerSupervisor->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
                         [
-                'attribute' => 'user.name',
+                            'value' => function($model){                   
+                                return $model->user->name.' '.$model->user->surname;
+                            },    
                 'label' => 'User'
             ],
     ];

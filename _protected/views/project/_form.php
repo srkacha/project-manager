@@ -105,13 +105,13 @@ use yii\widgets\ActiveForm;
     $forms = [
        
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Participants'),
+            'label' =>  Html::encode('Participants'),
             'content' => $this->render('_formParticipant', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->participants),
             ]),
         ],
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Supervisors'),
+            'label' =>  Html::encode('Supervisors'),
             'content' => $this->render('_formSupervisor', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->supervisors),
             ]),

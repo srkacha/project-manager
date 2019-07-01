@@ -27,7 +27,7 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\app\models\User::find()->orderBy('name')->asArray()->all(), 'id', 'name'),
+                'data' => \yii\helpers\ArrayHelper::map(\app\models\User::find()->select(['id', new \yii\db\Expression("CONCAT(`name`, ' ', `surname`) as nameAndSurname")])->orderBy('nameAndSurname')->asArray()->all(), 'id', 'nameAndSurname'),
                 'options' => ['placeholder' => 'Choose User'],
             ],
             'columnOptions' => ['width' => '200px']
