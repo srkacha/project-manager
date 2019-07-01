@@ -53,6 +53,8 @@ $this->registerJs($search);
             ],
         [
             'class' => 'yii\grid\ActionColumn',
+            'header' => 'Menu',
+            'template' => '{view} {update}',
         ],
     ]; 
     ?>

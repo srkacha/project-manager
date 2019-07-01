@@ -19,7 +19,7 @@ use app\models\Project;
     {
         return [
             [['id', 'manager_id'], 'integer'],
-            [['name', 'description', 'active', 'started', 'deadline'], 'safe'],
+            [['name', 'description', 'active'], 'safe'],
         ];
     }
 
