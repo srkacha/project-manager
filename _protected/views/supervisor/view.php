@@ -91,6 +91,7 @@ if($providerObservation->totalCount){
         'active',
         'started',
         'deadline',
+        'manager_id',
     ];
     echo DetailView::widget([
         'model' => $model->project,

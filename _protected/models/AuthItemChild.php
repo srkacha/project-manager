@@ -3,64 +3,25 @@
 namespace app\models;
 
 use Yii;
+use \app\models\base\AuthItemChild as BaseAuthItemChild;
 
 /**
  * This is the model class for table "auth_item_child".
- *
- * @property string $parent
- * @property string $child
- *
- * @property AuthItem $parent0
- * @property AuthItem $child0
  */
-class AuthItemChild extends \yii\db\ActiveRecord
+class AuthItemChild extends BaseAuthItemChild
 {
     /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'auth_item_child';
-    }
-
-    /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
-        return [
+        return array_replace_recursive(parent::rules(),
+	    [
             [['parent', 'child'], 'required'],
             [['parent', 'child'], 'string', 'max' => 64],
-            [['parent', 'child'], 'unique', 'targetAttribute' => ['parent', 'child']],
-            [['parent'], 'exist', 'skipOnError' => true, 'targetClass' => AuthItem::className(), 'targetAttribute' => ['parent' => 'name']],
-            [['child'], 'exist', 'skipOnError' => true, 'targetClass' => AuthItem::className(), 'targetAttribute' => ['child' => 'name']],
-        ];
+            [['lock'], 'default', 'value' => '0'],
+            [['lock'], 'mootensai\components\OptimisticLockValidator']
+        ]);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'parent' => 'Parent',
-            'child' => 'Child',
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getParent0()
-    {
-        return $this->hasOne(AuthItem::className(), ['name' => 'parent']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getChild0()
-    {
-        return $this->hasOne(AuthItem::className(), ['name' => 'child']);
-    }
+	
 }

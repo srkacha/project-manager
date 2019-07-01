@@ -3,52 +3,25 @@
 namespace app\models;
 
 use Yii;
+use \app\models\base\ProjectRole as BaseProjectRole;
 
 /**
  * This is the model class for table "project_role".
- *
- * @property int $id
- * @property string $name
- *
- * @property Participant[] $participants
  */
-class ProjectRole extends \yii\db\ActiveRecord
+class ProjectRole extends BaseProjectRole
 {
     /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'project_role';
-    }
-
-    /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
-        return [
+        return array_replace_recursive(parent::rules(),
+	    [
             [['name'], 'required'],
             [['name'], 'string', 'max' => 255],
-        ];
+            [['lock'], 'default', 'value' => '0'],
+            [['lock'], 'mootensai\components\OptimisticLockValidator']
+        ]);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'name' => 'Name',
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getParticipants()
-    {
-        return $this->hasMany(Participant::className(), ['project_role_id' => 'id', 'project_role_name' => 'name']);
-    }
+	
 }

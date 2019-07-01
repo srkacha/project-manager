@@ -80,6 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'active',
         'started',
         'deadline',
+        'manager_id',
     ];
     echo DetailView::widget([
         'model' => $model->project,

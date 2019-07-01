@@ -3,59 +3,27 @@
 namespace app\models;
 
 use Yii;
+use \app\models\base\Expense as BaseExpense;
 
 /**
  * This is the model class for table "expense".
- *
- * @property int $id
- * @property string $amount
- * @property string $date
- * @property int $project_id
- *
- * @property Project $project
  */
-class Expense extends \yii\db\ActiveRecord
+class Expense extends BaseExpense
 {
     /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'expense';
-    }
-
-    /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
-        return [
+        return array_replace_recursive(parent::rules(),
+	    [
             [['amount', 'date', 'project_id'], 'required'],
             [['amount'], 'number'],
             [['date'], 'safe'],
             [['project_id'], 'integer'],
-            [['project_id'], 'exist', 'skipOnError' => true, 'targetClass' => Project::className(), 'targetAttribute' => ['project_id' => 'id']],
-        ];
+            [['lock'], 'default', 'value' => '0'],
+            [['lock'], 'mootensai\components\OptimisticLockValidator']
+        ]);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'amount' => 'Amount',
-            'date' => 'Date',
-            'project_id' => 'Project ID',
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getProject()
-    {
-        return $this->hasOne(Project::className(), ['id' => 'project_id']);
-    }
+	
 }

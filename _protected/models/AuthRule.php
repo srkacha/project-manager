@@ -3,59 +3,27 @@
 namespace app\models;
 
 use Yii;
+use \app\models\base\AuthRule as BaseAuthRule;
 
 /**
  * This is the model class for table "auth_rule".
- *
- * @property string $name
- * @property string $data
- * @property int $created_at
- * @property int $updated_at
- *
- * @property AuthItem[] $authItems
  */
-class AuthRule extends \yii\db\ActiveRecord
+class AuthRule extends BaseAuthRule
 {
     /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'auth_rule';
-    }
-
-    /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
-        return [
+        return array_replace_recursive(parent::rules(),
+	    [
             [['name'], 'required'],
             [['data'], 'string'],
             [['created_at', 'updated_at'], 'integer'],
             [['name'], 'string', 'max' => 64],
-            [['name'], 'unique'],
-        ];
+            [['lock'], 'default', 'value' => '0'],
+            [['lock'], 'mootensai\components\OptimisticLockValidator']
+        ]);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'name' => 'Name',
-            'data' => 'Data',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAuthItems()
-    {
-        return $this->hasMany(AuthItem::className(), ['rule_name' => 'name']);
-    }
+	
 }

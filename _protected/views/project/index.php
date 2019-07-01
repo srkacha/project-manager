@@ -32,6 +32,19 @@ $this->registerJs($search);
         'started',
         'deadline',
         [
+                'attribute' => 'manager_id',
+                'label' => 'Manager',
+                'value' => function($model){                   
+                    return $model->manager->name;                   
+                },
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => \yii\helpers\ArrayHelper::map(\app\models\User::find()->asArray()->all(), 'id', 'name'),
+                'filterWidgetOptions' => [
+                    'pluginOptions' => ['allowClear' => true],
+                ],
+                'filterInputOptions' => ['placeholder' => 'User', 'id' => 'grid--manager_id']
+            ],
+        [
             'class' => 'yii\grid\ActionColumn',
         ],
     ]; 

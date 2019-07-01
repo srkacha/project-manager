@@ -3,44 +3,26 @@
 namespace app\models;
 
 use Yii;
+use \app\models\base\Migration as BaseMigration;
 
 /**
  * This is the model class for table "migration".
- *
- * @property string $version
- * @property int $apply_time
  */
-class Migration extends \yii\db\ActiveRecord
+class Migration extends BaseMigration
 {
     /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'migration';
-    }
-
-    /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
-        return [
+        return array_replace_recursive(parent::rules(),
+	    [
             [['version'], 'required'],
             [['apply_time'], 'integer'],
             [['version'], 'string', 'max' => 180],
-            [['version'], 'unique'],
-        ];
+            [['lock'], 'default', 'value' => '0'],
+            [['lock'], 'mootensai\components\OptimisticLockValidator']
+        ]);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'version' => 'Version',
-            'apply_time' => 'Apply Time',
-        ];
-    }
+	
 }

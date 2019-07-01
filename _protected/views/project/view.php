@@ -40,6 +40,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'active',
         'started',
         'deadline',
+        [
+            'attribute' => 'manager.name',
+            'label' => 'Manager',
+        ],
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -159,6 +163,26 @@ if($providerParticipant->totalCount){
 ?>
 
     </div>
+    <div class="row">
+        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnUser = [
+        ['attribute' => 'id', 'visible' => false],
+        'name',
+        'surname',
+        'username',
+        'email',
+        'password_hash',
+        'status',
+        'auth_key',
+        'password_reset_token',
+        'account_activation_token',
+    ];
+    echo DetailView::widget([
+        'model' => $model->manager,
+        'attributes' => $gridColumnUser    ]);
+    ?>
     
     <div class="row">
 <?php
