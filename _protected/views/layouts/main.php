@@ -45,6 +45,7 @@ AppAsset::register($this);
     //here we will display links for regular user role
     elseif (Yii::$app->user->can('employee')){
         $menuItems[] = ['label' => Yii::t('app', 'Projects'), 'url' => ['/project/my']];
+        $menuItems[] = ['label' => Yii::t('app', 'Account'), 'url' => ['/user/my']];
     }
     
     //if the user is guest then he can only see the Login link
