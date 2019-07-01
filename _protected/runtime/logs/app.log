@@ -7008,3 +7008,94 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1561973645.055
     'REQUEST_TIME' => 1561973645
 ]
+2019-07-01 11:47:25 [::1][1][ltmhs0bshn0ua0nm00n74j7ffo][error][ParseError] ParseError: syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\xampp\htdocs\project-manager\_protected\models\UserSearch.php:79
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\models\\User...')
+#1 C:\xampp\htdocs\project-manager\_protected\controllers\UserController.php(25): spl_autoload_call('app\\models\\User...')
+#2 [internal function]: app\controllers\UserController->actionIndex()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('user/index', Array)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#9 {main}
+2019-07-01 11:47:25 [::1][1][ltmhs0bshn0ua0nm00n74j7ffo][info][application] $_GET = [
+    'UserSearch' => [
+        'username' => ''
+        'email' => ''
+        'status' => ''
+        'item_name' => 'employee'
+    ]
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'ltmhs0bshn0ua0nm00n74j7ffo'
+    '_identity' => '3c6ac7b988d33dffedc5c8ad6debe0f77512542cc24abbba29223ad4250a5cf6a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"XxZjv2-yuNgB7Ow83ZMuOKVnwOUnTf2B\",2592000]\";}'
+    '_csrf' => 'bada511449e9943f66a38fd5f3d7b70a35881e5e0416949c73043698cfcd36e6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fFXhDFPkcoFn6V4oKji8SPBt30hYcW09\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/index?UserSearch%5Busername%5D=&UserSearch%5Bemail%5D=&UserSearch%5Bstatus%5D=10&UserSearch%5Bitem_name%5D=employee'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=ltmhs0bshn0ua0nm00n74j7ffo; _identity=3c6ac7b988d33dffedc5c8ad6debe0f77512542cc24abbba29223ad4250a5cf6a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22XxZjv2-yuNgB7Ow83ZMuOKVnwOUnTf2B%22%2C2592000%5D%22%3B%7D; _csrf=bada511449e9943f66a38fd5f3d7b70a35881e5e0416949c73043698cfcd36e6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fFXhDFPkcoFn6V4oKji8SPBt30hYcW09%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '50911'
+    'REDIRECT_URL' => '/project-manager/user/index'
+    'REDIRECT_QUERY_STRING' => 'UserSearch%5Busername%5D=&UserSearch%5Bemail%5D=&UserSearch%5Bstatus%5D=&UserSearch%5Bitem_name%5D=employee'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'UserSearch%5Busername%5D=&UserSearch%5Bemail%5D=&UserSearch%5Bstatus%5D=&UserSearch%5Bitem_name%5D=employee'
+    'REQUEST_URI' => '/project-manager/user/index?UserSearch%5Busername%5D=&UserSearch%5Bemail%5D=&UserSearch%5Bstatus%5D=&UserSearch%5Bitem_name%5D=employee'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1561974445.003
+    'REQUEST_TIME' => 1561974445
+]
