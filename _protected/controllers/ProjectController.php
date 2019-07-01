@@ -49,7 +49,7 @@ class ProjectController extends Controller
     {
         $userId = Yii::$app->user->id;
         $searchModel = new ProjectSearch();
-        
+
         //preparing the data, filtering only the projects that the logged in user is on
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $filteredModels = array_filter($dataProvider->models, function($obj){

@@ -26,7 +26,22 @@ $this->registerJs($search);
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
         'name',
-        'description',
+        [
+            'attribute' => 'description',
+            'contentOptions' => ['style'=>'max-width:100px; min-height:100px; overflow: auto;white-space: normal; word-wrap: break-word;'],
+          ],
+        [
+            'label'=> 'Role',
+            'value' => function($model){
+                if($model->manager_id == Yii::$app->user->id) return 'Manager';
+                foreach($model->supervisors as $supervisor){
+                    if($supervisor->user_id == Yii::$app->user->id) return 'Supervisor';
+                }
+                foreach($model->participants as $part){
+                    if($part->user_id == Yii::$app->user->id) return $part->projectRole->name;
+                }
+            }
+        ],
         'started',
         'deadline',
         [
