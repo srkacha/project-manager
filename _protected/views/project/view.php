@@ -85,7 +85,7 @@ if($providerParticipant->totalCount){
         'export' => false,
         'columns' => $gridColumnParticipant
     ]);
-}  else echo '<p>No supervisors on this project.</p>'
+}  else echo '<p>No participants on this project.</p>'
 ?>
 </div>
     

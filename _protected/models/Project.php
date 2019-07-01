@@ -22,7 +22,7 @@ class Project extends BaseProject
             [['manager_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 511],
-            [['active'], 'string', 'max' => 4]
+            [['active'], 'integer']
         ]);
     }
 	
