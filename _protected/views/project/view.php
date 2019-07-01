@@ -81,6 +81,7 @@ if($providerParticipant->totalCount){
             
     ];
     echo Gridview::widget([
+        'summary' => '',
         'dataProvider' => $providerParticipant,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-participant']],
@@ -107,6 +108,7 @@ if($providerSupervisor->totalCount){
             ],
     ];
     echo Gridview::widget([
+        'summary' => '',
         'dataProvider' => $providerSupervisor,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-supervisor']],

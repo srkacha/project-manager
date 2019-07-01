@@ -65,6 +65,7 @@ $this->registerJs($search);
     ]; 
     ?>
     <?= GridView::widget([
+        'summary' => '',
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
