@@ -151,6 +151,10 @@ class UserController extends AppController
             return $this->redirect(['index']);
 
         }
+        if(Yii::$app->user->id == $id){
+            Yii::$app->session->setFlash('error', Yii::t('app', 'You can`t delete yourself.'));
+            return $this->redirect(['index']);
+        }
         // delete user or throw exception if could not
         if (!$this->findModel($id)->delete()) {
             throw new ServerErrorHttpException(Yii::t('app', 'We could not delete this user.'));
