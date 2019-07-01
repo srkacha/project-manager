@@ -37,9 +37,7 @@ class AuthItemChild extends \yii\db\ActiveRecord
     {
         return [
             [['parent', 'child'], 'required'],
-            [['parent', 'child'], 'string', 'max' => 64],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['parent', 'child'], 'string', 'max' => 64]
         ];
     }
 
@@ -49,17 +47,6 @@ class AuthItemChild extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'auth_item_child';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

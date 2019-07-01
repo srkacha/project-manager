@@ -34,9 +34,7 @@ class Migration extends \yii\db\ActiveRecord
         return [
             [['version'], 'required'],
             [['apply_time'], 'integer'],
-            [['version'], 'string', 'max' => 180],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['version'], 'string', 'max' => 180]
         ];
     }
 
@@ -46,17 +44,6 @@ class Migration extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'migration';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

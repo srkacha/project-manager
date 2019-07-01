@@ -41,9 +41,7 @@ class Activity extends \yii\db\ActiveRecord
             [['task_id', 'description', 'finished'], 'required'],
             [['task_id'], 'integer'],
             [['description'], 'string', 'max' => 255],
-            [['finished'], 'string', 'max' => 4],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['finished'], 'string', 'max' => 4]
         ];
     }
 
@@ -53,17 +51,6 @@ class Activity extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'activity';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

@@ -42,7 +42,7 @@ echo TabularForm::widget([
             ],
             'columnOptions' => ['width' => '200px']
         ],
-        'project_role_name' => ['type' => TabularForm::INPUT_TEXT],
+        
         'del' => [
             'type' => 'raw',
             'label' => '',

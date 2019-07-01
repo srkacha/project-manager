@@ -18,9 +18,7 @@ class ProjectRole extends BaseProjectRole
         return array_replace_recursive(parent::rules(),
 	    [
             [['name'], 'required'],
-            [['name'], 'string', 'max' => 255],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['name'], 'string', 'max' => 255]
         ]);
     }
 	

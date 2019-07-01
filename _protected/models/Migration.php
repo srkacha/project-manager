@@ -19,9 +19,7 @@ class Migration extends BaseMigration
 	    [
             [['version'], 'required'],
             [['apply_time'], 'integer'],
-            [['version'], 'string', 'max' => 180],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['version'], 'string', 'max' => 180]
         ]);
     }
 	

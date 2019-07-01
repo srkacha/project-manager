@@ -47,7 +47,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'attribute' => 'projectRole.name',
             'label' => 'Project Role',
         ],
-        'project_role_name',
     ];
     echo DetailView::widget([
         'model' => $model,

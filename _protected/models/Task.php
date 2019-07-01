@@ -19,9 +19,7 @@ class Task extends BaseTask
 	    [
             [['parent_task_id', 'project_id', 'man_hours'], 'integer'],
             [['project_id', 'name', 'description', 'from', 'to', 'man_hours'], 'required'],
-            [['name', 'description', 'from', 'to'], 'string', 'max' => 45],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['name', 'description', 'from', 'to'], 'string', 'max' => 45]
         ]);
     }
 	

@@ -40,9 +40,7 @@ class Supervisor extends \yii\db\ActiveRecord
     {
         return [
             [['project_id', 'user_id'], 'required'],
-            [['project_id', 'user_id'], 'integer'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['project_id', 'user_id'], 'integer']
         ];
     }
 
@@ -52,17 +50,6 @@ class Supervisor extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'supervisor';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

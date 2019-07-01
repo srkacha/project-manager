@@ -35,9 +35,7 @@ class ProjectRole extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['name'], 'string', 'max' => 255],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['name'], 'string', 'max' => 255]
         ];
     }
 
@@ -47,17 +45,6 @@ class ProjectRole extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'project_role';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
@@ -76,7 +63,7 @@ class ProjectRole extends \yii\db\ActiveRecord
      */
     public function getParticipants()
     {
-        return $this->hasMany(\app\models\Participant::className(), ['project_role_id' => 'id', 'project_role_name' => 'name']);
+        return $this->hasMany(\app\models\Participant::className(), ['project_role_id' => 'id']);
     }
     
 

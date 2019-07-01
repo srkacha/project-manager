@@ -11,7 +11,6 @@ use Yii;
  * @property integer $project_id
  * @property integer $user_id
  * @property integer $project_role_id
- * @property string $project_role_name
  *
  * @property \app\models\ProjectRole $projectRole
  * @property \app\models\Project $project
@@ -43,11 +42,8 @@ class Participant extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['project_id', 'user_id', 'project_role_id', 'project_role_name'], 'required'],
-            [['project_id', 'user_id', 'project_role_id'], 'integer'],
-            [['project_role_name'], 'string', 'max' => 255],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['project_id', 'user_id', 'project_role_id'], 'required'],
+            [['project_id', 'user_id', 'project_role_id'], 'integer']
         ];
     }
 
@@ -60,17 +56,6 @@ class Participant extends \yii\db\ActiveRecord
     }
 
     /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
-    }
-
-    /**
      * @inheritdoc
      */
     public function attributeLabels()
@@ -80,7 +65,6 @@ class Participant extends \yii\db\ActiveRecord
             'project_id' => 'Project ID',
             'user_id' => 'User ID',
             'project_role_id' => 'Project Role ID',
-            'project_role_name' => 'Project Role Name',
         ];
     }
     
@@ -89,7 +73,7 @@ class Participant extends \yii\db\ActiveRecord
      */
     public function getProjectRole()
     {
-        return $this->hasOne(\app\models\ProjectRole::className(), ['id' => 'project_role_id', 'name' => 'project_role_name']);
+        return $this->hasOne(\app\models\ProjectRole::className(), ['id' => 'project_role_id']);
     }
         
     /**

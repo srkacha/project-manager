@@ -19,7 +19,6 @@ use app\models\Participant;
     {
         return [
             [['id', 'project_id', 'user_id', 'project_role_id'], 'integer'],
-            [['project_role_name'], 'safe'],
         ];
     }
 
@@ -61,8 +60,6 @@ use app\models\Participant;
             'user_id' => $this->user_id,
             'project_role_id' => $this->project_role_id,
         ]);
-
-        $query->andFilterWhere(['like', 'project_role_name', $this->project_role_name]);
 
         return $dataProvider;
     }

@@ -39,9 +39,7 @@ class Expense extends \yii\db\ActiveRecord
             [['amount', 'date', 'project_id'], 'required'],
             [['amount'], 'number'],
             [['date'], 'safe'],
-            [['project_id'], 'integer'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['project_id'], 'integer']
         ];
     }
 
@@ -51,17 +49,6 @@ class Expense extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'expense';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

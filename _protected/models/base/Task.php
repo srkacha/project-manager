@@ -50,9 +50,7 @@ class Task extends \yii\db\ActiveRecord
         return [
             [['parent_task_id', 'project_id', 'man_hours'], 'integer'],
             [['project_id', 'name', 'description', 'from', 'to', 'man_hours'], 'required'],
-            [['name', 'description', 'from', 'to'], 'string', 'max' => 45],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['name', 'description', 'from', 'to'], 'string', 'max' => 45]
         ];
     }
 
@@ -62,17 +60,6 @@ class Task extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'task';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

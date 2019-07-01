@@ -20,9 +20,7 @@ class Observation extends BaseObservation
             [['supervisor_id', 'project_id', 'comment', 'timestamp'], 'required'],
             [['supervisor_id', 'project_id'], 'integer'],
             [['timestamp'], 'safe'],
-            [['comment', 'file'], 'string', 'max' => 255],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['comment', 'file'], 'string', 'max' => 255]
         ]);
     }
 	

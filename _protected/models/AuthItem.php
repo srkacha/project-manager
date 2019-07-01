@@ -20,9 +20,7 @@ class AuthItem extends BaseAuthItem
             [['name', 'type'], 'required'],
             [['type', 'created_at', 'updated_at'], 'integer'],
             [['description', 'data'], 'string'],
-            [['name', 'rule_name'], 'string', 'max' => 64],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['name', 'rule_name'], 'string', 'max' => 64]
         ]);
     }
 	

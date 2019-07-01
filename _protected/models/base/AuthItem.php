@@ -46,9 +46,7 @@ class AuthItem extends \yii\db\ActiveRecord
             [['name', 'type'], 'required'],
             [['type', 'created_at', 'updated_at'], 'integer'],
             [['description', 'data'], 'string'],
-            [['name', 'rule_name'], 'string', 'max' => 64],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['name', 'rule_name'], 'string', 'max' => 64]
         ];
     }
 
@@ -58,17 +56,6 @@ class AuthItem extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'auth_item';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

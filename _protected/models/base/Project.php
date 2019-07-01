@@ -56,9 +56,7 @@ class Project extends \yii\db\ActiveRecord
             [['manager_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 511],
-            [['active'], 'string', 'max' => 4],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['active'], 'string', 'max' => 4]
         ];
     }
 
@@ -68,17 +66,6 @@ class Project extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'project';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

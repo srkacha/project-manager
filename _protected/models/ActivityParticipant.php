@@ -18,9 +18,7 @@ class ActivityParticipant extends BaseActivityParticipant
         return array_replace_recursive(parent::rules(),
 	    [
             [['task_participant_id', 'activity_id'], 'required'],
-            [['task_participant_id', 'activity_id', 'hours_worked'], 'integer'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['task_participant_id', 'activity_id', 'hours_worked'], 'integer']
         ]);
     }
 	

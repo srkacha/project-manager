@@ -19,9 +19,7 @@ class AuthAssignment extends BaseAuthAssignment
 	    [
             [['item_name', 'user_id'], 'required'],
             [['user_id', 'created_at'], 'integer'],
-            [['item_name'], 'string', 'max' => 64],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['item_name'], 'string', 'max' => 64]
         ]);
     }
 	

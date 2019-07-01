@@ -20,9 +20,7 @@ class AuthRule extends BaseAuthRule
             [['name'], 'required'],
             [['data'], 'string'],
             [['created_at', 'updated_at'], 'integer'],
-            [['name'], 'string', 'max' => 64],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['name'], 'string', 'max' => 64]
         ]);
     }
 	

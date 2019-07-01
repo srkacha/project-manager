@@ -49,8 +49,6 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'project_role_name')->textInput(['maxlength' => true, 'placeholder' => 'Project Role Name']) ?>
-
     <?php
     $forms = [
         [

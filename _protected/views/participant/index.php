@@ -71,7 +71,6 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Project role', 'id' => 'grid-participant-search-project_role_id']
             ],
-        'project_role_name',
         [
             'class' => 'yii\grid\ActionColumn',
         ],

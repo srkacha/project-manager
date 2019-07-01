@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= 'Project'.' '. Html::encode($this->title) ?></h2>
+            <h2><?=Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
 <?php 
+    $managerNameAndSurname = $model->manager->name .' '. $model->manager->surname;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         'name',
@@ -41,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'started',
         'deadline',
         [
-            'attribute' => 'manager.name',
+            'value' => $managerNameAndSurname,
             'label' => 'Manager',
         ],
     ];
@@ -52,89 +53,13 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
     </div>
     
-    <div class="row">
-<?php
-if($providerExpense->totalCount){
-    $gridColumnExpense = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-            'amount',
-            'date',
-                ];
-    echo Gridview::widget([
-        'dataProvider' => $providerExpense,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-expense']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Expense'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnExpense
-    ]);
-}
-?>
-
-    </div>
+ 
     
     <div class="row">
-<?php
-if($providerIncome->totalCount){
-    $gridColumnIncome = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-            'amount',
-            'date',
-                ];
-    echo Gridview::widget([
-        'dataProvider' => $providerIncome,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-income']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Income'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnIncome
-    ]);
-}
-?>
-
-    </div>
-    
-    <div class="row">
-<?php
-if($providerObservation->totalCount){
-    $gridColumnObservation = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-            [
-                'attribute' => 'supervisor.id',
-                'label' => 'Supervisor'
-            ],
-                        'comment',
-            'file',
-            'timestamp',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerObservation,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-observation']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Observation'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnObservation
-    ]);
-}
-?>
-
-    </div>
-    
-    <div class="row">
+<h2>Participants</h2>
 <?php
 if($providerParticipant->totalCount){
+    
     $gridColumnParticipant = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
@@ -146,45 +71,21 @@ if($providerParticipant->totalCount){
                 'attribute' => 'projectRole.name',
                 'label' => 'Project Role'
             ],
-            'project_role_name',
+            
     ];
     echo Gridview::widget([
         'dataProvider' => $providerParticipant,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-participant']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Participant'),
-        ],
+        
         'export' => false,
         'columns' => $gridColumnParticipant
     ]);
-}
+}  else echo '<p>No supervisors on this project.</p>'
 ?>
-
-    </div>
-    <div class="row">
-        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnUser = [
-        ['attribute' => 'id', 'visible' => false],
-        'name',
-        'surname',
-        'username',
-        'email',
-        'password_hash',
-        'status',
-        'auth_key',
-        'password_reset_token',
-        'account_activation_token',
-    ];
-    echo DetailView::widget([
-        'model' => $model->manager,
-        'attributes' => $gridColumnUser    ]);
-    ?>
     
     <div class="row">
+<h2>Supervisors</h2>
 <?php
 if($providerSupervisor->totalCount){
     $gridColumnSupervisor = [
@@ -199,47 +100,12 @@ if($providerSupervisor->totalCount){
         'dataProvider' => $providerSupervisor,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-supervisor']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Supervisor'),
-        ],
+        
         'export' => false,
         'columns' => $gridColumnSupervisor
     ]);
-}
+} else echo '<p>No supervisors on this project.</p>'
 ?>
-
-    </div>
-    
-    <div class="row">
-<?php
-if($providerTask->totalCount){
-    $gridColumnTask = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-            [
-                'attribute' => 'parentTask.name',
-                'label' => 'Parent Task'
-            ],
-                        'name',
-            'description',
-            'from',
-            'to',
-            'man_hours',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerTask,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-task']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Task'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnTask
-    ]);
-}
-?>
-
-    </div>
 </div>
+    
+   

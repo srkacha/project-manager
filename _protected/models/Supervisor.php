@@ -18,9 +18,7 @@ class Supervisor extends BaseSupervisor
         return array_replace_recursive(parent::rules(),
 	    [
             [['project_id', 'user_id'], 'required'],
-            [['project_id', 'user_id'], 'integer'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['project_id', 'user_id'], 'integer']
         ]);
     }
 	

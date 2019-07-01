@@ -40,9 +40,7 @@ class TaskParticipant extends \yii\db\ActiveRecord
     {
         return [
             [['participant_id', 'task_id'], 'required'],
-            [['participant_id', 'task_id'], 'integer'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['participant_id', 'task_id'], 'integer']
         ];
     }
 
@@ -52,17 +50,6 @@ class TaskParticipant extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'task_participant';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**

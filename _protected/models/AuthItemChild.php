@@ -18,9 +18,7 @@ class AuthItemChild extends BaseAuthItemChild
         return array_replace_recursive(parent::rules(),
 	    [
             [['parent', 'child'], 'required'],
-            [['parent', 'child'], 'string', 'max' => 64],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['parent', 'child'], 'string', 'max' => 64]
         ]);
     }
 	

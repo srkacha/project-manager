@@ -20,9 +20,7 @@ class Activity extends BaseActivity
             [['task_id', 'description', 'finished'], 'required'],
             [['task_id'], 'integer'],
             [['description'], 'string', 'max' => 255],
-            [['finished'], 'string', 'max' => 4],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['finished'], 'string', 'max' => 4]
         ]);
     }
 	

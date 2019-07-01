@@ -69,8 +69,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true, 'placeholder' => 'Description']) ?>
 
-    <?= $form->field($model, 'active')->textInput(['placeholder' => 'Active']) ?>
-
     <?= $form->field($model, 'started')->widget(\kartik\datecontrol\DateControl::classname(), [
         'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
         'saveFormat' => 'php:Y-m-d H:i:s',
@@ -105,42 +103,19 @@ use yii\widgets\ActiveForm;
 
     <?php
     $forms = [
+       
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Expense'),
-            'content' => $this->render('_formExpense', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->expenses),
-            ]),
-        ],
-        [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Income'),
-            'content' => $this->render('_formIncome', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->incomes),
-            ]),
-        ],
-        [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Observation'),
-            'content' => $this->render('_formObservation', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->observations),
-            ]),
-        ],
-        [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Participant'),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Participants'),
             'content' => $this->render('_formParticipant', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->participants),
             ]),
         ],
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Supervisor'),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Supervisors'),
             'content' => $this->render('_formSupervisor', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->supervisors),
             ]),
-        ],
-        [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Task'),
-            'content' => $this->render('_formTask', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->tasks),
-            ]),
-        ],
+        ]
     ];
     echo kartik\tabs\TabsX::widget([
         'items' => $forms,

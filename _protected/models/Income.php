@@ -20,9 +20,7 @@ class Income extends BaseIncome
             [['amount', 'date', 'project_id'], 'required'],
             [['amount'], 'number'],
             [['date'], 'safe'],
-            [['project_id'], 'integer'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['project_id'], 'integer']
         ]);
     }
 	

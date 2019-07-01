@@ -43,9 +43,7 @@ class Observation extends \yii\db\ActiveRecord
             [['supervisor_id', 'project_id', 'comment', 'timestamp'], 'required'],
             [['supervisor_id', 'project_id'], 'integer'],
             [['timestamp'], 'safe'],
-            [['comment', 'file'], 'string', 'max' => 255],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['comment', 'file'], 'string', 'max' => 255]
         ];
     }
 
@@ -55,17 +53,6 @@ class Observation extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'observation';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
