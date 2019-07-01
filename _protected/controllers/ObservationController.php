@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Observation;
-use yii\data\ActiveDataProvider;
+use app\models\ObservationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class ObservationController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Observation::find(),
-        ]);
+        $searchModel = new ObservationSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

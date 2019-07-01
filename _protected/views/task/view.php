@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\Task */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Task', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="task-view">

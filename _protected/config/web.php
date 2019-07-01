@@ -90,6 +90,7 @@ $config = [
 ];
 
 $config['modules']['gridview'] = ['class' => '\kartik\grid\Module'];
+$config['modules']['datecontrol'] = ['class' => '\kartik\datecontrol\Module'];
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment

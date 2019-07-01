@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\ProjectRole;
-use yii\data\ActiveDataProvider;
+use app\models\ProjectRoleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class ProjectRoleController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => ProjectRole::find(),
-        ]);
+        $searchModel = new ProjectRoleSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

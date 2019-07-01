@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\AuthAssignment */
 
 $this->title = 'Create Auth Assignment';
-$this->params['breadcrumbs'][] = ['label' => 'Auth Assignment', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Auth Assignments', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="auth-assignment-create">

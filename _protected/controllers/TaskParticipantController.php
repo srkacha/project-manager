@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\TaskParticipant;
-use yii\data\ActiveDataProvider;
+use app\models\TaskParticipantSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class TaskParticipantController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => TaskParticipant::find(),
-        ]);
+        $searchModel = new TaskParticipantSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

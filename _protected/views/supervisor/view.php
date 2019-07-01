@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\Supervisor */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Supervisor', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Supervisors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="supervisor-view">

@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\Expense */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Expense', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Expenses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="expense-view">

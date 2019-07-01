@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\AuthAssignment;
-use yii\data\ActiveDataProvider;
+use app\models\AuthAssignmentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class AuthAssignmentController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => AuthAssignment::find(),
-        ]);
+        $searchModel = new AuthAssignmentSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

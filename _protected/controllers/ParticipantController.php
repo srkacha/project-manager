@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Participant;
-use yii\data\ActiveDataProvider;
+use app\models\ParticipantSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class ParticipantController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Participant::find(),
-        ]);
+        $searchModel = new ParticipantSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

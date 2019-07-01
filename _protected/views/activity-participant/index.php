@@ -1,13 +1,14 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $searchModel app\models\ActivityParticipantSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = 'Activity Participant';
+$this->title = 'Activity Participants';
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -18,11 +19,16 @@ $this->registerJs($search);
 <div class="activity-participant-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Activity Participant', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Advance Search', '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
-<?php 
+    <div class="search-form" style="display:none">
+        <?=  $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
+    <?php 
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
@@ -37,7 +43,7 @@ $this->registerJs($search);
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
-                'filterInputOptions' => ['placeholder' => 'Task participant', 'id' => 'grid--task_participant_id']
+                'filterInputOptions' => ['placeholder' => 'Task participant', 'id' => 'grid-activity-participant-search-task_participant_id']
             ],
         [
                 'attribute' => 'activity_id',
@@ -50,7 +56,7 @@ $this->registerJs($search);
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
-                'filterInputOptions' => ['placeholder' => 'Activity', 'id' => 'grid--activity_id']
+                'filterInputOptions' => ['placeholder' => 'Activity', 'id' => 'grid-activity-participant-search-activity_id']
             ],
         'hours_worked',
         [
@@ -60,6 +66,7 @@ $this->registerJs($search);
     ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => $gridColumn,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-activity-participant']],

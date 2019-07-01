@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\ProjectRole */
 
 $this->title = 'Create Project Role';
-$this->params['breadcrumbs'][] = ['label' => 'Project Role', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Project Roles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="project-role-create">

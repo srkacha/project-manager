@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\AuthItemChild;
-use yii\data\ActiveDataProvider;
+use app\models\AuthItemChildSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class AuthItemChildController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => AuthItemChild::find(),
-        ]);
+        $searchModel = new AuthItemChildSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

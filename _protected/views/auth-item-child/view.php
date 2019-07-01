@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\AuthItemChild */
 
 $this->title = $model->parent;
-$this->params['breadcrumbs'][] = ['label' => 'Auth Item Child', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Auth Item Children', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="auth-item-child-view">

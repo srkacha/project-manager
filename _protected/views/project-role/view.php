@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\ProjectRole */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Project Role', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Project Roles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="project-role-view">

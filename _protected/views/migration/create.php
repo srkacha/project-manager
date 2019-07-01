@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Migration */
 
 $this->title = 'Create Migration';
-$this->params['breadcrumbs'][] = ['label' => 'Migration', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Migrations', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="migration-create">

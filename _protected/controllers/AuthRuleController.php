@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\AuthRule;
-use yii\data\ActiveDataProvider;
+use app\models\AuthRuleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class AuthRuleController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => AuthRule::find(),
-        ]);
+        $searchModel = new AuthRuleSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

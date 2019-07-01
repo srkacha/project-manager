@@ -1,13 +1,14 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $searchModel app\models\TaskParticipantSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = 'Task Participant';
+$this->title = 'Task Participants';
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -18,11 +19,16 @@ $this->registerJs($search);
 <div class="task-participant-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Task Participant', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Advance Search', '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
-<?php 
+    <div class="search-form" style="display:none">
+        <?=  $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
+    <?php 
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
@@ -37,7 +43,7 @@ $this->registerJs($search);
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
-                'filterInputOptions' => ['placeholder' => 'Participant', 'id' => 'grid--participant_id']
+                'filterInputOptions' => ['placeholder' => 'Participant', 'id' => 'grid-task-participant-search-participant_id']
             ],
         [
                 'attribute' => 'task_id',
@@ -50,7 +56,7 @@ $this->registerJs($search);
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
-                'filterInputOptions' => ['placeholder' => 'Task', 'id' => 'grid--task_id']
+                'filterInputOptions' => ['placeholder' => 'Task', 'id' => 'grid-task-participant-search-task_id']
             ],
         [
             'class' => 'yii\grid\ActionColumn',
@@ -59,6 +65,7 @@ $this->registerJs($search);
     ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => $gridColumn,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-task-participant']],

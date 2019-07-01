@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Income;
-use yii\data\ActiveDataProvider;
+use app\models\IncomeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class IncomeController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Income::find(),
-        ]);
+        $searchModel = new IncomeSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

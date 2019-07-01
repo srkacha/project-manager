@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\TaskParticipant */
 
 $this->title = 'Create Task Participant';
-$this->params['breadcrumbs'][] = ['label' => 'Task Participant', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Task Participants', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="task-participant-create">

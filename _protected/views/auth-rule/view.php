@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\AuthRule */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Auth Rule', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Auth Rules', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="auth-rule-view">

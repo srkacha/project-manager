@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Observation */
 
 $this->title = 'Create Observation';
-$this->params['breadcrumbs'][] = ['label' => 'Observation', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Observations', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="observation-create">

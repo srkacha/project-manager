@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Migration */
 
 $this->title = 'Update Migration: ' . ' ' . $model->version;
-$this->params['breadcrumbs'][] = ['label' => 'Migration', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Migrations', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->version, 'url' => ['view', 'id' => $model->version]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

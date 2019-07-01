@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Supervisor;
-use yii\data\ActiveDataProvider;
+use app\models\SupervisorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class SupervisorController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Supervisor::find(),
-        ]);
+        $searchModel = new SupervisorSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

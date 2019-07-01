@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\Migration */
 
 $this->title = $model->version;
-$this->params['breadcrumbs'][] = ['label' => 'Migration', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Migrations', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="migration-view">

@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\Observation */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Observation', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Observations', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="observation-view">
