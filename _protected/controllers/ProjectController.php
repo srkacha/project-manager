@@ -42,6 +42,21 @@ class ProjectController extends Controller
     }
 
     /**
+     * Lists logged in users Project models.
+     * @return mixed
+     */
+    public function actionMy()
+    {
+        $searchModel = new ProjectSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('my', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
      * Displays a single Project model.
      * @param integer $id
      * @return mixed
