@@ -108,6 +108,12 @@ class UserController extends AppController
         // get user id too
         $userId = $user->getId();
         
+        //here we are changing the user role
+        //if we try to change the role of the creator we should get an error
+        if("theCreator" == $oldRole->name){
+            Yii::$app->session->setFlash('error', Yii::t('app', 'You can`t change the role of the creator.'));
+            return $this->redirect(['view', 'id' => $user->id]);
+        }
         // we have to revoke the old role first and then assign the new one
         // this will happen if user actually had something to revoke
         if ($auth->revoke($oldRole, $userId)) {
@@ -133,6 +139,18 @@ class UserController extends AppController
      */
     public function actionDelete($id)
     {
+        $auth = Yii::$app->authManager;
+        $info = true; // monitor info status
+        // get user role if he has one  
+        if ($roles = $auth->getRolesByUser($id)) {
+            // it's enough for us the get first assigned role name
+            $role = array_keys($roles)[0]; 
+        }
+        if("theCreator" == $role){
+            Yii::$app->session->setFlash('error', Yii::t('app', 'You can`t delete the creator.'));
+            return $this->redirect(['index']);
+
+        }
         // delete user or throw exception if could not
         if (!$this->findModel($id)->delete()) {
             throw new ServerErrorHttpException(Yii::t('app', 'We could not delete this user.'));
@@ -144,6 +162,7 @@ class UserController extends AppController
             // it's enough for us the get first assigned role name
             $role = array_keys($roles)[0]; 
         }
+        
         // remove role if user had it
         if (isset($role)) {
             $info = $auth->revoke($auth->getRole($role), $id);
