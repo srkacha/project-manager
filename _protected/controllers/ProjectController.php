@@ -34,7 +34,7 @@ class ProjectController extends Controller
     {
         $searchModel = new ProjectSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+       
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -47,13 +47,45 @@ class ProjectController extends Controller
      */
     public function actionMy()
     {
+        $userId = Yii::$app->user->id;
         $searchModel = new ProjectSearch();
+        
+        //preparing the data, filtering only the projects that the logged in user is on
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $filteredModels = array_filter($dataProvider->models, function($obj){
+            if ($obj->manager_id == Yii::$app->user->id) {
+                return true;
+            }
+            elseif($this->isUserParticipant(Yii::$app->user->id, $obj->participants)){
+                return true;
+            }
+            elseif($this->isUserSupervisor(Yii::$app->user->id, $obj->supervisors)){
+                return true;
+            } else return false;
+        });
+        $dataProvider->models = $filteredModels;
+
 
         return $this->render('my', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    //helper function to check if the user is one of the participants on the project
+    private function isUserParticipant($userId, $participants){
+        foreach($participants as $part){
+            if($part->user_id == $userId) return true;
+        }
+        return false;
+    }
+
+    //helper function to check if the user is one of the supervisors on the project
+    private function isUserSupervisor($userId, $supervisors){
+        foreach($supervisors as $supervisor){
+            if($supervisor->user_id == $userId) return true;
+        }
+        return false;
     }
 
     /**

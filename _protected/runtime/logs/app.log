@@ -16133,3 +16133,771 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1562004067.22
     'REQUEST_TIME' => 1562004067
 ]
+2019-07-01 20:14:50 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][Error] Error: Call to undefined function app\controllers\toArray() in C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php:53
+Stack trace:
+#0 [internal function]: app\controllers\ProjectController->actionMy()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('my', Array)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#7 {main}
+2019-07-01 20:14:50 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51182'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562004890.78
+    'REQUEST_TIME' => 1562004890
+]
+2019-07-01 20:15:58 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][Error] Error: Call to undefined function app\controllers\asArray() in C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php:53
+Stack trace:
+#0 [internal function]: app\controllers\ProjectController->actionMy()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('my', Array)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#7 {main}
+2019-07-01 20:15:57 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51196'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562004957.902
+    'REQUEST_TIME' => 1562004957
+]
+2019-07-01 20:16:52 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][Error] Error: Call to undefined function app\controllers\asArray() in C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php:53
+Stack trace:
+#0 [internal function]: app\controllers\ProjectController->actionMy()
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('my', Array)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#7 {main}
+2019-07-01 20:16:52 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51201'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562005012.129
+    'REQUEST_TIME' => 1562005012
+]
+2019-07-01 20:17:00 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][Error] Error: Call to a member function getModels() on array in C:\xampp\htdocs\project-manager\_protected\vendor\kartik-v\yii2-export\src\ExportMenu.php:1782
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\vendor\kartik-v\yii2-export\src\ExportMenu.php(1753): kartik\export\ExportMenu->getAttributeLabel('name')
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\kartik-v\yii2-export\src\ExportMenu.php(1727): kartik\export\ExportMenu->getColumnLabel(3, Object(kartik\grid\DataColumn))
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\kartik-v\yii2-export\src\ExportMenu.php(749): kartik\export\ExportMenu->initColumnSelector()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Widget.php(140): kartik\export\ExportMenu->run()
+#4 C:\xampp\htdocs\project-manager\_protected\views\project\my.php(64): yii\base\Widget::widget(Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\ProjectController))
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('my', Array, Object(app\controllers\ProjectController))
+#9 C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php(57): yii\base\Controller->render('my', Array)
+#10 [internal function]: app\controllers\ProjectController->actionMy()
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('my', Array)
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#17 {main}
+2019-07-01 20:17:00 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51206'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562005020.423
+    'REQUEST_TIME' => 1562005020
+]
+2019-07-01 20:20:11 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'manager' of non-object in C:\xampp\htdocs\project-manager\_protected\views\project\my.php:36
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\views\project\my.php(36): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 [internal function]: yii\base\View->{closure}(Array, 0, 0, Object(kartik\grid\DataColumn))
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\grid\DataColumn.php(230): call_user_func(Object(Closure), Array, 0, 0, Object(kartik\grid\DataColumn))
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\grid\DataColumn.php(244): yii\grid\DataColumn->getDataCellValue(Array, 0, 0)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\kartik-v\yii2-grid\src\DataColumn.php(242): yii\grid\DataColumn->renderDataCellContent(Array, 0, 0)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\grid\GridView.php(525): kartik\grid\DataColumn->renderDataCell(Array, 0, 0)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\grid\GridView.php(494): yii\grid\GridView->renderTableRow(Array, 0, 0)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\kartik-v\yii2-grid\src\GridView.php(1279): yii\grid\GridView->renderTableBody()
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\grid\GridView.php(358): kartik\grid\GridView->renderTableBody()
+#9 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(160): yii\grid\GridView->renderItems()
+#10 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\grid\GridView.php(326): yii\widgets\BaseListView->renderSection('{items}')
+#11 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n<div ...')
+#14 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\grid\GridView.php(301): yii\widgets\BaseListView->run()
+#15 C:\xampp\htdocs\project-manager\_protected\vendor\kartik-v\yii2-grid\src\GridView.php(1201): yii\grid\GridView->run()
+#16 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Widget.php(140): kartik\grid\GridView->run()
+#17 C:\xampp\htdocs\project-manager\_protected\views\project\my.php(64): yii\base\Widget::widget(Array)
+#18 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#19 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#20 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\ProjectController))
+#21 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('my', Array, Object(app\controllers\ProjectController))
+#22 C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php(58): yii\base\Controller->render('my', Array)
+#23 [internal function]: app\controllers\ProjectController->actionMy()
+#24 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#25 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#26 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('my', Array)
+#27 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#28 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#29 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#30 {main}
+2019-07-01 20:20:10 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51219'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562005210.888
+    'REQUEST_TIME' => 1562005210
+]
+2019-07-01 20:28:27 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: yii\data\ActiveDataProvider::allModels in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php(54): yii\base\Component->__get('allModels')
+#1 [internal function]: app\controllers\ProjectController->actionMy()
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('my', Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#8 {main}
+2019-07-01 20:28:27 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51278'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562005707.036
+    'REQUEST_TIME' => 1562005707
+]
+2019-07-01 20:29:37 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: userId in C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php:55
+Stack trace:
+#0 C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php(55): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 55, Array)
+#1 [internal function]: app\controllers\ProjectController->app\controllers\{closure}(Object(app\models\Project))
+#2 C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php(58): array_filter(Array, Object(Closure))
+#3 [internal function]: app\controllers\ProjectController->actionMy()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('my', Array)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#8 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-07-01 20:29:37 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51289'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562005777.69
+    'REQUEST_TIME' => 1562005777
+]
+2019-07-01 20:42:49 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][ParseError] ParseError: syntax error, unexpected 'elseif' (T_ELSEIF) in C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php:57
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 [internal function]: spl_autoload_call('app\\controllers...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(637): class_exists('app\\controllers...')
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('project')
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('my')
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#8 {main}
+2019-07-01 20:42:49 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51340'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562006569.803
+    'REQUEST_TIME' => 1562006569
+]
+2019-07-01 20:48:49 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][error][Error] Error: Call to undefined function app\controllers\isUserParticipant() in C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php:58
+Stack trace:
+#0 [internal function]: app\controllers\ProjectController->app\controllers\{closure}(Object(app\models\Project))
+#1 C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php(61): array_filter(Array, Object(Closure))
+#2 [internal function]: app\controllers\ProjectController->actionMy()
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('my', Array)
+#6 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/my', Array)
+#7 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#9 {main}
+2019-07-01 20:48:48 [::1][2][6t1k3nfvu3pplppa5g9hvevcvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '6t1k3nfvu3pplppa5g9hvevcvh'
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    '_csrf' => '611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/user/my'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=6t1k3nfvu3pplppa5g9hvevcvh; _identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; _csrf=611accbea9321ae4fa4d685a5c8954114dd6bb05a5ba6ef9178cb0d56e4bc584a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220U3Y70OSf8wUcM_vqDWU88FfhKsMtwi9%22%3B%7D'
+    'PATH' => 'C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\cygwin64\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Tcl\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Jova\\AppData\\Roaming\\npm;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_181\\bin;C:\\MinGW\\bin;C:\\Program Files\\Redis\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files\\Git\\cmd;C:\\page;C:\\Program File;C:\\Users\\Jova\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Jova\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '51381'
+    'REDIRECT_URL' => '/project-manager/project/my'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/project-manager/project/my'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562006928.948
+    'REQUEST_TIME' => 1562006928
+]
