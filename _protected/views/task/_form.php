@@ -10,8 +10,7 @@ use yii\widgets\ActiveForm;
 
 <div class="task-form">
 
-
-    <?= $form->field($node, 'parent_task_id')->hiddenInput(['value'=> Yii::$app->session->get('parentTaskId')])->label(false); ?>
+    <?= $form->field($node, 'parent_task_id')->hiddenInput(['value'=> 0, 'id' => 'myid'])->label(false); ?>
 
     <?= $form->field($node, 'project_id')->hiddenInput(['value'=> Yii::$app->session->get('rootProjectId')])->label(false); ?>
     
