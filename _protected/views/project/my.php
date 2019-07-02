@@ -30,7 +30,7 @@ $this->registerJs($search);
             'format' => 'raw',
             'value'=>function ($model) {
                 return Html::a(Html::encode($model->name),'viewmy?id='.$model->id);
-    },
+            },
         ],
         [
             'attribute' => 'description',

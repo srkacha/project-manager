@@ -43,67 +43,9 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
 ?>
     </div>
-    
-    <div class="row">
-<?php
-if($providerActivity->totalCount){
-    $gridColumnActivity = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-                        'description',
-            'finished',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerActivity,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-activity']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Activity'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnActivity
-    ]);
-}
-?>
 
-    </div>
-    
-    
     <div class="row">
-<?php
-if($providerTask->totalCount){
-    $gridColumnTask = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-                        [
-                'attribute' => 'project.name',
-                'label' => 'Project'
-            ],
-            'name',
-            'description',
-            'from',
-            'to',
-            'man_hours',
-            'lvl',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerTask,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-task']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Task'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnTask
-    ]);
-}
-?>
-
-    </div>
-    
-    <div class="row">
+    <h2>Task particpants</h2>
 <?php
 if($providerTaskParticipant->totalCount){
     $gridColumnTaskParticipant = [
@@ -115,18 +57,72 @@ if($providerTaskParticipant->totalCount){
             ],
                 ];
     echo Gridview::widget([
+        'summary' => '',
         'dataProvider' => $providerTaskParticipant,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-task-participant']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Task Participant'),
-        ],
         'export' => false,
         'columns' => $gridColumnTaskParticipant
     ]);
-}
+}else echo '<p>No task participants on this task</p>';
 ?>
 
     </div>
+    
+    <div class="row">
+    <h2>Activities</h2>
+<?php
+if($providerActivity->totalCount){
+    $gridColumnActivity = [
+        ['class' => 'yii\grid\SerialColumn'],
+            ['attribute' => 'id', 'visible' => false],
+                        'description',
+            'finished',
+    ];
+    echo Gridview::widget([
+        'summary' => '',
+        'dataProvider' => $providerActivity,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-activity']],
+        'export' => false,
+        'columns' => $gridColumnActivity
+    ]);
+}else echo '<p>No activities for this task</p>';
+?>
+
+    </div>
+    
+    
+    <div class="row">
+    <h2>Subtasks</h2>
+<?php
+if($providerTask->totalCount){
+    $gridColumnTask = [
+        ['class' => 'yii\grid\SerialColumn'],
+        [
+            'label' => 'Name',
+            'format' => 'raw',
+            'value'=>function ($model) {
+                return Html::a(Html::encode($model->name),'view?id='.$model->id);
+            },
+        ],
+            'description',
+            'from',
+            'to',
+            'man_hours',
+    ];
+    echo Gridview::widget([
+        'summary' => '',
+        'dataProvider' => $providerTask,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-task']],
+        'export' => false,
+        'columns' => $gridColumnTask
+    ]);
+}else echo "<p>This task has no subtasks</p>";
+?>
+
+    </div>
+    
+    
 </div>
