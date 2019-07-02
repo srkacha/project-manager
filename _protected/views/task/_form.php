@@ -10,14 +10,10 @@ use yii\widgets\ActiveForm;
 
 <div class="task-form">
 
-    <?= $form->field($node, 'project_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\Project::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
-        'options' => ['placeholder' => 'Choose Project', 'value' => $node->project_id],
-        'pluginOptions' => [
-            'allowClear' => true,
-            'style' => 'enabled: false'
-        ],
-    ])->label('Root project'); ?>
+    
+
+    <?= $form->field($node, 'project_id')->hiddenInput(['value'=> Yii::$app->session->get('rootProjectId')])->label(false); ?>
+    
 
     <?= $form->field($node, 'description')->textInput(['maxlength' => true, 'placeholder' => 'Description']) ?>
 

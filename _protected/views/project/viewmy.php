@@ -126,6 +126,7 @@ if($providerSupervisor->totalCount){
 <div class="row">
 <h2>Tasks</h2>
     <?php
+        Yii::$app->session->set('rootProjectId', $model->id);
        echo TreeView::widget([
         'query' => Task::find()->where(['project_id' => $model->id])->addOrderBy('root, lft'),
         'headingOptions' => ['label' => 'Tasks'],
