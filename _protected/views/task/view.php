@@ -98,27 +98,6 @@ if($providerActivity->totalCount){
         'model' => $model->project,
         'attributes' => $gridColumnProject    ]);
     ?>
-    <div class="row">
-        <h4>Task<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnTask = [
-        ['attribute' => 'id', 'visible' => false],
-        [
-            'attribute' => 'project.name',
-            'label' => 'Project',
-        ],
-        'name',
-        'description',
-        'from',
-        'to',
-        'man_hours',
-        'lvl',
-    ];
-    echo DetailView::widget([
-        'model' => $model->parentTask,
-        'attributes' => $gridColumnTask    ]);
-    ?>
     
     <div class="row">
 <?php
