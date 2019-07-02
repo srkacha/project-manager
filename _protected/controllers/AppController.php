@@ -33,7 +33,7 @@ class AppController extends Controller
                     [
                         // other rules
                         'controllers' => ['user', 'project'],
-                        'actions' => ['my', 'editme'],
+                        'actions' => ['my', 'editme', 'viewmy'],
                         'allow' => true,
                         'roles' => ['employee'],
                     ],

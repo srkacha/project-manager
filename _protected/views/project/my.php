@@ -29,7 +29,7 @@ $this->registerJs($search);
             'label' => 'Name',
             'format' => 'raw',
             'value'=>function ($model) {
-                return Html::a(Html::encode($model->name),'view?id='.$model->id);
+                return Html::a(Html::encode($model->name),'viewmy?id='.$model->id);
     },
         ],
         [

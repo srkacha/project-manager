@@ -43,16 +43,7 @@ class ProjectController extends AppController
         //preparing the data, filtering only the projects that the logged in user is on
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $filteredModels = array_filter($dataProvider->models, function($obj){
-            if($obj->active == 0) return false;
-            if ($obj->manager_id == Yii::$app->user->id) {
-                return true;
-            }
-            elseif($this->isUserParticipant(Yii::$app->user->id, $obj->participants)){
-                return true;
-            }
-            elseif($this->isUserSupervisor(Yii::$app->user->id, $obj->supervisors)){
-                return true;
-            } else return false;
+            return $this->isUserOnProject(Yii::$app->user->id, $obj);
         });
         $dataProvider->models = $filteredModels;
 
@@ -76,6 +67,13 @@ class ProjectController extends AppController
         foreach($supervisors as $supervisor){
             if($supervisor->user_id == $userId) return true;
         }
+        return false;
+    }
+
+    private function isUserOnProject($userId, $project){
+        if($project->manager_id == $userId) return true;
+        if($this->isUserParticipant($userId, $project->participants)) return true;
+        if($this->isUserSupervisor($userId, $project->supervisors)) return true;
         return false;
     }
 
@@ -106,6 +104,47 @@ class ProjectController extends AppController
             'allModels' => $model->tasks,
         ]);
         return $this->render('view', [
+            'model' => $this->findModel($id),
+            'providerExpense' => $providerExpense,
+            'providerIncome' => $providerIncome,
+            'providerObservation' => $providerObservation,
+            'providerParticipant' => $providerParticipant,
+            'providerSupervisor' => $providerSupervisor,
+            'providerTask' => $providerTask,
+        ]);
+    }
+
+    /**
+     * Displays a single Project model, if the logged in user is on the project
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionViewmy($id)
+    {
+        $model = $this->findModel($id);
+        //check if user is on the project, if not redirect to projects index page
+        if(!$this->isUserOnProject(Yii::$app->user->id, $model)){
+            return $this->redirect('my');
+        }
+        $providerExpense = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->expenses,
+        ]);
+        $providerIncome = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->incomes,
+        ]);
+        $providerObservation = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->observations,
+        ]);
+        $providerParticipant = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->participants,
+        ]);
+        $providerSupervisor = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->supervisors,
+        ]);
+        $providerTask = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->tasks,
+        ]);
+        return $this->render('viewmy', [
             'model' => $this->findModel($id),
             'providerExpense' => $providerExpense,
             'providerIncome' => $providerIncome,
