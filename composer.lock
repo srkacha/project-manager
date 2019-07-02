@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7432a0b1d2c5ca7e027106e5ba93ba09",
+    "content-hash": "9578ff08f8d1a78e9634c1e3e64db0e4",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -271,6 +271,46 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "creocoder/yii2-nested-sets",
+            "version": "0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/creocoder/yii2-nested-sets.git",
+                "reference": "cb8635a459b6246e5a144f096b992dcc30cf9954"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/creocoder/yii2-nested-sets/zipball/cb8635a459b6246e5a144f096b992dcc30cf9954",
+                "reference": "cb8635a459b6246e5a144f096b992dcc30cf9954",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "creocoder\\nestedsets\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kochetov",
+                    "email": "creocoder@gmail.com"
+                }
+            ],
+            "description": "The nested sets behavior for the Yii framework",
+            "keywords": [
+                "nested sets",
+                "yii2"
+            ],
+            "time": "2015-01-27T10:53:51+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1362,6 +1402,63 @@
                 "tabs-x"
             ],
             "time": "2018-09-26T10:53:28+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-tree-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-tree-manager.git",
+                "reference": "23c5563a9b4c5d343d7e97fadf2d32c9b60728fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/23c5563a9b4c5d343d7e97fadf2d32c9b60728fd",
+                "reference": "23c5563a9b4c5d343d7e97fadf2d32c9b60728fd",
+                "shasum": ""
+            },
+            "require": {
+                "creocoder/yii2-nested-sets": ">=0.9",
+                "kartik-v/yii2-dialog": ">=1.0",
+                "kartik-v/yii2-widget-activeform": ">=1.5.7"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\tree\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An enhanced tree management module with tree node selection and manipulation using nested sets.",
+            "homepage": "https://github.com/kartik-v/yii2-tree-manager",
+            "keywords": [
+                "ajax",
+                "bootstrap",
+                "hierarchy",
+                "jquery",
+                "krajee",
+                "nested",
+                "nestedset",
+                "set",
+                "tree",
+                "treeview"
+            ],
+            "time": "2019-05-25T07:28:51+00:00"
         },
         {
             "name": "kartik-v/yii2-widget-activeform",
@@ -5556,7 +5653,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "kartik-v/yii2-password": 20,
-        "mootensai/yii2-enhanced-gii": 20
+        "mootensai/yii2-enhanced-gii": 20,
+        "kartik-v/yii2-tree-manager": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

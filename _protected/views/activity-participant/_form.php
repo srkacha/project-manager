@@ -7,6 +7,14 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\ActivityParticipant */
 /* @var $form yii\widgets\ActiveForm */
 
+\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
+    'viewParams' => [
+        'class' => 'ActivityProgress', 
+        'relID' => 'activity-progress', 
+        'value' => \yii\helpers\Json::encode($model->activityProgresses),
+        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
+    ]
+]);
 ?>
 
 <div class="activity-participant-form">
@@ -35,6 +43,26 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'hours_worked')->textInput(['placeholder' => 'Hours Worked']) ?>
 
+    <?php
+    $forms = [
+        [
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('ActivityProgress'),
+            'content' => $this->render('_formActivityProgress', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->activityProgresses),
+            ]),
+        ],
+    ];
+    echo kartik\tabs\TabsX::widget([
+        'items' => $forms,
+        'position' => kartik\tabs\TabsX::POS_ABOVE,
+        'encodeLabels' => false,
+        'pluginOptions' => [
+            'bordered' => true,
+            'sideways' => true,
+            'enableCache' => false,
+        ],
+    ]);
+    ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

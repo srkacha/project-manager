@@ -78,4 +78,30 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model->taskParticipant,
         'attributes' => $gridColumnTaskParticipant    ]);
     ?>
+    
+    <div class="row">
+<?php
+if($providerActivityProgress->totalCount){
+    $gridColumnActivityProgress = [
+        ['class' => 'yii\grid\SerialColumn'],
+            ['attribute' => 'id', 'visible' => false],
+            'timestamp',
+            'comment',
+                        'hours_done',
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerActivityProgress,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-activity-progress']],
+        'panel' => [
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Activity Progress'),
+        ],
+        'export' => false,
+        'columns' => $gridColumnActivityProgress
+    ]);
+}
+?>
+
+    </div>
 </div>

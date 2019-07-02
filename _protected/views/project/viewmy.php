@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use kartik\grid\GridView;
+use kartik\tree\TreeViewInput;
+use app\models\Task;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Project */
@@ -118,6 +120,28 @@ if($providerSupervisor->totalCount){
     ]);
 } else echo '<p>No supervisors on this project.</p>'
 ?>
+</div>
+
+<div class="row">
+    <?php
+        echo TreeViewInput::widget([
+            // single query fetch to render the tree
+            'query'             => Task::find()->addOrderBy('root, lft'), 
+            'headingOptions'    => ['label' => 'Categories'],
+            'name'              => 'kv-product',    // input name
+            'value'             => '1,2,3',         // values selected (comma separated for multiple select)
+            'asDropdown'        => true,            // will render the tree input widget as a dropdown.
+            'multiple'          => true,            // set to false if you do not need multiple selection
+            'fontAwesome'       => true,            // render font awesome icons
+            'rootOptions'       => [
+                'label' => '<i class="fa fa-tree"></i>', 
+                'class'=>'text-success'
+            ],                                      // custom root label
+            //'options'         => ['disabled' => true],
+        ]);
+    ?>
+</div>
+
 </div>
     
    

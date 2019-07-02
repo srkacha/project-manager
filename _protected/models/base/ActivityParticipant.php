@@ -14,6 +14,7 @@ use Yii;
  *
  * @property \app\models\Activity $activity
  * @property \app\models\TaskParticipant $taskParticipant
+ * @property \app\models\ActivityProgress[] $activityProgresses
  */
 class ActivityParticipant extends \yii\db\ActiveRecord
 {
@@ -28,7 +29,8 @@ class ActivityParticipant extends \yii\db\ActiveRecord
     {
         return [
             'activity',
-            'taskParticipant'
+            'taskParticipant',
+            'activityProgresses'
         ];
     }
 
@@ -78,6 +80,14 @@ class ActivityParticipant extends \yii\db\ActiveRecord
     public function getTaskParticipant()
     {
         return $this->hasOne(\app\models\TaskParticipant::className(), ['id' => 'task_participant_id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getActivityProgresses()
+    {
+        return $this->hasMany(\app\models\ActivityProgress::className(), ['activity_participant' => 'id']);
     }
     
 

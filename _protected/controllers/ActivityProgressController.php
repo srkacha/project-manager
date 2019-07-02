@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\ActivityParticipant;
-use app\models\ActivityParticipantSearch;
+use app\models\ActivityProgress;
+use app\models\ActivityProgressSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ActivityParticipantController implements the CRUD actions for ActivityParticipant model.
+ * ActivityProgressController implements the CRUD actions for ActivityProgress model.
  */
-class ActivityParticipantController extends Controller
+class ActivityProgressController extends Controller
 {
     public function behaviors()
     {
@@ -27,12 +27,12 @@ class ActivityParticipantController extends Controller
     }
 
     /**
-     * Lists all ActivityParticipant models.
+     * Lists all ActivityProgress models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ActivityParticipantSearch();
+        $searchModel = new ActivityProgressSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -42,30 +42,26 @@ class ActivityParticipantController extends Controller
     }
 
     /**
-     * Displays a single ActivityParticipant model.
+     * Displays a single ActivityProgress model.
      * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $providerActivityProgress = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->activityProgresses,
-        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerActivityProgress' => $providerActivityProgress,
         ]);
     }
 
     /**
-     * Creates a new ActivityParticipant model.
+     * Creates a new ActivityProgress model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new ActivityParticipant();
+        $model = new ActivityProgress();
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -77,7 +73,7 @@ class ActivityParticipantController extends Controller
     }
 
     /**
-     * Updates an existing ActivityParticipant model.
+     * Updates an existing ActivityProgress model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +92,7 @@ class ActivityParticipantController extends Controller
     }
 
     /**
-     * Deletes an existing ActivityParticipant model.
+     * Deletes an existing ActivityProgress model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,36 +106,16 @@ class ActivityParticipantController extends Controller
 
     
     /**
-     * Finds the ActivityParticipant model based on its primary key value.
+     * Finds the ActivityProgress model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return ActivityParticipant the loaded model
+     * @return ActivityProgress the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ActivityParticipant::findOne($id)) !== null) {
+        if (($model = ActivityProgress::findOne($id)) !== null) {
             return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for ActivityProgress
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddActivityProgress()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('ActivityProgress');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formActivityProgress', ['row' => $row]);
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
