@@ -51,7 +51,7 @@ $this->registerJs($search);
                     return $model->manager->name.' '.$model->manager->surname;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\app\models\User::find()->asArray()->all(), 'id', 'name'),
+                'filter' => \yii\helpers\ArrayHelper::map(\app\models\User::find()->select(['id', new \yii\db\Expression("CONCAT(`name`, ' ', `surname`) as nameAndSurname")])->orderBy('nameAndSurname')->asArray()->all(), 'id', 'nameAndSurname'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
