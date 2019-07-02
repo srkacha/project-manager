@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use kartik\grid\GridView;
-use kartik\tree\TreeViewInput;
+use kartik\tree\TreeView;
+use kartik\tree\Module;
 use app\models\Task;
 
 /* @var $this yii\web\View */
@@ -123,22 +124,21 @@ if($providerSupervisor->totalCount){
 </div>
 
 <div class="row">
+<h2>Tasks</h2>
     <?php
-        echo TreeViewInput::widget([
-            // single query fetch to render the tree
-            'query'             => Task::find()->addOrderBy('parent_task_id, name'), 
-            'headingOptions'    => ['label' => 'Tasks'],
-            'name'              => 'kv-product',    // input name
-            'value'             => '1,2,3',         // values selected (comma separated for multiple select)
-            'asDropdown'        => true,            // will render the tree input widget as a dropdown.
-            'multiple'          => false,            // set to false if you do not need multiple selection
-            'fontAwesome'       => true,            // render font awesome icons
-            'rootOptions'       => [
-                'label' => '<i class="fa fa-tree"></i>', 
-                'class'=>'text-success'
-            ],                                      // custom root label
-            //'options'         => ['disabled' => true],
-        ]);
+       echo TreeView::widget([
+        'query' => Task::find()->where(['project_id' => $model->id])->addOrderBy('root, lft'),
+        'headingOptions' => ['label' => 'Tasks'],
+        'showIDAttribute' => false,
+        'rootOptions' => ['label' => '<span class="text-primary"></span>'],
+        'fontAwesome' => false,
+        'isAdmin' => false, // @TODO : put your isAdmin getter here
+        'displayValue' => 0,
+        'cacheSettings' => ['enableCache' => true],
+        'nodeAddlViews' => [
+            Module::VIEW_PART_2 => '@app/views/task/_form'
+        ]
+    ]);
     ?>
 </div>
 

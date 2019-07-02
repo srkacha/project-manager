@@ -50,7 +50,7 @@ class Task extends \yii\db\ActiveRecord
     { 
         return [
             [['parent_task_id', 'project_id', 'man_hours', 'lvl'], 'integer'],
-            [['project_id', 'name', 'description', 'from', 'to', 'man_hours', 'lvl'], 'required'],
+            [['project_id', 'name', 'description', 'from', 'to', 'man_hours'], 'required'],
             [['name', 'description', 'from', 'to'], 'string', 'max' => 45]
         ]; 
     } 
