@@ -482,7 +482,7 @@ CREATE TABLE `task` (
   KEY `tbl_product_NK5` (`active`),
   CONSTRAINT `fk_task_project1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`),
   CONSTRAINT `fk_task_task1` FOREIGN KEY (`parent_task_id`) REFERENCES `task` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -491,7 +491,7 @@ CREATE TABLE `task` (
 
 LOCK TABLES `task` WRITE;
 /*!40000 ALTER TABLE `task` DISABLE KEYS */;
-INSERT INTO `task` VALUES (4,NULL,1,'First task','Description new node','2019-07-04 21:00:00','2019-07-12 21:00:00',30,0,1,6,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(5,NULL,1,'Second task','Description new node','2019-07-04 21:00:00','2019-07-12 21:00:00',30,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,5),(6,NULL,1,'Subtask 1','Description subtask','2019-07-04 21:00:00','2019-07-10 21:00:00',10,1,2,5,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(7,NULL,1,'One more','Description subtask one more','2019-07-06 21:00:00','2019-07-08 21:00:00',5,2,3,4,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(8,NULL,5,'Make a good sandwitch','With salamii','2019-07-04 21:00:00','2019-07-08 21:00:00',5,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,8),(9,NULL,3,'Some new task','Something...','2019-07-04 21:00:00','2019-07-08 21:00:00',17,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,9),(10,NULL,2,'Cool task','Cool task description','2019-07-04 21:00:00','2019-07-08 21:00:00',5,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,10);
+INSERT INTO `task` VALUES (4,NULL,1,'First task','Description new node','2019-07-04 21:00:00','2019-07-12 21:00:00',30,0,1,10,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(5,NULL,1,'Second task','Description new node','2019-07-04 21:00:00','2019-07-12 21:00:00',30,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,5),(6,4,1,'Subtask 1','Description subtask','2019-07-04 21:00:00','2019-07-10 21:00:00',10,1,2,5,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(7,6,1,'One more','Description subtask one more','2019-07-06 21:00:00','2019-07-08 21:00:00',5,2,3,4,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(8,NULL,5,'Make a good sandwitch','With salamii','2019-07-04 21:00:00','2019-07-08 21:00:00',5,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,8),(9,NULL,3,'Some new task','Something...','2019-07-04 21:00:00','2019-07-08 21:00:00',17,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,9),(10,NULL,2,'Cool task','Cool task description','2019-07-04 21:00:00','2019-07-08 21:00:00',5,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,10),(11,4,1,'Another one','Descccccc','2019-07-04 21:00:00','2019-07-10 21:00:00',10,1,6,9,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(12,11,1,'Wow another one','Description','2019-07-04 21:00:00','2019-07-12 21:00:00',3,2,7,8,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4);
 /*!40000 ALTER TABLE `task` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -570,4 +570,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-02 18:03:01
+-- Dump completed on 2019-07-02 19:25:22
