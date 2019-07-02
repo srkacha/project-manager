@@ -10,11 +10,9 @@ use yii\widgets\ActiveForm;
 
 <div class="task-form">
 
-    <?php $iconsList = 'none'; ?>
-
     <?= $form->field($node, 'project_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Project::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
-        'options' => ['placeholder' => 'Choose Project'],
+        'options' => ['placeholder' => 'Choose Project', 'value' => $node->project_id],
         'pluginOptions' => [
             'allowClear' => true,
             'style' => 'enabled: false'
