@@ -25,7 +25,13 @@ $this->registerJs($search);
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
-        'name',
+        [
+            'label' => 'Name',
+            'format' => 'raw',
+            'value'=>function ($model) {
+                return Html::a(Html::encode($model->name),'view?id='.$model->id);
+    },
+        ],
         [
             'attribute' => 'description',
             'contentOptions' => ['style'=>'max-width:100px; min-height:100px; overflow: auto;white-space: normal; word-wrap: break-word;'],
@@ -56,12 +62,7 @@ $this->registerJs($search);
                     'pluginOptions' => ['allowClear' => true],
                 ],
                 'filterInputOptions' => ['placeholder' => 'User', 'id' => 'grid-project-search-manager_id']
-            ],
-        [
-            'class' => 'yii\grid\ActionColumn',
-            'header' => 'Menu',
-            'template' => '{view} {update}',
-        ],
+            ]
     ]; 
     ?>
     <?= GridView::widget([
