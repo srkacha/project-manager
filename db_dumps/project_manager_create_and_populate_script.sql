@@ -1,15 +1,15 @@
-CREATE DATABASE  IF NOT EXISTS `project_manager` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE  IF NOT EXISTS `project_manager` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `project_manager`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
 --
 -- Host: localhost    Database: project_manager
 -- ------------------------------------------------------
--- Server version	5.7.22-log
+-- Server version	8.0.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,11 +23,11 @@ USE `project_manager`;
 
 DROP TABLE IF EXISTS `activity`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `activity` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` int(11) NOT NULL,
-  `description` varchar(255) COLLATE utf16_bin NOT NULL,
+  `description` varchar(255) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
   `finished` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_activity_task1_idx` (`task_id`),
@@ -50,7 +50,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `activity_participant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `activity_participant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_participant_id` int(11) NOT NULL,
@@ -74,14 +74,42 @@ LOCK TABLES `activity_participant` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `activity_progress`
+--
+
+DROP TABLE IF EXISTS `activity_progress`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `activity_progress` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `timestamp` datetime NOT NULL,
+  `comment` varchar(511) NOT NULL,
+  `activity_participant` int(11) NOT NULL,
+  `hours_done` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_activity_activity_progress_idx` (`activity_participant`),
+  CONSTRAINT `fk_activity_activity_progress` FOREIGN KEY (`activity_participant`) REFERENCES `activity_participant` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `activity_progress`
+--
+
+LOCK TABLES `activity_progress` WRITE;
+/*!40000 ALTER TABLE `activity_progress` DISABLE KEYS */;
+/*!40000 ALTER TABLE `activity_progress` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `auth_assignment`
 --
 
 DROP TABLE IF EXISTS `auth_assignment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `auth_assignment` (
-  `item_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `item_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(11) NOT NULL,
   `created_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`item_name`,`user_id`),
@@ -105,13 +133,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `auth_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `auth_item` (
-  `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `type` int(11) NOT NULL,
-  `description` text COLLATE utf8_unicode_ci,
-  `rule_name` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `data` text COLLATE utf8_unicode_ci,
+  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `rule_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `data` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`name`),
@@ -137,10 +165,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `auth_item_child`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `auth_item_child` (
-  `parent` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  `child` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `parent` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `child` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`parent`,`child`),
   KEY `child` (`child`),
   CONSTRAINT `auth_item_child_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -164,10 +192,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `auth_rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `auth_rule` (
-  `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  `data` text COLLATE utf8_unicode_ci,
+  `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `data` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`name`)
@@ -190,7 +218,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `expense`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `expense` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `amount` decimal(13,2) NOT NULL,
@@ -217,7 +245,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `income`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `income` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `amount` decimal(13,2) NOT NULL,
@@ -244,12 +272,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `migration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `migration` (
   `version` varchar(180) NOT NULL,
   `apply_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`version`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,13 +296,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `observation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `observation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `supervisor_id` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
-  `comment` varchar(255) COLLATE utf16_bin NOT NULL,
-  `file` varchar(255) COLLATE utf16_bin DEFAULT NULL,
+  `comment` varchar(255) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
+  `file` varchar(255) CHARACTER SET utf16 COLLATE utf16_bin DEFAULT NULL,
   `timestamp` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_observation_control1_idx` (`supervisor_id`),
@@ -299,7 +327,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `participant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `participant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL,
@@ -331,11 +359,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `project`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `project` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf16_bin NOT NULL,
-  `description` varchar(511) COLLATE utf16_bin NOT NULL,
+  `name` varchar(255) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
+  `description` varchar(511) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
   `active` tinyint(4) NOT NULL DEFAULT '1',
   `started` datetime NOT NULL,
   `deadline` datetime NOT NULL,
@@ -362,10 +390,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `project_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `project_role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf16_bin NOT NULL,
+  `name` varchar(255) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
   PRIMARY KEY (`id`,`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -386,7 +414,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `supervisor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `supervisor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL,
@@ -415,22 +443,46 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `task` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_task_id` int(11) DEFAULT NULL,
   `project_id` int(11) NOT NULL,
-  `name` varchar(45) COLLATE utf16_bin NOT NULL,
-  `description` varchar(45) COLLATE utf16_bin NOT NULL,
-  `from` varchar(45) COLLATE utf16_bin NOT NULL,
-  `to` varchar(45) COLLATE utf16_bin NOT NULL,
+  `name` varchar(45) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
+  `description` varchar(45) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
+  `from` varchar(45) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
+  `to` varchar(45) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
   `man_hours` int(11) NOT NULL,
+  `lvl` int(11) DEFAULT NULL,
+  `lft` int(11) NOT NULL,
+  `rgt` int(11) NOT NULL,
+  `icon` varchar(255) COLLATE utf16_bin DEFAULT NULL,
+  `icon_type` tinyint(1) NOT NULL DEFAULT '1',
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `selected` tinyint(1) NOT NULL DEFAULT '0',
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  `readonly` tinyint(1) NOT NULL DEFAULT '0',
+  `visible` tinyint(1) NOT NULL DEFAULT '1',
+  `collapsed` tinyint(1) NOT NULL DEFAULT '0',
+  `movable_u` tinyint(1) NOT NULL DEFAULT '1',
+  `movable_d` tinyint(1) NOT NULL DEFAULT '1',
+  `movable_l` tinyint(1) NOT NULL DEFAULT '1',
+  `movable_r` tinyint(1) NOT NULL DEFAULT '1',
+  `removable` tinyint(1) NOT NULL DEFAULT '1',
+  `removable_all` tinyint(1) NOT NULL DEFAULT '0',
+  `child_allowed` tinyint(1) NOT NULL DEFAULT '1',
+  `root` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_task_task1_idx` (`parent_task_id`),
   KEY `fk_task_project1_idx` (`project_id`),
+  KEY `tbl_product_NK1` (`root`),
+  KEY `tbl_product_NK2` (`lft`),
+  KEY `tbl_product_NK3` (`rgt`),
+  KEY `tbl_product_NK4` (`lvl`),
+  KEY `tbl_product_NK5` (`active`),
   CONSTRAINT `fk_task_project1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`),
   CONSTRAINT `fk_task_task1` FOREIGN KEY (`parent_task_id`) REFERENCES `task` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -439,6 +491,7 @@ CREATE TABLE `task` (
 
 LOCK TABLES `task` WRITE;
 /*!40000 ALTER TABLE `task` DISABLE KEYS */;
+INSERT INTO `task` VALUES (4,NULL,1,'First task','Description new node','2019-07-04 21:00:00','2019-07-12 21:00:00',30,0,1,6,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(5,NULL,1,'Second task','Description new node','2019-07-04 21:00:00','2019-07-12 21:00:00',30,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,5),(6,NULL,1,'Subtask 1','Description subtask','2019-07-04 21:00:00','2019-07-10 21:00:00',10,1,2,5,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(7,NULL,1,'One more','Description subtask one more','2019-07-06 21:00:00','2019-07-08 21:00:00',5,2,3,4,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(8,NULL,5,'Make a good sandwitch','With salamii','2019-07-04 21:00:00','2019-07-08 21:00:00',5,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,8),(9,NULL,3,'Some new task','Something...','2019-07-04 21:00:00','2019-07-08 21:00:00',17,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,9),(10,NULL,2,'Cool task','Cool task description','2019-07-04 21:00:00','2019-07-08 21:00:00',5,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,10);
 /*!40000 ALTER TABLE `task` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -448,7 +501,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `task_participant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `task_participant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `participant_id` int(11) NOT NULL,
@@ -476,18 +529,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `surname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `surname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password_hash` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` smallint(6) NOT NULL,
-  `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `account_activation_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `auth_key` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password_reset_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `account_activation_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -507,10 +560,6 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES (1,'Srdjan','Jovic','jova','jova@pr.com','$2y$13$cD59HmxZoAYCEqMSoXLfYecgc/dRu4RmxHV/ReXk.VQntz/Kbe2d6',10,'O1lZ80hnn7CFQtQ77PO9sImx4G2chZr8',NULL,NULL,1561975922,1561975922),(2,'Mike','Tomphson','mike','mike123@pr.com','$2y$13$mYQA/eZCaX7kSm4S/F7Fx.V/YLmH4x/XJUyP5zYvGwD0wfoP9vqra',10,'xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y',NULL,NULL,1561973568,1562004057),(3,'Tom','Surly','tom','tom@pr.com','$2y$13$gwSNIKpLsHv47mBpxMVVSO7J47uc5c4BVFbsDMSfgPjrsb3Hnn6M2',10,'7f9cz0gHbDyMA6FTh_YQ42NpmQTveEPy',NULL,NULL,1561973596,1561973596),(4,'John','Johnson','john','john@pr.com','$2y$13$Z796kwyrNOF6Xs4Rd2Ar9uhfNIjHadsbQibyxRQ1A1ZpDH4Ib54.y',10,'pn0RTdjYhOY--Efab1uOoH64YhA7ZXlc',NULL,NULL,1561973624,1561973624),(6,'Jonny','Jonson','jonny','jonny@pr.com','$2y$13$K7.JKzsPv8gfgm.UXNArg.Re1WzgdcX5ZjbhIyEyuEgRDA2I8Oe36',10,'GjrRUQR4dxno0A4-x9fuLaeqmGPywsJV',NULL,NULL,1561988892,1561988892),(7,'Bojan','Jovic','kibo','kibo@pr.com','$2y$13$SuazT8kzGwZgiIUQwoVflOXuZx3yJ3wG/Md/N7bq.z.Jt54j0ksFK',10,'GyAiG8c1ub2ge14BSlfcgCJWqac89uFV',NULL,NULL,1561988928,1561988928),(8,'April','Danny','april','april@pr.com','$2y$13$S0BXYPQzTcWWmNPCiW8bcOMmG4uhR/HqVxRS91.7TgL.18jMae/Qq',10,'X0A47o8U5q9YzKhGhdzxsH3kCwfimNlM',NULL,NULL,1561989140,1561989140),(9,'Dana','Banana','dana','dana@pr.com','$2y$13$wrtAzPX1.faWdLi24Nv9leGn5A1asKbXEtxEtOTTsh2vyehekeC3G',10,'AuBTqrrTU9pD5J5KIt7gYCu8IspXMU4z',NULL,NULL,1561989173,1561989173);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'project_manager'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -521,4 +570,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-01 22:41:48
+-- Dump completed on 2019-07-02 18:03:01
