@@ -131,6 +131,7 @@ if($providerSupervisor->totalCount){
         'query' => Task::find()->where(['project_id' => $model->id])->addOrderBy('root, lft'),
         'headingOptions' => ['label' => 'Tasks'],
         'showIDAttribute' => false,
+        'showTooltips' => false,
         'rootOptions' => ['label' => '<span class="text-primary"></span>'],
         'fontAwesome' => false,
         'isAdmin' => false, // @TODO : put your isAdmin getter here
@@ -140,6 +141,34 @@ if($providerSupervisor->totalCount){
             Module::VIEW_PART_2 => '@app/views/task/_form'
         ],
         'iconEditSettings' => ['show' => 'none'],  // to hide the icons list
+        'toolbar' => [
+            TreeView::BTN_CREATE => [
+                'icon' => 'plus',
+                'alwaysDisabled' => false,
+                'options' => ['title' => 'Add new subtask', 'disabled' => true]
+            ],
+            TreeView::BTN_CREATE_ROOT => [
+                'icon' => 'plus',
+                'alwaysDisabled' => false,
+                'options' => ['title' => 'Add new root task']
+            ],
+            TreeView::BTN_REMOVE => [
+                'icon' => 'trash',
+                'alwaysDisabled' => false,
+                'options' => ['title' => 'Delete task', 'disabled' => true]
+            ],
+            TreeView::BTN_SEPARATOR,
+            TreeView::BTN_MOVE_UP => false,
+            TreeView::BTN_MOVE_DOWN => false,
+            TreeView::BTN_MOVE_LEFT => false,
+            TreeView::BTN_MOVE_RIGHT => false,
+            TreeView::BTN_REFRESH => false,
+        ],
+        'i18n' => [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => '@kvtree/messages',
+            'forceTranslation' => false
+        ]
     ]);
     ?>
 </div>
