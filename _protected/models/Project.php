@@ -25,5 +25,4 @@ class Project extends BaseProject
             [['active'], 'integer']
         ]);
     }
-	
 }

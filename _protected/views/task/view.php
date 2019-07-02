@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model app\models\Task */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Task', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="task-view">
@@ -48,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'from',
         'to',
         'man_hours',
+        'lvl',
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -112,6 +113,7 @@ if($providerActivity->totalCount){
         'from',
         'to',
         'man_hours',
+        'lvl',
     ];
     echo DetailView::widget([
         'model' => $model->parentTask,
@@ -133,6 +135,7 @@ if($providerTask->totalCount){
             'from',
             'to',
             'man_hours',
+            'lvl',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerTask,

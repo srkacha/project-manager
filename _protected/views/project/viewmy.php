@@ -126,12 +126,12 @@ if($providerSupervisor->totalCount){
     <?php
         echo TreeViewInput::widget([
             // single query fetch to render the tree
-            'query'             => Task::find()->addOrderBy('root, lft'), 
-            'headingOptions'    => ['label' => 'Categories'],
+            'query'             => Task::find()->addOrderBy('parent_task_id, name'), 
+            'headingOptions'    => ['label' => 'Tasks'],
             'name'              => 'kv-product',    // input name
             'value'             => '1,2,3',         // values selected (comma separated for multiple select)
             'asDropdown'        => true,            // will render the tree input widget as a dropdown.
-            'multiple'          => true,            // set to false if you do not need multiple selection
+            'multiple'          => false,            // set to false if you do not need multiple selection
             'fontAwesome'       => true,            // render font awesome icons
             'rootOptions'       => [
                 'label' => '<i class="fa fa-tree"></i>', 

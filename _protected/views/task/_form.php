@@ -67,6 +67,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'man_hours')->textInput(['placeholder' => 'Man Hours']) ?>
 
+    <?= $form->field($model, 'lvl')->textInput(['placeholder' => 'Lvl']) ?>
+
     <?php
     $forms = [
         [
