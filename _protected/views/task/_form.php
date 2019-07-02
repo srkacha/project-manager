@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
 <div class="task-form">
 
-    
+    <?php $iconsList = 'none'; ?>
 
     <?= $form->field($node, 'project_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Project::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
@@ -19,13 +19,13 @@ use yii\widgets\ActiveForm;
             'allowClear' => true,
             'style' => 'enabled: false'
         ],
-    ]); ?>
+    ])->label('Root project'); ?>
 
     <?= $form->field($node, 'description')->textInput(['maxlength' => true, 'placeholder' => 'Description']) ?>
 
-    <?= $form->field($node, 'from')->textInput(['maxlength' => true, 'placeholder' => 'From']) ?>
+    <?= $form->field($node, 'from')->textInput(['maxlength' => true, 'placeholder' => 'Start'])->label('Start') ?>
 
-    <?= $form->field($node, 'to')->textInput(['maxlength' => true, 'placeholder' => 'To']) ?>
+    <?= $form->field($node, 'to')->textInput(['maxlength' => true, 'placeholder' => 'Deadline'])->label('Deadline')  ?>
 
     <?= $form->field($node, 'man_hours')->textInput(['placeholder' => 'Man Hours']) ?>
 

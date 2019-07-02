@@ -137,7 +137,8 @@ if($providerSupervisor->totalCount){
         'cacheSettings' => ['enableCache' => true],
         'nodeAddlViews' => [
             Module::VIEW_PART_2 => '@app/views/task/_form'
-        ]
+        ],
+        'iconEditSettings' => ['show' => 'none'],  // to hide the icons list
     ]);
     ?>
 </div>
