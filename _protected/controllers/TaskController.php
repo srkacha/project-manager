@@ -52,7 +52,7 @@ class TaskController extends Controller
         $providerActivity = new \yii\data\ArrayDataProvider([
             'allModels' => $model->activities,
         ]);
-        $subtasks = \app\models\base\Task::find()->where(['>', 'lft', $model->lft])->andWhere(['<', 'rgt', $model->rgt])->andWhere(['lvl' => $model->lvl + 1])->andWhere(['root' => $model->id])->all();
+        $subtasks = \app\models\base\Task::find()->where(['>', 'lft', $model->lft])->andWhere(['<', 'rgt', $model->rgt])->andWhere(['lvl' => $model->lvl + 1])->andWhere(['root' => $model->root])->all();
         
         $providerTask = new \yii\data\ArrayDataProvider([
             'allModels' => $subtasks,
