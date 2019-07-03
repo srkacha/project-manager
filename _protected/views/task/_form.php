@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="task-form">
-
+    
 
     <?= $form->field($node, 'parent_task_id')->hiddenInput(['value'=> Yii::$app->session->get('parentTaskId')])->label(false); ?>
 
@@ -24,5 +24,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($node, 'man_hours')->textInput(['placeholder' => 'Man Hours']) ?>
 
-
+    <?php
+        if($node->id){
+            echo Html::a('View details', ['/task/view', 'id' => $node->id], ['class' => 'btn btn-primary text-center']).'<br>';
+        }
+    ?>
+    
 </div>
