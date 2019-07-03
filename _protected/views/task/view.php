@@ -114,7 +114,7 @@ if($providerTask->totalCount){
     echo Gridview::widget([
         'summary' => '',
         'dataProvider' => $providerTask,
-        'pjax' => true,
+        'pjax' => false,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-task']],
         'export' => false,
         'columns' => $gridColumnTask
