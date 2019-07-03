@@ -6,6 +6,8 @@ use kartik\grid\GridView;
 use kartik\tree\TreeView;
 use kartik\tree\Module;
 use app\models\Task;
+use yii\helpers\Url;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Project */
@@ -21,18 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h2><?=Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
-            <?php 
-                $active = $model->active;
-            ?>
-            <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a($active?"Deactivate":"Activate", ['active', 'id' => $model->id], [
-                'class' => 'btn btn-danger',
-                'data' => [
-                    
-                    'method' => 'post',
-                ],
-            ])
-            ?>
+            
         </div>
     </div>
 
@@ -168,6 +159,12 @@ if($providerSupervisor->totalCount){
             'class' => 'yii\i18n\PhpMessageSource',
             'basePath' => '@kvtree/messages',
             'forceTranslation' => false
+        ],
+        'nodeActions' => [
+            Module::NODE_MANAGE => Url::to(['/treemanager/node/manage']),
+            Module::NODE_SAVE => Url::to(['/task/update']),
+            Module::NODE_REMOVE => Url::to(['/treemanager/node/remove']),
+            Module::NODE_MOVE => Url::to(['/treemanager/node/move']),
         ]
     ]);
     ?>

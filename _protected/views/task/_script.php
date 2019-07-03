@@ -8,7 +8,7 @@ use yii\helpers\Url;
         data.push({name: '_action', value : 'add'});
         $.ajax({
             type: 'POST',
-            url: '<?php echo Url::to(['add-'.$relID]); ?>',
+            url: '<?php echo Url::to(['/task/add-'.$relID]); ?>',
             data: data,
             success: function (data) {
                 $('#add-<?= $relID?>').html(data);
