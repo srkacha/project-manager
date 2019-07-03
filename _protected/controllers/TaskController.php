@@ -52,8 +52,10 @@ class TaskController extends Controller
         $providerActivity = new \yii\data\ArrayDataProvider([
             'allModels' => $model->activities,
         ]);
+        $subtasks = \app\models\base\Task::find()->where(['>', 'lft', $model->lft])->andWhere(['<', 'rgt', $model->rgt])->andWhere(['lvl' => $model->lvl + 1])->andWhere(['root' => $model->id])->all();
+        
         $providerTask = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->tasks,
+            'allModels' => $subtasks,
         ]);
         $providerTaskParticipant = new \yii\data\ArrayDataProvider([
             'allModels' => $model->taskParticipants,
