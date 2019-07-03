@@ -8,16 +8,18 @@ use kartik\tree\Module;
 use app\models\Task;
 use yii\helpers\Url;
 
+use yii\web\View;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Project */
 
+
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Projects', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="project-view">
-
     <div class="row">
         <div class="col-sm-9">
             <h2><?=Html::encode($this->title) ?></h2>
@@ -171,5 +173,3 @@ if($providerSupervisor->totalCount){
 </div>
 
 </div>
-    
-   
