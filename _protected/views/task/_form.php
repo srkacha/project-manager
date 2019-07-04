@@ -58,7 +58,7 @@ use yii\widgets\ActiveForm;
     ]); ?>
 
     <?= $form->field($node, 'man_hours')->textInput(['placeholder' => 'Man Hours']) ?>
-
-    <?= Html::a('Go to task page', ['/task/view?id='.$node->id], ['class' => 'btn btn-danger']) ?>
-    
+    <span class="pull-right">
+    <?= Html::a('Go to task page', ['/task/view?id='.$node->id], ['class' => 'btn btn-primary mb-4']) ?>
+    </span>
 </div>
