@@ -114,6 +114,13 @@ class ProjectController extends AppController
         ]);
     }
 
+    private function userRoleOnProject($userId, $project){
+        if($project->manager_id == $userId) return 'manager';
+        if($this->isUserSupervisor($userId, $project->supervisors)) return 'supervisor';
+        if($this->isUserParticipant($userId, $project->participants)) return 'participant';
+        return 'none';
+    }
+
     /**
      * Displays a single Project model, if the logged in user is on the project
      * @param integer $id
@@ -126,6 +133,7 @@ class ProjectController extends AppController
         if(!$this->isUserOnProject(Yii::$app->user->id, $model)){
             return $this->redirect('my');
         }
+        $role = $this->userRoleOnProject(Yii::$app->user->id, $model);
         $providerExpense = new \yii\data\ArrayDataProvider([
             'allModels' => $model->expenses,
         ]);
@@ -145,6 +153,7 @@ class ProjectController extends AppController
             'allModels' => $model->tasks,
         ]);
         return $this->render('viewmy', [
+            'role' => $role,
             'model' => $this->findModel($id),
             'providerExpense' => $providerExpense,
             'providerIncome' => $providerIncome,

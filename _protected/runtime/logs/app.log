@@ -34523,3 +34523,1420 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1562221996.88
     'REQUEST_TIME' => 1562221996
 ]
+2019-07-04 08:40:31 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:40:31 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '674873661'
+]
+
+$_POST = [
+    'id' => '6'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2300'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '53988'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=674873661'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=674873661'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=674873661'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222431.433
+    'REQUEST_TIME' => 1562222431
+]
+2019-07-04 08:40:32 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:40:31 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '886224574'
+]
+
+$_POST = [
+    'id' => '7'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2300'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '53988'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=886224574'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=886224574'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=886224574'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222431.832
+    'REQUEST_TIME' => 1562222431
+]
+2019-07-04 08:40:32 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:40:32 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '-1462391257'
+]
+
+$_POST = [
+    'id' => '11'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2301'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '53988'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=-1462391257'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=-1462391257'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=-1462391257'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222432.231
+    'REQUEST_TIME' => 1562222432
+]
+2019-07-04 08:40:33 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:40:33 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '-1251040344'
+]
+
+$_POST = [
+    'id' => '12'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2301'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '53988'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=-1251040344'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=-1251040344'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=-1251040344'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222432.983
+    'REQUEST_TIME' => 1562222432
+]
+2019-07-04 08:40:33 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:40:33 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '463522748'
+]
+
+$_POST = [
+    'id' => '5'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2300'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '53988'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=463522748'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=463522748'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=463522748'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222433.735
+    'REQUEST_TIME' => 1562222433
+]
+2019-07-04 08:40:34 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:40:34 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '-1039689431'
+]
+
+$_POST = [
+    'id' => '13'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2301'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '53988'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=-1039689431'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=-1039689431'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=-1039689431'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222434.159
+    'REQUEST_TIME' => 1562222434
+]
+2019-07-04 08:40:34 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:40:34 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '-828338518'
+]
+
+$_POST = [
+    'id' => '14'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2301'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '53988'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=-828338518'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=-828338518'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=-828338518'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222434.615
+    'REQUEST_TIME' => 1562222434
+]
+2019-07-04 08:40:36 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:40:36 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '252171835'
+]
+
+$_POST = [
+    'id' => '4'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2300'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'l6UBpzvaWiIcjD123F1tASio-weF7Nc4IFbKqVLrnk7A6znfeeNubHbOTw-KEQple_yjPv2vmGoVYqz5A9_cPw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '53988'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=252171835'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=252171835'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=252171835'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222436.639
+    'REQUEST_TIME' => 1562222436
+]
+2019-07-04 08:47:15 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:47:15 [::1][2][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '54005'
+    'REDIRECT_URL' => '/project-manager/project/viewmy'
+    'REDIRECT_QUERY_STRING' => 'id=1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/project-manager/project/viewmy?id=1'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222835.582
+    'REQUEST_TIME' => 1562222835
+]
+2019-07-04 08:48:30 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 34278 bytes' 
+
+in C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php:99
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(99): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(74): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2-debug\src\LogTarget.php(130): yii\debug\LogTarget->export()
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2019-07-04 08:48:30 [::1][2][-][info][application] $_GET = [
+    'kvtree' => '252171835'
+]
+
+$_POST = [
+    'id' => '4'
+    'modelClass' => 'app\\models\\Task'
+    'hideCssClass' => 'hide'
+    'defaultBtnCss' => 'btn-default'
+    'isAdmin' => 'false'
+    'formAction' => '/project-manager/treemanager/node/save'
+    'formOptions' => [
+        'id' => 'w5-nodeform'
+    ]
+    'parentKey' => ''
+    'iconsList' => 'none'
+    'currUrl' => '/project-manager/project/viewmy?id=1'
+    'softDelete' => 'true'
+    'showFormButtons' => 'true'
+    'showIDAttribute' => 'false'
+    'showNameAttribute' => 'true'
+    'multiple' => 'true'
+    'nodeView' => '@kvtree/views/_form'
+    'nodeAddlViews' => [
+        1 => ''
+        2 => '@app/views/task/_form'
+        3 => ''
+        4 => ''
+        5 => ''
+    ]
+    'nodeViewButtonLabels' => [
+        'submit' => '<i class=\"glyphicon glyphicon-floppy-disk\"></i>'
+        'reset' => '<i class=\"glyphicon glyphicon-repeat\"></i>'
+    ]
+    'nodeViewParams' => 'a:0:{}'
+    'nodeSelected' => 'w5-nodesel'
+    'noNodesMessage' => '<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>'
+    'breadcrumbs' => [
+        'depth' => ''
+        'glue' => ' &raquo; '
+        'activeCss' => 'kv-crumb-active'
+        'untitled' => 'Untitled'
+    ]
+    'allowNewRoots' => 'true'
+    'treeManageHash' => 'f0a7a7514e26d685ed712e59b8274dd3f11e009df9626938e8a50edee1593457app\\models\\Taskhidebtn-default/project-manager/treemanager/node/save/project-manager/project/viewmy?id=1@kvtree/views/_formw5-nodeselnodenodes<div class=\"kv-node-message\">No valid nodes are available for display. Use toolbar buttons to add nodes.</div>1111{\"id\":\"w5-nodeform\"}{\"1\":\"\",\"2\":\"@app/views/task/_form\",\"3\":\"\",\"4\":\"\",\"5\":\"\"}{\"submit\":\"<i class=\\\"glyphicon glyphicon-floppy-disk\\\"></i>\",\"reset\":\"<i class=\\\"glyphicon glyphicon-repeat\\\"></i>\"}a:0:{}[]\"none\"{\"depth\":\"\",\"glue\":\" &raquo; \",\"activeCss\":\"kv-crumb-active\",\"untitled\":\"Untitled\"}'
+    'treeRemoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    'treeMoveHash' => '94b4f4f5795bca8df52164571a636ee72dbe17f7a3626ffefbd693edca9b9110app\\models\\Task1'
+    '_csrf' => 'wg1Bz6s4jW-2Lq67XOx3SPEpuf9izCMDfOTKg4D2Kn6VQ3m36QG5Idxs3MIKoBAson3hxhqPbFFJ0KzT0cJoDw=='
+    'nodeTitle' => 'node'
+    'nodeTitlePlural' => 'nodes'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2300'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_X_CSRF_TOKEN' => 'wg1Bz6s4jW-2Lq67XOx3SPEpuf9izCMDfOTKg4D2Kn6VQ3m36QG5Idxs3MIKoBAson3hxhqPbFFJ0KzT0cJoDw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '54010'
+    'REDIRECT_URL' => '/project-manager/treemanager/node/manage'
+    'REDIRECT_QUERY_STRING' => 'kvtree=252171835'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'kvtree=252171835'
+    'REQUEST_URI' => '/project-manager/treemanager/node/manage?kvtree=252171835'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562222910.1
+    'REQUEST_TIME' => 1562222910
+]
+2019-07-04 08:56:58 [::1][2][1qn5sovbqedhutd42cksqb1dd3][error][Error] Error: Call to undefined function app\controllers\userRoleOnProject() in C:\xampp\htdocs\project-manager\_protected\controllers\ProjectController.php:136
+Stack trace:
+#0 [internal function]: app\controllers\ProjectController->actionViewmy('1')
+#1 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('viewmy', Array)
+#4 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('project/viewmy', Array)
+#5 C:\xampp\htdocs\project-manager\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\xampp\htdocs\project-manager\index.php(12): yii\base\Application->run()
+#7 {main}
+2019-07-04 08:56:58 [::1][2][1qn5sovbqedhutd42cksqb1dd3][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y\",2592000]\";}'
+    'PHPSESSID' => '1qn5sovbqedhutd42cksqb1dd3'
+    '_csrf' => '3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+    'rootProjectId' => 1
+    'w5-nodesel' => null
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost/project-manager/project/viewmy?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,hr;q=0.8,ms;q=0.7,sr;q=0.6,bs;q=0.5'
+    'HTTP_COOKIE' => '_identity=2ca31f1eb7129299323ca755a31cccc47bab464f829f81cc598d8c4d9a66a1dda%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22xFIN6dhiXx0U6ew6jzhxwMoqCEkF9X_Y%22%2C2592000%5D%22%3B%7D; PHPSESSID=1qn5sovbqedhutd42cksqb1dd3; _csrf=3cb76bb994376f69fa4dbb4a4b6c247a722f60974754dd792e7ce8ebf22a6f6ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WN8xB94NjBryVLgdSTX9xCOR54fPQ4Bq%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\MinGW\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\sjovic\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\sjovic\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\sjovic\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/project-manager/index.php'
+    'REMOTE_PORT' => '54040'
+    'REDIRECT_URL' => '/project-manager/project/viewmy'
+    'REDIRECT_QUERY_STRING' => 'id=1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/project-manager/project/viewmy?id=1'
+    'SCRIPT_NAME' => '/project-manager/index.php'
+    'PHP_SELF' => '/project-manager/index.php'
+    'REQUEST_TIME_FLOAT' => 1562223418.027
+    'REQUEST_TIME' => 1562223418
+]

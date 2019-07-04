@@ -59,6 +59,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($node, 'man_hours')->textInput(['placeholder' => 'Man Hours']) ?>
 
-    
+    <?= Html::a('Go to task page', ['/task/view?id='.$node->id], ['class' => 'btn btn-danger']) ?>
     
 </div>
