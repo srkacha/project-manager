@@ -59,36 +59,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($node, 'man_hours')->textInput(['placeholder' => 'Man Hours']) ?>
 
-    <?php
-    $forms = [
-        [
-            'label' =>  Html::encode('Activities'),
-            'content' => $this->render('_formActivity', [
-                'row' => \yii\helpers\ArrayHelper::toArray($node->activities),
-            ]),
-        ],
-        [
-            'label' =>  Html::encode('Participants'),
-            'content' => $this->render('_formTaskParticipant', [
-                'row' => \yii\helpers\ArrayHelper::toArray($node->taskParticipants),
-            ]),
-        ],
-    ];
-    echo kartik\tabs\TabsX::widget([
-        'items' => $forms,
-        'position' => kartik\tabs\TabsX::POS_ABOVE,
-        'encodeLabels' => false,
-        'pluginOptions' => [
-            'bordered' => true,
-            'sideways' => true,
-            'enableCache' => false,
-        ],
-    ]);
-    echo $formAction;
-    ?>
-
-    <div class="form-group">
-        <?= Html::submitButton($node->isNewRecord ? 'Create task' : 'Update task', ['class' => $node->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
+    
     
 </div>

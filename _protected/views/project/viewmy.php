@@ -162,12 +162,6 @@ if($providerSupervisor->totalCount){
             'basePath' => '@kvtree/messages',
             'forceTranslation' => false
         ],
-        'nodeActions' => [
-            Module::NODE_MANAGE => Url::to(['/treemanager/node/manage']),
-            Module::NODE_SAVE => Url::to(['/task/update']),
-            Module::NODE_REMOVE => Url::to(['/treemanager/node/remove']),
-            Module::NODE_MOVE => Url::to(['/treemanager/node/move']),
-        ]
     ]);
     ?>
 </div>
