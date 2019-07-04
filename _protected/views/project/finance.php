@@ -97,6 +97,12 @@ use yii\widgets\DetailView;
 ?>
 
     <?php $form = ActiveForm::begin(); ?>
+    
+    <h1>
+    <span class="pull-right m-3">
+        <?= Html::submitButton('Update finance data', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </span>
+    </h1>
 
     <?= $form->errorSummary($model); ?>
 
@@ -128,9 +134,7 @@ use yii\widgets\DetailView;
         ],
     ]);
     ?>
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
+    
 
     <?php ActiveForm::end(); ?>
 
