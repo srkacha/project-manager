@@ -114,6 +114,34 @@ class ProjectController extends AppController
         ]);
     }
 
+    /**
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionFinance($id){
+        $model = $this->findModel($id);
+
+        $totalIncome = 0;
+        foreach($model->incomes as $inc) $totalIncome += $inc->amount;
+
+        $totalOutcome = 0;
+        foreach($model->expenses as $ex) $totalOutcome += $ex->amount;
+
+        $providerExpense = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->expenses,
+        ]);
+        $providerIncome = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->incomes,
+        ]);
+        return $this->render('finance', [
+            'model' => $model,
+            'providerExpense' => $providerExpense,
+            'providerIncome' => $providerIncome,
+            'totalOutcome' => $totalOutcome,
+            'totalIncome' => $totalIncome
+        ]);
+    }
+
     private function userRoleOnProject($userId, $project){
         if($project->manager_id == $userId) return 'manager';
         if($this->isUserSupervisor($userId, $project->supervisors)) return 'supervisor';
