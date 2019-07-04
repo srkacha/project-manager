@@ -7,6 +7,7 @@ use kartik\tree\TreeView;
 use kartik\tree\Module;
 use app\models\Task;
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 
 use yii\web\View;
 
@@ -18,11 +19,31 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Projects', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
+\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
+    'viewParams' => [
+        'class' => 'Expense', 
+        'relID' => 'expense', 
+        'value' => \yii\helpers\Json::encode($model->expenses),
+        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
+    ]
+]);
+\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
+    'viewParams' => [
+        'class' => 'Income', 
+        'relID' => 'income', 
+        'value' => \yii\helpers\Json::encode($model->incomes),
+        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
+    ]
+]);
+
 ?>
 <div class="project-view">
     <div class="row">
         <div class="col-sm-9">
-            <h2><?=Html::encode($this->title) ?></h2>
+            <h2><?=Html::encode($this->title) ?>
+            <span class="pull-right">
+            <?= $role !='participant'?Html::a(Yii::t('app', 'Project finance'), ['finance'], ['class' => 'btn btn-primary']):"" ?>
+        </span>  </h2>    
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             

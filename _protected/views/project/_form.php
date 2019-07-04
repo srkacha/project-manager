@@ -115,6 +115,35 @@ use yii\widgets\ActiveForm;
             'content' => $this->render('_formSupervisor', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->supervisors),
             ]),
+        ],
+        [
+            'label' =>  Html::encode('Incomes'),
+            'content' => $this->render('_formIncome', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->incomes),
+            ]),
+            'headerOptions' => ['class'=>'disabled']
+        ],
+        [
+            'label' =>  Html::encode('Expenses'),
+            'content' => $this->render('_formExpense', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->expenses),
+            ]),
+            'headerOptions' => ['class'=>'disabled']
+        ],
+        [
+            'label' =>  Html::encode('Tasks'),
+            'content' => $this->render('_formTask', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->tasks),
+                
+            ]),
+            'headerOptions' => ['class'=>'disabled']
+        ],
+        [
+            'label' =>  Html::encode('Observations'),
+            'content' => $this->render('_formObservation', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->observations),
+            ]),
+            'headerOptions' => ['class'=>'disabled']
         ]
     ];
     echo kartik\tabs\TabsX::widget([

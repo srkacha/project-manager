@@ -26,14 +26,14 @@ class AppController extends Controller
                 'rules' => [
                     [
                         'controllers' => ['user', 'project'],
-                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'add-participant', 'add-supervisor'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
                     [
                         // other rules
                         'controllers' => ['user', 'project'],
-                        'actions' => ['my', 'editme', 'viewmy'],
+                        'actions' => ['my', 'editme', 'viewmy', 'add-income', 'add-expense', 'update'],
                         'allow' => true,
                         'roles' => ['employee'],
                     ],
