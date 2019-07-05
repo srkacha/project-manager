@@ -235,6 +235,40 @@ class ProjectController extends AppController
      * @param integer $id
      * @return mixed
      */
+    public function actionUpdateFinance($id)
+    {
+        $model = $this->findModel($id);
+        $post_expense = [];
+        $post_income = [];
+        $expenses = [];
+        $incomes = [];
+        unset($model->incomes);
+        unset($model->expenses);
+        if(isset($_POST['Expense'])) $post_expense = $_POST['Expense'];
+        if(isset($_POST['Income'])) $post_income = $_POST['Income'];
+        foreach($post_expense as $ex){
+            $expenses[] = $ex;
+        }
+        foreach($post_income as $inc){
+            $incomes[] = $inc;
+        }
+        $model->incomes = $incomes;
+        $model->expenses = $expenses;
+        unset($expenses);
+        unset($incomes);
+        if($model->saveAll()) {
+            return $this->redirect(['finance', 'id' => $model->id]);
+        } else {
+            return $this->redirect(['jova', 'id' => $model->id]);
+        }
+    }
+
+    /**
+     * Updates an existing Project model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
     public function actionActive($id)
     {
         $model = $this->findModel($id);

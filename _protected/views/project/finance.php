@@ -96,7 +96,7 @@ use yii\widgets\DetailView;
     ]);
 ?>
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['action' => ['project/update-finance?id='.$model->id],'options' => ['method' => 'post']]); ?>
     
     <h1>
     <span class="pull-right m-3">
