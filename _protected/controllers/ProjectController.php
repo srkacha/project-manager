@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Project;
+use app\models\Expense;
+use app\models\Income;
 use app\models\ProjectSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -237,30 +239,41 @@ class ProjectController extends AppController
      */
     public function actionUpdateFinance($id)
     {
-        $model = $this->findModel($id);
-        $post_expense = [];
-        $post_income = [];
-        $expenses = [];
-        $incomes = [];
-        unset($model->incomes);
-        unset($model->expenses);
-        if(isset($_POST['Expense'])) $post_expense = $_POST['Expense'];
-        if(isset($_POST['Income'])) $post_income = $_POST['Income'];
-        foreach($post_expense as $ex){
-            $expenses[] = $ex;
+        $post_expenses = isset($_POST['Expense'])?$_POST['Expense']:[];
+        $post_incomes = isset($_POST['Income'])?$_POST['Income']:[];
+
+        //first we add the new expenses and update the existing ones
+        foreach($post_expenses as $exp){
+            if(!$exp['id']) {
+                $new_exp = new Expense();
+                $new_exp->amount = $exp['amount'];
+                $new_exp->project_id = $id;
+                $new_exp->date = $exp['date'];
+                $new_exp->save();
+            }else{
+                $existing = Expense::findOne($exp['id']);
+                $existing->amount = $exp['amount'];
+                $existing->date = $exp['date'];
+                $existing->update();
+            }
         }
-        foreach($post_income as $inc){
-            $incomes[] = $inc;
+        //then we add the new incomes, and update the existing ones
+        foreach($post_incomes as $inc){
+            if(!$inc['id']) {
+                $new_inc = new Income();
+                $new_inc->amount = $inc['amount'];
+                $new_inc->project_id = $id;
+                $new_inc->date = $inc['date'];
+                $new_inc->save();
+            }else{
+                $existing = Income::findOne($inc['id']);
+                $existing->amount = $inc['amount'];
+                $existing->date = $inc['date'];
+                $existing->update();
+            }
         }
-        $model->incomes = $incomes;
-        $model->expenses = $expenses;
-        unset($expenses);
-        unset($incomes);
-        if($model->saveAll()) {
-            return $this->redirect(['finance', 'id' => $model->id]);
-        } else {
-            return $this->redirect(['jova', 'id' => $model->id]);
-        }
+
+        return $this->redirect(['finance', 'id' => $id]);
     }
 
     /**
