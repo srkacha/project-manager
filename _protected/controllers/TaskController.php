@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Task;
+use app\models\User;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -49,6 +50,8 @@ class TaskController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
+        $user = User::findOne(['id' => Yii::$app->user->id]);
+        $role = $user->userRoleOnProject($model->project_id);
         $providerActivity = new \yii\data\ArrayDataProvider([
             'allModels' => $model->activities,
         ]);
@@ -61,6 +64,7 @@ class TaskController extends Controller
             'allModels' => $model->taskParticipants,
         ]);
         return $this->render('view', [
+            'role' => $role,
             'model' => $this->findModel($id),
             'providerActivity' => $providerActivity,
             'providerTask' => $providerTask,

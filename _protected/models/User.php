@@ -255,7 +255,9 @@ class User extends UserIdentity
         $this->account_activation_token = null;
     }
 
-    public function userRoleOnProject($project){
+    public function userRoleOnProject($project_id){
+        $project = Project::findOne(['id'=> $project_id]);
+        if(!$project) return 'none';
         if($project->manager_id == $this->id) return 'manager';
         if($this->isUserSupervisor($project->supervisors)) return 'supervisor';
         if($this->isUserParticipant($project->participants)) return 'participant';
@@ -278,8 +280,8 @@ class User extends UserIdentity
         return false;
     }
 
-    public function isUserOnProject($project){
-        if($this->userRoleOnProject($project) != 'none') return true;
+    public function isUserOnProject($project_id){
+        if($this->userRoleOnProject($project_id) != 'none') return true;
         return false;
     }
 }

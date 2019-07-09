@@ -47,7 +47,7 @@ class ProjectController extends AppController
         //preparing the data, filtering only the projects that the logged in user is on
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $filteredModels = array_filter($dataProvider->models, function($obj) use(&$user) {
-            return $user->isUserOnProject($obj);
+            return $user->isUserOnProject($obj->id);
         });
         $dataProvider->models = $filteredModels;
 
@@ -134,7 +134,7 @@ class ProjectController extends AppController
         $model = $this->findModel($id);
         $user = User::findOne(['id' => Yii::$app->user->id]);
         //check if user is on the project, if not redirect to projects index page
-        if(!$user->isUserOnProject($model)){
+        if(!$user->isUserOnProject($model->id)){
             return $this->redirect('my');
         }
         $role = $user->userRoleOnProject($model);
