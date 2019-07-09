@@ -105,6 +105,18 @@ class TaskController extends Controller
             ]);
         }
     }
+
+    public function actionUpdateDetails($id){
+        $model = $this->findModel($id);
+        if($model->updateWhole($_POST)){
+            return $this->redirect(['view', 'id' => $id]);
+        }
+        else return $this->render('details', [
+            'model' => $model
+        ]);
+    }
+
+
     /**
      * Deletes an existing Task model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
