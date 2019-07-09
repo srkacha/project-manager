@@ -239,53 +239,13 @@ class ProjectController extends AppController
      */
     public function actionUpdateFinance($id)
     {
-        $post_expenses = isset($_POST['Expense'])?$_POST['Expense']:[];
-        $post_incomes = isset($_POST['Income'])?$_POST['Income']:[];
-
-        //first we have to remove the ones that are removed
-        $project_expenses = Expense::find()->where(['project_id' => $id])->all();
-        foreach($project_expenses as $exp){
-            $toDelete = true;
-            foreach($post_expenses as $post_exp){
-                if($post_exp['id'] == $exp->id) $toDelete = false;
-            }
-            if($toDelete){
-                $exp->delete();
-            } 
+        $model = $this->findModel($id);
+        if($model->updateFinance($_POST)){
+            return $this->redirect(['finance', 'id' => $id]);
         }
+        else return $this->redirect(['/']);
 
-        //then we add the new expenses and update the existing ones
-        foreach($post_expenses as $exp){
-            if(!$exp['id']) {
-                $new_exp = new Expense();
-                $new_exp->amount = $exp['amount'];
-                $new_exp->project_id = $id;
-                $new_exp->date = $exp['date'];
-                $new_exp->save();
-            }else{
-                $existing = Expense::findOne($exp['id']);
-                $existing->amount = $exp['amount'];
-                $existing->date = $exp['date'];
-                $existing->update();
-            }
-        }
-        //then we add the new incomes, and update the existing ones
-        foreach($post_incomes as $inc){
-            if(!$inc['id']) {
-                $new_inc = new Income();
-                $new_inc->amount = $inc['amount'];
-                $new_inc->project_id = $id;
-                $new_inc->date = $inc['date'];
-                $new_inc->save();
-            }else{
-                $existing = Income::findOne($inc['id']);
-                $existing->amount = $inc['amount'];
-                $existing->date = $inc['date'];
-                $existing->update();
-            }
-        }
-
-        return $this->redirect(['finance', 'id' => $id]);
+        
     }
 
     /**
