@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use kartik\grid\GridView;
+use app\models\User;
+use app\models\Participant;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Task */
@@ -55,8 +58,12 @@ if($providerTaskParticipant->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
             [
-                'attribute' => 'participant.id',
-                'label' => 'Participant'
+                'label' => 'Participant',
+                'value' => function($model){
+                    $part = Participant::findOne(['id' => $model->participant_id]);
+                    $emp = User::findOne(['id' => $part->user_id]);
+                    return $emp->name.' '.$emp->surname;
+                }
             ],
                 ];
     echo Gridview::widget([
@@ -80,7 +87,12 @@ if($providerActivity->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
                         'description',
-            'finished',
+           [
+               'label' => 'Finished',
+               'value' => function($model){
+                   return $model->finished?'Yes':'No';
+               }
+           ]
     ];
     echo Gridview::widget([
         'summary' => '',
