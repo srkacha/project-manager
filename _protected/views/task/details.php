@@ -79,6 +79,7 @@ use yii\widgets\ActiveForm;
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode('Participants'),
             'content' => $this->render('_formTaskParticipant', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->taskParticipants),
+                'id' => 1
             ]),
         ],
         [
