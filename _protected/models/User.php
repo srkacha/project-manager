@@ -254,4 +254,32 @@ class User extends UserIdentity
     {
         $this->account_activation_token = null;
     }
+
+    public function userRoleOnProject($project){
+        if($project->manager_id == $this->id) return 'manager';
+        if($this->isUserSupervisor($project->supervisors)) return 'supervisor';
+        if($this->isUserParticipant($project->participants)) return 'participant';
+        return 'none';
+    }
+
+    //helper function to check if the user is one of the participants on the project
+    private function isUserParticipant($participants){
+        foreach($participants as $part){
+            if($part->user_id == $this->id) return true;
+        }
+        return false;
+    }
+
+    //helper function to check if the user is one of the supervisors on the project
+    private function isUserSupervisor($supervisors){
+        foreach($supervisors as $supervisor){
+            if($supervisor->user_id == $this->id) return true;
+        }
+        return false;
+    }
+
+    public function isUserOnProject($project){
+        if($this->userRoleOnProject($project) != 'none') return true;
+        return false;
+    }
 }

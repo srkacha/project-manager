@@ -6,6 +6,7 @@ use Yii;
 use app\models\Project;
 use app\models\Expense;
 use app\models\Income;
+use app\models\User;
 use app\models\ProjectSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -40,43 +41,20 @@ class ProjectController extends AppController
     public function actionMy()
     {
         $userId = Yii::$app->user->id;
+        $user = User::findOne(['id' => $userId]);
         $searchModel = new ProjectSearch();
 
         //preparing the data, filtering only the projects that the logged in user is on
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $filteredModels = array_filter($dataProvider->models, function($obj){
-            return $this->isUserOnProject(Yii::$app->user->id, $obj);
+        $filteredModels = array_filter($dataProvider->models, function($obj) use(&$user) {
+            return $user->isUserOnProject($obj);
         });
         $dataProvider->models = $filteredModels;
-
 
         return $this->render('my', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
-    }
-
-    //helper function to check if the user is one of the participants on the project
-    private function isUserParticipant($userId, $participants){
-        foreach($participants as $part){
-            if($part->user_id == $userId) return true;
-        }
-        return false;
-    }
-
-    //helper function to check if the user is one of the supervisors on the project
-    private function isUserSupervisor($userId, $supervisors){
-        foreach($supervisors as $supervisor){
-            if($supervisor->user_id == $userId) return true;
-        }
-        return false;
-    }
-
-    private function isUserOnProject($userId, $project){
-        if($project->manager_id == $userId) return true;
-        if($this->isUserParticipant($userId, $project->participants)) return true;
-        if($this->isUserSupervisor($userId, $project->supervisors)) return true;
-        return false;
     }
 
     /**
@@ -144,12 +122,7 @@ class ProjectController extends AppController
         ]);
     }
 
-    private function userRoleOnProject($userId, $project){
-        if($project->manager_id == $userId) return 'manager';
-        if($this->isUserSupervisor($userId, $project->supervisors)) return 'supervisor';
-        if($this->isUserParticipant($userId, $project->participants)) return 'participant';
-        return 'none';
-    }
+   
 
     /**
      * Displays a single Project model, if the logged in user is on the project
@@ -159,11 +132,12 @@ class ProjectController extends AppController
     public function actionViewmy($id)
     {
         $model = $this->findModel($id);
+        $user = User::findOne(['id' => Yii::$app->user->id]);
         //check if user is on the project, if not redirect to projects index page
-        if(!$this->isUserOnProject(Yii::$app->user->id, $model)){
+        if(!$user->isUserOnProject($model)){
             return $this->redirect('my');
         }
-        $role = $this->userRoleOnProject(Yii::$app->user->id, $model);
+        $role = $user->userRoleOnProject($model);
         $providerExpense = new \yii\data\ArrayDataProvider([
             'allModels' => $model->expenses,
         ]);

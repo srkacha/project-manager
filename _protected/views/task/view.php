@@ -15,7 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?=Html::encode($this->title) ?></h2>
+        <h1><?=Html::encode($this->title) ?>
+            <span class="pull-right">
+            <?= $role !='participant'?Html::a(Yii::t('app', 'Project finance'), ['finance?id='.$model->id], ['class' => 'btn btn-primary']):"" ?>
+        </span>  </h1>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
