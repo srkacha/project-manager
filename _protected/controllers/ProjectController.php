@@ -242,7 +242,19 @@ class ProjectController extends AppController
         $post_expenses = isset($_POST['Expense'])?$_POST['Expense']:[];
         $post_incomes = isset($_POST['Income'])?$_POST['Income']:[];
 
-        //first we add the new expenses and update the existing ones
+        //first we have to remove the ones that are removed
+        $project_expenses = Expense::find()->where(['project_id' => $id])->all();
+        foreach($project_expenses as $exp){
+            $toDelete = true;
+            foreach($post_expenses as $post_exp){
+                if($post_exp['id'] == $exp->id) $toDelete = false;
+            }
+            if($toDelete){
+                $exp->delete();
+            } 
+        }
+
+        //then we add the new expenses and update the existing ones
         foreach($post_expenses as $exp){
             if(!$exp['id']) {
                 $new_exp = new Expense();
