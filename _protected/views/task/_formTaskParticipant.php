@@ -27,7 +27,7 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\app\models\Participant::find()->where(['project_id' => $id])->orderBy('id')->asArray()->all(), 'id', 'id'),
+                'data' => \yii\helpers\ArrayHelper::map(\app\models\Participant::find()->where(['project_id' => $project_id])->orderBy('id')->asArray()->all(), 'id', 'id'),
                 'options' => ['placeholder' => 'Choose Participant'],
             ],
             'columnOptions' => ['width' => '200px']
@@ -48,7 +48,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . 'Add Task Participant', ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowTaskParticipant()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . 'Add Task Participant', ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowTaskParticipant('.$project_id.')']),
         ]
     ]
 ]);

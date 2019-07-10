@@ -193,13 +193,13 @@ class TaskController extends Controller
     *
     * @return mixed
     */
-    public function actionAddTaskParticipant()
+    public function actionAddTaskParticipant($project_id=0)
     {
         if (Yii::$app->request->isAjax) {
             $row = Yii::$app->request->post('TaskParticipant');
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
-            return $this->renderAjax('_formTaskParticipant', ['row' => $row]);
+            return $this->renderAjax('_formTaskParticipant', ['row' => $row, 'project_id'=>$project_id]);
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
