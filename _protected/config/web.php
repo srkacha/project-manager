@@ -38,6 +38,14 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '<alias:\w+>' => 'site/<alias>',
+                [
+                    'class' => 'yii\rest\UrlRule', 
+                    'controller' => 'api/user',
+                    'extraPatterns' => [
+                        'POST login' => 'login',
+                        'GET jova' => 'jova'
+                    ]
+                ], 
             ],
         ],
         'user' => [
