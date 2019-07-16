@@ -87,10 +87,23 @@ if($providerActivityProgress->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
             [
-                'attribute' => 'taskParticipant.id',
-                'label' => 'Task Participant'
+                'label' => 'Participant',
+                'value' => function($model){
+                    $apart = app\models\ActivityParticipant::findOne(['id' => $model->activity_participant_id]);
+                    $tpart = app\models\TaskParticipant::findOne(['id' => $apart->task_participant_id]);
+                    $part = app\models\Participant::findOne(['id' => $tpart->participant_id]);
+                    $emp = app\models\User::findOne(['id' => $part->user_id]);
+                    return $emp->name.' '.$emp->surname;
+                }
             ],
-                        'hours_worked',
+            [
+                'label' => 'Timestamp',
+                'value' => function($model){
+                    return $model->timestamp;
+                }
+            ],
+            'comment',
+            'hours_done'
     ];
     echo Gridview::widget([
         'dataProvider' => $providerActivityProgress,
