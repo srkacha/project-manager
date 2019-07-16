@@ -82,8 +82,8 @@ if($providerActivityParticipant->totalCount){
 <div class="row">
     <h2>Activity progress </h2>
 <?php
-if($providerActivityParticipant->totalCount){
-    $gridColumnActivityParticipant = [
+if($providerActivityProgress->totalCount){
+    $gridColumnActivityProgress = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
             [
@@ -93,12 +93,12 @@ if($providerActivityParticipant->totalCount){
                         'hours_worked',
     ];
     echo Gridview::widget([
-        'dataProvider' => $providerActivityParticipant,
+        'dataProvider' => $providerActivityProgress,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-activity-participant']],
         'summary' => '',
         'export' => false,
-        'columns' => $gridColumnActivityParticipant
+        'columns' => $gridColumnActivityProgress
     ]);
 }else echo "This activity has no progress"
 ?>
