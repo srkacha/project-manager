@@ -175,12 +175,10 @@ class Task extends \yii\db\ActiveRecord
                 $new_act = new Activity();
                 $new_act->description = $act['description'];
                 $new_act->task_id = $id;
-                $new_act->finished = $act['finished'];
                 $new_act->save();
             }else{
                 $existing = Activity::findOne($act['id']);
                 $existing->description = $act['description'];
-                $existing->finished = $act['finished'];
                 $existing->update();
             }
         }

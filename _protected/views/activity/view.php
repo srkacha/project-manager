@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Activity */
 
-$this->title = $model->id;
+$this->title = $model->description;
 $this->params['breadcrumbs'][] = ['label' => 'Activities', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,19 +15,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= 'Activity'.' '. Html::encode($this->title) ?></h2>
+            <h2><?= Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
             <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-                'class' => 'btn btn-danger',
-                'data' => [
-                    'confirm' => 'Are you sure you want to delete this item?',
-                    'method' => 'post',
-                ],
-            ])
-            ?>
+            
         </div>
     </div>
 
@@ -40,7 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'label' => 'Task',
         ],
         'description',
-        'finished',
+        [
+            'label' => 'Finshed',
+            'value' => function($model){
+                return $model->finished?'Yes':'No';
+            }
+        ]
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -48,26 +46,41 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
 ?>
     </div>
-    <div class="row">
-        <h4>Task<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnTask = [
-        ['attribute' => 'id', 'visible' => false],
-        'parent_task_id',
-        'project_id',
-        'name',
-        'description',
-        'from',
-        'to',
-        'man_hours',
-    ];
-    echo DetailView::widget([
-        'model' => $model->task,
-        'attributes' => $gridColumnTask    ]);
-    ?>
     
     <div class="row">
+    <h2>Activity participants </h2>
+<?php
+if($providerActivityParticipant->totalCount){
+    $gridColumnActivityParticipant = [
+        ['class' => 'yii\grid\SerialColumn'],
+            ['attribute' => 'id', 'visible' => false],
+            [
+                'attribute' => 'taskParticipant.id',
+                'label' => 'Participant',
+                'value' => function($model){
+                    $tpart = app\models\TaskParticipant::findOne(['id' => $model->task_participant_id]);
+                    $part = app\models\Participant::findOne(['id' => $tpart->participant_id]);
+                    $emp = app\models\User::findOne(['id' => $part->user_id]);
+                    return $emp->name.' '.$emp->surname;
+                }
+            ],
+                        'hours_worked',
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerActivityParticipant,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-activity-participant']],
+        'summary' => '',
+        'export' => false,
+        'columns' => $gridColumnActivityParticipant
+    ]);
+}else echo "This activity has no participants"
+?>
+
+</div>
+
+<div class="row">
+    <h2>Activity progress </h2>
 <?php
 if($providerActivityParticipant->totalCount){
     $gridColumnActivityParticipant = [
@@ -83,15 +96,14 @@ if($providerActivityParticipant->totalCount){
         'dataProvider' => $providerActivityParticipant,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-activity-participant']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('Activity Participant'),
-        ],
+        'summary' => '',
         'export' => false,
         'columns' => $gridColumnActivityParticipant
     ]);
-}
+}else echo "This activity has no progress"
 ?>
 
-    </div>
+</div>
+
+
 </div>

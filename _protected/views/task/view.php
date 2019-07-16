@@ -92,7 +92,14 @@ if($providerActivity->totalCount){
                'value' => function($model){
                    return $model->finished?'Yes':'No';
                }
-           ]
+            ],
+            [
+                'label' => 'View details',
+                'format' => 'raw',
+                'value' => function($model){
+                     return Html::a('View', ['/activity/view?id='.$model->id], ['class'=>'btn btn-primary grid-button']);
+                }
+            ]
     ];
     echo Gridview::widget([
         'summary' => '',

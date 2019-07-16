@@ -17,10 +17,10 @@ class Activity extends BaseActivity
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['task_id', 'description', 'finished'], 'required'],
+            [['task_id', 'description'], 'required'],
             [['task_id'], 'integer'],
             [['description'], 'string', 'max' => 255],
-            [['finished'], 'string', 'max' => 4]
+            [['finished'], 'integer', 'max' => 4]
         ]);
     }
 	

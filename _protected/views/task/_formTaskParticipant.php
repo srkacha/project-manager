@@ -5,6 +5,8 @@ use kartik\builder\TabularForm;
 use yii\data\ArrayDataProvider;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
+use app\models\Participant;
+use app\models\User;
 
 $dataProvider = new ArrayDataProvider([
     'allModels' => $row,
@@ -29,8 +31,7 @@ echo TabularForm::widget([
             'options' => [
                 'data' => \yii\helpers\ArrayHelper::map(\app\models\Participant::find()->where(['project_id' => $project_id])->orderBy('id')->asArray()->all(), 'id', 'id'),
                 'options' => ['placeholder' => 'Choose Participant'],
-            ],
-            'columnOptions' => ['width' => '200px']
+            ]
         ],
         'del' => [
             'type' => 'raw',

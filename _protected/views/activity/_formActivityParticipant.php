@@ -23,16 +23,15 @@ echo TabularForm::widget([
     'attributes' => [
         "id" => ['type' => TabularForm::INPUT_HIDDEN, 'columnOptions' => ['hidden'=>true]],
         'task_participant_id' => [
-            'label' => 'Task participant',
+            'label' => 'Activity participant',
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
                 'data' => \yii\helpers\ArrayHelper::map(\app\models\TaskParticipant::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-                'options' => ['placeholder' => 'Choose Task participant'],
+                'options' => ['placeholder' => 'Choose activity participant'],
             ],
             'columnOptions' => ['width' => '200px']
         ],
-        'hours_worked' => ['type' => TabularForm::INPUT_TEXT],
         'del' => [
             'type' => 'raw',
             'label' => '',
