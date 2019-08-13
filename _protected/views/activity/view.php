@@ -107,7 +107,7 @@ if($providerActivityProgress->totalCount){
     ];
     echo Gridview::widget([
         'dataProvider' => $providerActivityProgress,
-        'pjax' => true,
+        'pjax' => false,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-activity-participant']],
         'summary' => '',
         'export' => false,

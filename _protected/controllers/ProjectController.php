@@ -156,7 +156,11 @@ class ProjectController extends AppController
         $providerTask = new \yii\data\ArrayDataProvider([
             'allModels' => $model->tasks,
         ]);
+
+        $projectProgress = $this->calculateProjectProgress($model);
+
         return $this->render('viewmy', [
+            'projectProgress' => $projectProgress,
             'role' => $role,
             'model' => $this->findModel($id),
             'providerExpense' => $providerExpense,
@@ -166,6 +170,34 @@ class ProjectController extends AppController
             'providerSupervisor' => $providerSupervisor,
             'providerTask' => $providerTask,
         ]);
+    }
+
+    //Calculating the project progress
+    //returns string info of task completition and aprox percentage completititon
+    private function calculateProjectProgress($model){
+        $tasks = \app\models\base\Task::find()->where(['project_id' => $model->id])->all();
+        $totalTasks = 0;
+        $totalHours = 0;
+        $totalhoursDone = 0;
+        $tasksDone = 0;
+        foreach($tasks as $task){
+            $totalTasks++;
+            $taskActivities = \app\models\base\Activity::find()->where(['task_id' => $task->id])->all();
+            $man_hours = $task->man_hours;
+            $totalHours += $man_hours;
+            $sum_of_hours_done = 0;
+            foreach($taskActivities as $activity){
+                $progress = \app\models\base\ActivityProgress::find()->where(['activity_id' => $activity->id])->all();
+                foreach($progress as $singleProgress){
+                    $sum_of_hours_done += $singleProgress->hours_done;
+                }
+            }
+            $totalhoursDone += $sum_of_hours_done;
+            $result = ($sum_of_hours_done/$man_hours)*100;
+            if ($result >= 100) $tasksDone++;
+        }
+        if($totalTasks == 0) return 'No tasks on this project yet';
+        return $tasksDone.'/'.$totalTasks.' tasks done, about '.round(($totalhoursDone/$totalHours)*100, 2).'% activites done';
     }
 
     /**

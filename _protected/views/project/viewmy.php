@@ -67,6 +67,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'value' => $managerNameAndSurname,
             'label' => 'Manager',
         ],
+        [
+            'label' => 'Progress',
+            'value' => $projectProgress
+        ]
     ];
     echo DetailView::widget([
         'model' => $model,

@@ -41,7 +41,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'description',
         'from',
         'to',
-        'man_hours'
+        'man_hours',
+        [
+            'label' => 'Done(%)',
+            'value' => $percentageDone
+        ]
     ];
     echo DetailView::widget([
         'model' => $model,

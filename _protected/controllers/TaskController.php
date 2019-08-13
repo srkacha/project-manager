@@ -50,6 +50,7 @@ class TaskController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
+        $percentageDone = $this->calculatePercentageDone($model);
         $user = User::findOne(['id' => Yii::$app->user->id]);
         $role = $user->userRoleOnProject($model->project_id);
         $providerActivity = new \yii\data\ArrayDataProvider([
@@ -64,6 +65,7 @@ class TaskController extends Controller
             'allModels' => $model->taskParticipants,
         ]);
         return $this->render('view', [
+            'percentageDone' => $percentageDone,
             'role' => $role,
             'model' => $this->findModel($id),
             'providerActivity' => $providerActivity,
@@ -71,6 +73,25 @@ class TaskController extends Controller
             'providerTaskParticipant' => $providerTaskParticipant,
         ]);
     }
+
+    //Calculates the percentage done on a task
+    private function calculatePercentageDone($model){
+        if($model->man_hours <= 0) return 0;
+        $taskActivities = \app\models\base\Activity::find()->where(['task_id' => $model->id])->all();
+        $man_hours = $model->man_hours;
+        $sum_of_hours_done = 0;
+        foreach($taskActivities as $activity){
+            $progress = \app\models\base\ActivityProgress::find()->where(['activity_id' => $activity->id])->all();
+            foreach($progress as $singleProgress){
+                $sum_of_hours_done += $singleProgress->hours_done;
+            }
+        }
+        $result = ($sum_of_hours_done/$man_hours)*100;
+        if ($result > 100) $result = 100;
+        $result = round($result, 2);
+        return $result;
+    }
+
     /**
      * Creates a new Task model.
      * If creation is successful, the browser will be redirected to the 'view' page.
