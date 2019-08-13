@@ -60,7 +60,10 @@ use yii\widgets\DetailView;
 ?>
 
 <div class="project-form">
-    <h1>Finance</h1>
+    <h1><?="Finance" ?>
+            <span class="pull-right">
+            <?= Html::a(Yii::t('app', 'Back to project'), ['viewmy?id='.$model->id], ['class' => 'btn btn-primary']) ?>
+        </span>  </h1>  
 
     <?php 
     $managerNameAndSurname = $model->manager->name .' '. $model->manager->surname;
