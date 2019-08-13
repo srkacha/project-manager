@@ -53,7 +53,7 @@ class ActivityController extends Controller
             'allModels' => $model->activityParticipants,
         ]);
         $providerActivityProgress = new \yii\data\ArrayDataProvider([
-            'allModels' => \app\models\ActivityProgress::find(['activity_id' => $id])->all()
+            'allModels' => \app\models\ActivityProgress::find()->where(['activity_id' => $id])->all()
         ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
