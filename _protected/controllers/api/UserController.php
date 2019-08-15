@@ -34,10 +34,6 @@ class UserController extends ActiveController{
       ]);
     }
 
-    public function actionJova(){
-        return ['jova' => 'pero'];
-    }
-
     public function actionLogin(){
         if(isset($_POST['username']) && isset($_POST['password'])){
             $login = new LoginForm();
