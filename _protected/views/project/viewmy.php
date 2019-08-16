@@ -143,6 +143,17 @@ if($providerSupervisor->totalCount){
 
 <div class="row">
 <h2>Tasks</h2>
+    <style>
+        .hideSave button:nth-of-type(1){
+            display:none;
+        }
+        .hideReset button:nth-of-type(2){
+            display:none;
+        }
+        .disableInputs input{
+            pointer-events:none;
+        }
+    </style>
     <?php
         Yii::$app->session->set('rootProjectId', $model->id);
        echo TreeView::widget([
@@ -156,6 +167,9 @@ if($providerSupervisor->totalCount){
         'isAdmin' => false, // @TODO : put your isAdmin getter here
         'displayValue' => 0,
         'cacheSettings' => ['enableCache' => true],
+        'nodeFormOptions' => [
+            'class' => $role != 'manager'?'hideSave hideReset disableInputs':'noClass'
+        ],
         'nodeAddlViews' => [
             Module::VIEW_PART_2 => '@app/views/task/_form'
         ],
