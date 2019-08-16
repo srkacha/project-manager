@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
-            <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+            <?= $role == 'manager'?Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']):"" ?>
             <?= Html::a(Yii::t('app', 'Back to task'), ['/task/view?id='.$model->task_id], ['class' => 'btn btn-primary'])?>
         </div>
     </div>

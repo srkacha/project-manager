@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-sm-9">
         <h1><?=Html::encode($this->title) ?>
             <span class="pull-right">
-            <?= $role !='participant'?Html::a(Yii::t('app', 'Update'), ['update-details?id='.$model->id], ['class' => 'btn btn-primary']):"" ?>
+            <?= $role == 'manager'?Html::a(Yii::t('app', 'Update'), ['update-details?id='.$model->id], ['class' => 'btn btn-primary']):"" ?>
             <?= Html::a(Yii::t('app', 'Back to project'), ['/project/viewmy?id='.$model->project_id], ['class' => 'btn btn-primary'])?>
         </span>  </h1>
         </div>

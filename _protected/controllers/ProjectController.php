@@ -101,6 +101,9 @@ class ProjectController extends AppController
     public function actionFinance($id){
         $model = $this->findModel($id);
 
+        $user = User::findOne(['id' => Yii::$app->user->id]);
+        $role = $user->userRoleOnProject($id);
+
         $totalIncome = 0;
         foreach($model->incomes as $inc) $totalIncome += $inc->amount;
 
@@ -114,6 +117,7 @@ class ProjectController extends AppController
             'allModels' => $model->incomes,
         ]);
         return $this->render('finance', [
+            'role' => $role,
             'model' => $model,
             'providerExpense' => $providerExpense,
             'providerIncome' => $providerIncome,

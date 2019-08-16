@@ -143,16 +143,16 @@ if($providerSupervisor->totalCount){
 
 <div class="row">
 <h2>Tasks</h2>
-    <?php echo $role?>
     <?php
         Yii::$app->session->set('rootProjectId', $model->id);
        echo TreeView::widget([
         'query' => Task::find()->where(['project_id' => $model->id])->addOrderBy('root, lft'),
+        'showFormButtons' => false,
         'headingOptions' => ['label' => 'Tasks'],
         'showIDAttribute' => false,
         'showTooltips' => false,
         'rootOptions' => ['label' => '<span class="text-primary"></span>'],
-        'fontAwesome' => false,
+        'fontAwesome' => true,
         'isAdmin' => false, // @TODO : put your isAdmin getter here
         'displayValue' => 0,
         'cacheSettings' => ['enableCache' => true],

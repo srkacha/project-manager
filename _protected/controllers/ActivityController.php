@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Activity;
+use app\models\User;
 use app\models\ActivitySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -52,10 +53,15 @@ class ActivityController extends Controller
         $providerActivityParticipant = new \yii\data\ArrayDataProvider([
             'allModels' => $model->activityParticipants,
         ]);
+
+        $user = User::findOne(['id' => Yii::$app->user->id]);
+        $task = \app\models\Task::findOne(['id' => $model->task_id]);
+        $role = $user->userRoleOnProject($task->project_id);
         $providerActivityProgress = new \yii\data\ArrayDataProvider([
             'allModels' => \app\models\ActivityProgress::find()->where(['activity_id' => $id])->all()
         ]);
         return $this->render('view', [
+            'role' => $role,
             'model' => $this->findModel($id),
             'providerActivityParticipant' => $providerActivityParticipant,
             'providerActivityProgress' => $providerActivityProgress,
