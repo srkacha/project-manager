@@ -104,7 +104,7 @@ if($providerParticipant->totalCount){
     echo Gridview::widget([
         'summary' => '',
         'dataProvider' => $providerParticipant,
-        'pjax' => true,
+        'pjax' => false,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-participant']],
         
         'export' => false,
@@ -131,7 +131,7 @@ if($providerSupervisor->totalCount){
     echo Gridview::widget([
         'summary' => '',
         'dataProvider' => $providerSupervisor,
-        'pjax' => true,
+        'pjax' => false,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-supervisor']],
         
         'export' => false,
@@ -143,6 +143,7 @@ if($providerSupervisor->totalCount){
 
 <div class="row">
 <h2>Tasks</h2>
+    <?php echo $role?>
     <?php
         Yii::$app->session->set('rootProjectId', $model->id);
        echo TreeView::widget([
@@ -162,17 +163,17 @@ if($providerSupervisor->totalCount){
         'toolbar' => [
             TreeView::BTN_CREATE => [
                 'icon' => 'plus',
-                'alwaysDisabled' => false,
+                'alwaysDisabled' => $role == 'manager'?false:true,
                 'options' => ['title' => 'Add new subtask', 'disabled' => true]
             ],
             TreeView::BTN_CREATE_ROOT => [
                 'icon' => 'plus',
-                'alwaysDisabled' => false,
+                'alwaysDisabled' => $role == 'manager'?false:true,
                 'options' => ['title' => 'Add new root task']
             ],
             TreeView::BTN_REMOVE => [
                 'icon' => 'trash',
-                'alwaysDisabled' => false,
+                'alwaysDisabled' => $role == 'manager'?false:true,
                 'options' => ['title' => 'Delete task', 'disabled' => true]
             ],
             TreeView::BTN_SEPARATOR,

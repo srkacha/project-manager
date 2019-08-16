@@ -134,10 +134,10 @@ class ProjectController extends AppController
         $model = $this->findModel($id);
         $user = User::findOne(['id' => Yii::$app->user->id]);
         //check if user is on the project, if not redirect to projects index page
-        if(!$user->isUserOnProject($model->id)){
+        if(!$user->isUserManagerOrSupervisor($model->id)){
             return $this->redirect('my');
         }
-        $role = $user->userRoleOnProject($model);
+        $role = $user->userRoleOnProject($model->id);
         $providerExpense = new \yii\data\ArrayDataProvider([
             'allModels' => $model->expenses,
         ]);

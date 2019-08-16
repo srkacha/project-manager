@@ -70,7 +70,7 @@ $this->registerJs($search);
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
-        'pjax' => true,
+        'pjax' => false,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-project']],
         
         'export' => false,
