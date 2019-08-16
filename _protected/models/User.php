@@ -284,4 +284,10 @@ class User extends UserIdentity
         if($this->userRoleOnProject($project_id) != 'none') return true;
         return false;
     }
+
+    public function isUserManagerOrSupervisor($project_id){
+        $role = $this->userRoleOnProject($project_id);
+        if($role == 'manager' || $role == 'supervisor') return true;
+        return false;
+    }
 }

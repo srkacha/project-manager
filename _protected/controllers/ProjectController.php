@@ -47,7 +47,7 @@ class ProjectController extends AppController
         //preparing the data, filtering only the projects that the logged in user is on
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $filteredModels = array_filter($dataProvider->models, function($obj) use(&$user) {
-            return $user->isUserOnProject($obj->id);
+            return $user->isUserManagerOrSupervisor($obj->id);
         });
         $dataProvider->models = $filteredModels;
 
