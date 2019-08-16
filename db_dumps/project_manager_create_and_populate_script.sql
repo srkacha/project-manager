@@ -28,11 +28,11 @@ CREATE TABLE `activity` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` int(11) NOT NULL,
   `description` varchar(255) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
-  `finished` tinyint(4) NOT NULL,
+  `finished` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_activity_task1_idx` (`task_id`),
   CONSTRAINT `fk_activity_task1` FOREIGN KEY (`task_id`) REFERENCES `task` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `activity` (
 
 LOCK TABLES `activity` WRITE;
 /*!40000 ALTER TABLE `activity` DISABLE KEYS */;
+INSERT INTO `activity` VALUES (2,19,'Druga aktivnost',0),(3,19,'Jos jedna aktivnost',0),(5,19,'Cetvrta aktivnost',0),(6,21,'Nova aktivnost drugog taksa',0);
 /*!40000 ALTER TABLE `activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +62,7 @@ CREATE TABLE `activity_participant` (
   KEY `fk_activity_participant_activity1_idx` (`activity_id`),
   CONSTRAINT `fk_activity_participant_activity1` FOREIGN KEY (`activity_id`) REFERENCES `activity` (`id`),
   CONSTRAINT `fk_activity_participant_task_participant1` FOREIGN KEY (`task_participant_id`) REFERENCES `task_participant` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,6 +71,7 @@ CREATE TABLE `activity_participant` (
 
 LOCK TABLES `activity_participant` WRITE;
 /*!40000 ALTER TABLE `activity_participant` DISABLE KEYS */;
+INSERT INTO `activity_participant` VALUES (1,2,2,0);
 /*!40000 ALTER TABLE `activity_participant` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,12 +86,13 @@ CREATE TABLE `activity_progress` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `timestamp` datetime NOT NULL,
   `comment` varchar(511) NOT NULL,
-  `activity_participant` int(11) NOT NULL,
+  `activity_participant_id` int(11) NOT NULL,
   `hours_done` int(11) NOT NULL,
+  `activity_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_activity_activity_progress_idx` (`activity_participant`),
-  CONSTRAINT `fk_activity_activity_progress` FOREIGN KEY (`activity_participant`) REFERENCES `activity_participant` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `fk_activity_activity_progress_idx` (`activity_participant_id`),
+  CONSTRAINT `fk_activity_activity_progress` FOREIGN KEY (`activity_participant_id`) REFERENCES `activity_participant` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,6 +101,7 @@ CREATE TABLE `activity_progress` (
 
 LOCK TABLES `activity_progress` WRITE;
 /*!40000 ALTER TABLE `activity_progress` DISABLE KEYS */;
+INSERT INTO `activity_progress` VALUES (1,'2019-07-16 02:02:55','Nesto sam radio kao',1,25,2);
 /*!40000 ALTER TABLE `activity_progress` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -227,7 +231,7 @@ CREATE TABLE `expense` (
   PRIMARY KEY (`id`),
   KEY `fk_expense_project1_idx` (`project_id`),
   CONSTRAINT `fk_expense_project1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,6 +240,7 @@ CREATE TABLE `expense` (
 
 LOCK TABLES `expense` WRITE;
 /*!40000 ALTER TABLE `expense` DISABLE KEYS */;
+INSERT INTO `expense` VALUES (7,60.00,'2019-07-05 08:50:51',1),(9,15.00,'2019-07-05 08:50:51',2),(10,35.00,'2019-08-17 13:00:24',5);
 /*!40000 ALTER TABLE `expense` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,7 +259,7 @@ CREATE TABLE `income` (
   PRIMARY KEY (`id`),
   KEY `fk_income_project_idx` (`project_id`),
   CONSTRAINT `fk_income_project` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,6 +268,7 @@ CREATE TABLE `income` (
 
 LOCK TABLES `income` WRITE;
 /*!40000 ALTER TABLE `income` DISABLE KEYS */;
+INSERT INTO `income` VALUES (1,50.00,'2019-07-05 11:55:54',1),(2,70.00,'2019-07-03 13:40:32',1),(4,50.00,'2019-07-03 00:00:46',2),(5,150.00,'2019-07-06 11:00:59',1),(6,120.00,'2019-08-31 13:00:55',5),(7,40.00,'2019-08-17 13:20:05',5);
 /*!40000 ALTER TABLE `income` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -340,7 +346,7 @@ CREATE TABLE `participant` (
   CONSTRAINT `fk_participant_project_role1` FOREIGN KEY (`project_role_id`) REFERENCES `project_role` (`id`),
   CONSTRAINT `fk_project_has_user_project2` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`),
   CONSTRAINT `fk_project_has_user_user2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -349,7 +355,7 @@ CREATE TABLE `participant` (
 
 LOCK TABLES `participant` WRITE;
 /*!40000 ALTER TABLE `participant` DISABLE KEYS */;
-INSERT INTO `participant` VALUES (2,2,4,3),(3,2,3,1),(4,1,3,1),(6,1,9,3),(7,3,2,2),(8,3,6,1),(9,4,4,2),(10,4,8,1),(11,5,3,1);
+INSERT INTO `participant` VALUES (2,2,4,3),(3,2,3,1),(7,3,2,2),(8,3,6,1),(9,4,4,2),(10,4,3,1),(11,5,3,1),(12,6,4,1),(13,1,6,3),(14,1,4,1);
 /*!40000 ALTER TABLE `participant` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -371,7 +377,7 @@ CREATE TABLE `project` (
   PRIMARY KEY (`id`),
   KEY `fk_project_user_idx` (`manager_id`),
   CONSTRAINT `fk_project_user` FOREIGN KEY (`manager_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -380,7 +386,7 @@ CREATE TABLE `project` (
 
 LOCK TABLES `project` WRITE;
 /*!40000 ALTER TABLE `project` DISABLE KEYS */;
-INSERT INTO `project` VALUES (1,'First Project','Description for the first project',1,'2019-07-01 12:00:20','2019-10-01 13:00:20',2),(2,'Second Project ','Description for the second project',1,'2019-07-01 13:00:38','2019-12-02 13:00:38',2),(3,'Third Project','Description of the third project',1,'2019-07-01 04:00:02','2019-10-31 21:00:02',9),(4,'Fourth Project','This one is special because Mike aint on it.',1,'2019-07-01 20:00:56','2019-10-11 01:05:56',9),(5,'The best one yet','The project where Mike is the supervisor. It\'s gonna be good I tell ya.',1,'2019-07-01 22:50:54','2020-01-07 20:50:54',6);
+INSERT INTO `project` VALUES (1,'First Projectoooo','Description for the first project',1,'2019-07-01 12:00:20','2019-10-01 13:00:20',2),(2,'Second Project ','Description for the second project',1,'2019-07-01 13:00:38','2019-12-02 13:00:38',2),(3,'Third Project','Description of the third project',1,'2019-07-01 04:00:02','2019-10-31 21:00:02',9),(4,'Fourth Project','This one is special because Mike aint on it.',1,'2019-07-01 20:00:56','2019-10-11 01:05:56',9),(5,'The best one yet','The project where Mike is the supervisor. It\'s gonna be good I tell ya.',1,'2019-07-01 22:50:54','2020-01-07 20:50:54',6),(6,'Testt','Description for the tessttproject',1,'2019-07-01 12:00:20','2019-10-01 13:00:20',3);
 /*!40000 ALTER TABLE `project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -424,7 +430,7 @@ CREATE TABLE `supervisor` (
   KEY `fk_project_has_user_project1_idx` (`project_id`),
   CONSTRAINT `fk_project_has_user_project1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`),
   CONSTRAINT `fk_project_has_user_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -433,7 +439,7 @@ CREATE TABLE `supervisor` (
 
 LOCK TABLES `supervisor` WRITE;
 /*!40000 ALTER TABLE `supervisor` DISABLE KEYS */;
-INSERT INTO `supervisor` VALUES (1,1,2),(2,2,2),(3,3,8),(4,4,8),(5,5,2);
+INSERT INTO `supervisor` VALUES (2,2,2),(3,3,8),(4,4,8),(5,5,2),(6,1,9);
 /*!40000 ALTER TABLE `supervisor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -482,7 +488,7 @@ CREATE TABLE `task` (
   KEY `tbl_product_NK5` (`active`),
   CONSTRAINT `fk_task_project1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`),
   CONSTRAINT `fk_task_task1` FOREIGN KEY (`parent_task_id`) REFERENCES `task` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -491,7 +497,7 @@ CREATE TABLE `task` (
 
 LOCK TABLES `task` WRITE;
 /*!40000 ALTER TABLE `task` DISABLE KEYS */;
-INSERT INTO `task` VALUES (4,NULL,1,'First taskic','Description new node','2019-07-04 21:00:00','2019-07-12 21:00:00',35,0,1,10,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(5,NULL,1,'Second task','Description new node','2019-07-04 21:00:00','2019-07-12 21:00:00',30,0,1,4,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,5),(6,4,1,'Subtask 1','Description subtask','2019-07-04 21:00:00','2019-07-10 21:00:00',10,1,2,5,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(7,6,1,'One more','Description subtask one more','2019-07-06 21:00:00','2019-07-08 21:00:00',5,2,3,4,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(8,NULL,5,'Make a good sandwitch','With salamii','2019-07-04 21:00:00','2019-07-08 21:00:00',5,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,8),(9,NULL,3,'Some new task','Something...','2019-07-04 21:00:00','2019-07-08 21:00:00',17,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,9),(10,NULL,2,'Cool task','Cool task description','2019-07-04 21:00:00','2019-07-08 21:00:00',5,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,10),(11,4,1,'Another one','Descccccc','2019-07-04 21:00:00','2019-07-10 21:00:00',10,1,6,9,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(12,11,1,'Wow another one','Description','2019-07-04 21:00:00','2019-07-12 21:00:00',3,2,7,8,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,4),(13,NULL,1,'New','New Desc','2019-07-04 21:00:00','2019-07-08 21:00:00',33,1,2,3,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,5),(14,NULL,1,'Testing this new','Features','2019-07-03 00:00:45','2019-08-30 00:00:45',50,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,14);
+INSERT INTO `task` VALUES (19,NULL,1,'Novi task updated','Ovo je neki novi opis ovog taska','2019-07-09 09:45:51','2019-07-18 10:15:13',30,0,1,4,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,19),(20,NULL,1,'Some new task','Something...','2019-07-03 00:00:45','2019-08-30 00:00:45',17,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,20),(21,NULL,1,'Subtask 1','Description new node','2019-07-03 00:00:45','2019-08-30 00:00:45',5,1,2,3,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,19),(22,NULL,2,'Frontend cleanup','Desc','2019-08-13 12:55:36','2019-08-24 12:55:36',25,0,1,2,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,22),(23,NULL,5,'novi node hehe','ehhehe','2019-07-09 09:45:51','2019-08-30 00:00:45',30,0,1,4,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,23),(24,NULL,5,'child node hehe','ehehe','2019-07-09 09:45:51','2019-08-30 00:00:45',20,1,2,3,NULL,1,1,0,0,0,1,0,1,1,1,1,1,0,1,23);
 /*!40000 ALTER TABLE `task` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -511,7 +517,7 @@ CREATE TABLE `task_participant` (
   KEY `fk_task_participant_task1_idx` (`task_id`),
   CONSTRAINT `fk_task_participant_participant1` FOREIGN KEY (`participant_id`) REFERENCES `participant` (`id`),
   CONSTRAINT `fk_task_participant_task1` FOREIGN KEY (`task_id`) REFERENCES `task` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -520,6 +526,7 @@ CREATE TABLE `task_participant` (
 
 LOCK TABLES `task_participant` WRITE;
 /*!40000 ALTER TABLE `task_participant` DISABLE KEYS */;
+INSERT INTO `task_participant` VALUES (2,13,19),(3,14,19),(4,13,21);
 /*!40000 ALTER TABLE `task_participant` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -570,4 +577,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-03 16:01:27
+-- Dump completed on 2019-08-16 15:00:15
