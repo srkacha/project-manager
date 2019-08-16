@@ -14,11 +14,18 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="activity-view">
 
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-6">
             <h2><?= Html::encode($this->title) ?></h2>
         </div>
-        <div class="col-sm-3" style="margin-top: 15px">
-            
+        <div class="col-sm-6" style="margin-top: 15px">
+            <?= $role == 'manager'?Html::a($model->finished?"Mark as not finished":"Mark as finished", ['finished', 'id' => $model->id], [
+                    'class' => 'btn btn-primary',
+                    'data' => [
+                        
+                        'method' => 'post',
+                    ],
+                ]):""
+            ?>
             <?= $role == 'manager'?Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']):"" ?>
             <?= Html::a(Yii::t('app', 'Back to task'), ['/task/view?id='.$model->task_id], ['class' => 'btn btn-primary'])?>
         </div>

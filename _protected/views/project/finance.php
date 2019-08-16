@@ -103,7 +103,7 @@ use yii\widgets\DetailView;
     
     <h1>
     <span class="pull-right m-3">
-        <?=$role == 'manager'?Html::submitButton('Update finance data', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']):"" ?>
+        <?=$role == 'manager'?Html::submitButton('Update finance data', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']):""     ?>
     </span>
     </h1>
 

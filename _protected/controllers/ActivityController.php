@@ -105,6 +105,18 @@ class ActivityController extends Controller
         }
     }
 
+    public function actionFinished($id)
+    {
+        $model = $this->findModel($id);
+        $model->finished = $model->finished == 1?0:1;
+
+        if ($model->update()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->redirect(['error', 'id' => $model->id]);
+        }
+    }
+
     /**
      * Deletes an existing Activity model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

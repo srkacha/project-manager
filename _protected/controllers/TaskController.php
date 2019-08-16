@@ -80,7 +80,10 @@ class TaskController extends Controller
         $taskActivities = \app\models\base\Activity::find()->where(['task_id' => $model->id])->all();
         $man_hours = $model->man_hours;
         $sum_of_hours_done = 0;
+        $activites_done = 0;
+        $total_activities = sizeof($model->activities);
         foreach($taskActivities as $activity){
+            if($activity->finished) $activites_done++;
             $progress = \app\models\base\ActivityProgress::find()->where(['activity_id' => $activity->id])->all();
             foreach($progress as $singleProgress){
                 $sum_of_hours_done += $singleProgress->hours_done;
@@ -89,7 +92,7 @@ class TaskController extends Controller
         $result = ($sum_of_hours_done/$man_hours)*100;
         if ($result > 100) $result = 100;
         $result = round($result, 2);
-        return $result;
+        return $result.', '.$activites_done.'/'.$total_activities.' activities finished';
     }
 
     /**
