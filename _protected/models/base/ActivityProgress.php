@@ -10,8 +10,9 @@ use Yii;
  * @property integer $id
  * @property string $timestamp
  * @property string $comment
- * @property integer $activity_participant
+ * @property integer $activity_participant_id
  * @property integer $hours_done
+ * @property integer $activity_id
  *
  * @property \app\models\ActivityParticipant $activityParticipant
  */
@@ -37,9 +38,9 @@ class ActivityProgress extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['timestamp', 'comment', 'activity_participant', 'hours_done'], 'required'],
+            [['timestamp', 'activity_participant_id', 'hours_done', 'activity_id'], 'required'],
             [['timestamp'], 'safe'],
-            [['activity_participant', 'hours_done'], 'integer'],
+            [['activity_participant_id', 'hours_done', 'activity_id'], 'integer'],
             [['comment'], 'string', 'max' => 511]
         ];
     }
@@ -61,8 +62,9 @@ class ActivityProgress extends \yii\db\ActiveRecord
             'id' => 'ID',
             'timestamp' => 'Timestamp',
             'comment' => 'Comment',
-            'activity_participant' => 'Activity Participant',
+            'activity_participant_id' => 'Activity Participant ID',
             'hours_done' => 'Hours Done',
+            'activity_id' => 'Activity ID',
         ];
     }
     
@@ -71,7 +73,7 @@ class ActivityProgress extends \yii\db\ActiveRecord
      */
     public function getActivityParticipant()
     {
-        return $this->hasOne(\app\models\ActivityParticipant::className(), ['id' => 'activity_participant']);
+        return $this->hasOne(\app\models\ActivityParticipant::className(), ['id' => 'activity_participant_id']);
     }
     
 

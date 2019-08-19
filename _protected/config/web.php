@@ -56,7 +56,8 @@ $config = [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'api/activity',
                     'extraPatterns' => [
-                        'POST get-activities-for-project-and-user' => 'get-activities-for-project-and-user'
+                        'POST get-activities-for-project-and-user' => 'get-activities-for-project-and-user',
+                        'POST add-progress-for-activity' => 'add-progress-for-activity'
                     ]
                 ],
                 [

@@ -62,7 +62,40 @@ class ActivityController extends ActiveController{
     }
 
     public function actionAddProgressForActivity(){
+        if(isset($_POST['user_id']) && isset($_POST['activity_id']) && isset($_POST['hours_done'])){
+            $user_id = $_POST['user_id'];
+            $activity_id = $_POST['activity_id'];
+            $hours_done = $_POST['hours_done'];
+            //checking if comment is set cause it is not necessary
+            $comment = isset($_POST['comment'])?$_POST['comment']:"";
+            $activityParticipantId = $this->getActivityParticipantId($user_id, $activity_id);
+            if($activityParticipantId == -1){
+                Yii::$app->response->statusCode = 404;
+                throw new UnauthorizedHttpException;
+            }else{
+                //insert
+                $progress = new ActivityProgress();
+                $progress->timestamp = date('Y-m-d H-i-s');
+                $progress->comment = $comment;
+                $progress->activity_participant_id = $activityParticipantId;
+                $progress->hours_done = $hours_done;
+                $progress->activity_id = $activity_id;
+                if($progress->save()){
+                    Yii::$app->response->statusCode = 200;
+                    return 'success';
+                }else{
+                    Yii::$app->response->statusCode = 500;
+                    return 'error';
+                }
+            }
+        }else{
+            Yii::$app->response->statusCode = 404;
+            throw new UnauthorizedHttpException;
+        }
+    }
 
+    private function getActivityParticipantId($userId, $activityId){
+        return 2;
     }
 }
 

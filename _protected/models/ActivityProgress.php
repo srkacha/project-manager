@@ -17,9 +17,9 @@ class ActivityProgress extends BaseActivityProgress
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['timestamp', 'comment', 'activity_participant', 'hours_done'], 'required'],
+            [['timestamp', 'activity_participant_id', 'hours_done', 'activity_id'], 'required'],
             [['timestamp'], 'safe'],
-            [['activity_participant', 'hours_done'], 'integer'],
+            [['activity_participant_id', 'hours_done', 'activity_id'], 'integer'],
             [['comment'], 'string', 'max' => 511]
         ]);
     }
