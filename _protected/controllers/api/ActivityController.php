@@ -95,7 +95,18 @@ class ActivityController extends ActiveController{
     }
 
     private function getActivityParticipantId($userId, $activityId){
-        return 2;
+        $activityParticipantId = -1;
+        $participants = Participant::find()->where(['user_id' => $userId])->all();
+        $task_participants = [];
+        $activity_participants = [];
+        foreach($participants as $part){
+            $tempTaskParts = TaskParticipant::find()->where(['participant_id' => $part->id])->all();
+            foreach($tempTaskParts as $tempTaskPart){
+                $tempActPart = ActivityParticipant::findOne(['task_participant_id' => $tempTaskPart->id, 'activity_id' => $activityId]);
+                if($tempActPart) return $tempActPart->id;
+            }
+        } 
+        return -1;
     }
 }
 
