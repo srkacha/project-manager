@@ -43,9 +43,29 @@ $config = [
                     'controller' => 'api/user',
                     'extraPatterns' => [
                         'POST login' => 'login',
-                        'GET jova' => 'jova'
                     ]
                 ], 
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/project',
+                    'extraPatterns' => [
+                        'POST get-projects-for-user-id' => 'get-projects-for-user-id',
+                    ]
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/activity',
+                    'extraPatterns' => [
+                        'POST get-activities-for-project-and-user' => 'get-activities-for-project-and-user'
+                    ]
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/task',
+                    'extraPatterns' => [
+                        
+                    ]
+                ]
             ],
         ],
         'user' => [
