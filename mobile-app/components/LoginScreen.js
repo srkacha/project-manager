@@ -1,37 +1,57 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 
+const loginURL = 'https://pisio.etfbl.net/~srdjanj/project-manager/api/users/login';
+
 export default class LoginScreen extends React.Component {
 
     constructor(props){
       super(props);
   
       //binding the functions to the object
-      this.handleInputChange = this.handleInputChange.bind(this);
-  
-      this.state = {
+      this.handleInputChangeUsername = this.handleInputChangeUsername.bind(this);
+      this.handleInputChangePassword = this.handleInputChangePassword.bind(this);
+      this.login = this.login.bind(this);
+    }
+
+    state = {
         username: '',
         password: ''
       };
-    }
   
     static navigationOptions = {
     };
   
-    handleInputChange(event = {}){
-      const name = event.target && event.target.name;
-      const value = event.target && event.target.value;
-  
-      //setting the state values for username and password
-      if(name == 'username'){
-          this.setState({username: value});
-      }else if(name == 'password'){
-        this.setState({password: password});
-      }
+    handleInputChangeUsername(event = {}){
+        const value = event;
+        this.setState({username: value});
+    }
+
+    handleInputChangePassword(event = {}){
+        const value = event;
+        this.setState({password: value});
     }
   
     login(){
-      alert('cao');
+        let formData = new FormData();
+        formData.append('username', this.state.username);
+        formData.append('password', this.state.password);
+
+        fetch(loginURL, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'multipart/form-data',
+          },
+          body: formData
+      }).then((response) => {
+            if(response.status === 200){
+                this.props.navigation.navigate('Projects', {user: response.body});
+            }else{
+                alert('Username or password is wrong');
+            }
+        
+      }).catch((error) => alert(error));
     }
   
     render() {
@@ -39,8 +59,8 @@ export default class LoginScreen extends React.Component {
       <View style={{paddingTop:20, alignItems: 'center'}}>
         <Text style = {styles.loginText}>Welcome to Projectory</Text>  
         <Image style = {styles.loginImage} source = {require('../assets/project.png')}></Image>
-        <TextInput name = 'username' onChangeText = {this.handleInputChange} placeholder = 'Username' style = {styles.loginInput}></TextInput>
-        <TextInput name = 'password' onChangeText = {this.handleInputChange} placeholder = 'Password' secureTextEntry = {true} style = {styles.loginInput}></TextInput>
+        <TextInput name = 'username' onChangeText = {this.handleInputChangeUsername} placeholder = 'Username' style = {styles.loginInput}></TextInput>
+        <TextInput name = 'password' onChangeText = {this.handleInputChangePassword} placeholder = 'Password' secureTextEntry = {true} style = {styles.loginInput}></TextInput>
         <Button onPress = {this.login} color = 'darkblue' style = {styles.loginButton} title = 'Login'/>
       </View>
       );

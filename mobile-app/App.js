@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import LoginScreen from './components/LoginScreen';
+import ProjectsScreen from './components/ProjectsScreen';
 
 //Code responsible for navigation
 
