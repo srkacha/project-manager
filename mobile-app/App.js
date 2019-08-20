@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import LoginScreen from './components/LoginScreen';
 import ProjectsScreen from './components/ProjectsScreen';
+import ActivitiesScreen from './components/ActivitiesScreen';
+import ProgressScreen from './components/ProgressScreen';
 
 //Code responsible for navigation
 
@@ -10,6 +12,8 @@ const MainNavigator = createStackNavigator(
   {
     Login: {screen: LoginScreen},
     Projects: {screen: ProjectsScreen},
+    Activities: {screen: ActivitiesScreen},
+    Progress: {screen: ProgressScreen}
   },
   {
     initialRouteName: "Login",
