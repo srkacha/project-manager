@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput, Alert } from 'react-native';
 
 const loginURL = 'https://pisio.etfbl.net/~srdjanj/project-manager/api/users/login';
 
@@ -46,12 +46,13 @@ export default class LoginScreen extends React.Component {
           body: formData
       }).then((response) => {
             if(response.status === 200){
-                this.props.navigation.navigate('Projects', {user: response.body});
+                 return response.json();
             }else{
-                alert('Username or password is wrong');
+                Alert.alert('Login failed', 'Username or password is incorrect.');
             }
-        
-      }).catch((error) => alert(error));
+      }).then(responseJson => {
+            this.props.navigation.navigate('Projects', {user: responseJson});
+      }).catch((error) => alert('There was an error with the request.'));
     }
   
     render() {
