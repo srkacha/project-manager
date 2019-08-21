@@ -19,9 +19,9 @@ const MainNavigator = createStackNavigator(
     initialRouteName: "Login",
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: 'white',
+        backgroundColor: '#1D2951',
       },
-      headerTintColor: 'black',
+      headerTintColor: 'white',
       headerTitleStyle: {
         fontWeight: 'bold',
       },

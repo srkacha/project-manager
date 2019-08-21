@@ -48,11 +48,11 @@ export default class LoginScreen extends React.Component {
             if(response.status === 200){
                  return response.json();
             }else{
-                Alert.alert('Login failed', 'Username or password is incorrect.');
+                return Promise.reject();
             }
       }).then(responseJson => {
             this.props.navigation.navigate('Projects', {user: responseJson});
-      }).catch((error) => alert('There was an error with the request.'));
+      }).catch((error) => Alert.alert('Login failed','Username or password is incorrect.'));
     }
   
     render() {
@@ -62,7 +62,7 @@ export default class LoginScreen extends React.Component {
         <Image style = {styles.loginImage} source = {require('../assets/project.png')}></Image>
         <TextInput name = 'username' onChangeText = {this.handleInputChangeUsername} placeholder = 'Username' style = {styles.loginInput}></TextInput>
         <TextInput name = 'password' onChangeText = {this.handleInputChangePassword} placeholder = 'Password' secureTextEntry = {true} style = {styles.loginInput}></TextInput>
-        <Button onPress = {this.login} color = 'darkblue' style = {styles.loginButton} title = 'Login'/>
+        <Button onPress = {this.login} color = '#1D2951' style = {styles.loginButton} title = 'Login'/>
       </View>
       );
     }
