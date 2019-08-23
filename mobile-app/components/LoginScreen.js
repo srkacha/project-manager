@@ -57,12 +57,12 @@ export default class LoginScreen extends React.Component {
   
     render() {
       return (
-      <View style={{paddingTop:20, alignItems: 'center'}}>
+      <View style={{paddingTop:20, alignItems: 'center', backgroundColor: '#a8d0e6', flex: 1}}>
         <Text style = {styles.loginText}>Welcome to Projectory</Text>  
         <Image style = {styles.loginImage} source = {require('../assets/project.png')}></Image>
-        <TextInput name = 'username' onChangeText = {this.handleInputChangeUsername} placeholder = 'Username' style = {styles.loginInput}></TextInput>
-        <TextInput name = 'password' onChangeText = {this.handleInputChangePassword} placeholder = 'Password' secureTextEntry = {true} style = {styles.loginInput}></TextInput>
-        <Button onPress = {this.login} color = '#1D2951' style = {styles.loginButton} title = 'Login'/>
+        <TextInput name = 'username' onChangeText = {this.handleInputChangeUsername} placeholderTextColor = 'black' placeholder = 'Username' style = {styles.loginInput}></TextInput>
+        <TextInput name = 'password' onChangeText = {this.handleInputChangePassword} placeholderTextColor = 'black' placeholder = 'Password' secureTextEntry = {true} style = {styles.loginInput}></TextInput>
+        <Button onPress = {this.login} color = '#f76c6c' style = {styles.loginButton} title = 'Login'/>
       </View>
       );
     }
@@ -78,7 +78,11 @@ export default class LoginScreen extends React.Component {
       borderBottomColor: 'gray', 
       borderBottomWidth: 1, 
       marginBottom:25,
-      width: 250
+      width: 250,
+      backgroundColor: 'white',
+      paddingLeft: 5,
+      height: 40,
+      borderRadius: 5
     },
     loginText: {
       fontSize:40,

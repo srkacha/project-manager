@@ -21,7 +21,7 @@ export default class ProjectsScreen extends React.Component {
       return {
         title: 'Projects',
         headerRight: (
-          <View style = {{paddingRight: 20}}><Button title="Logout" color="#1A1A1A"
+          <View style = {{paddingRight: 20}}><Button title="Logout" color="#f76c6c"
             onPress={() => navigation.popToTop()}
           /></View>),
           headerLeft: null
@@ -62,10 +62,10 @@ export default class ProjectsScreen extends React.Component {
 
     render(){
       if(this.state.loadingDone == false){
-        return (<View></View>)
+        return (<View style = {{backgroundColor: '#a8d0e6', flex: 1}}></View>)
       }else if(this.state.projects.length == 0){
         return (
-          <View style = {{alignItems: 'center', paddingTop: 25}}>
+          <View style = {{alignItems: 'center', paddingTop: 25, backgroundColor: '#a8d0e6', flex: 1}}>
               <Image style = {{width: 250, height: 250}} source = {require('../assets/planning.png')}></Image>
               <Text style = {{width: 250, fontSize: 25, marginTop: 25, textAlign: 'center'}}>{'You are currently not assinged on any projects.'}</Text>
           </View>
@@ -82,7 +82,7 @@ export default class ProjectsScreen extends React.Component {
                 <View style = {styles.cardInfo}>
                   <Text style = {{fontSize: 25, marginBottom: 10, color: 'white'}}>{project.name}</Text>
                   <Text style = {{marginBottom: 10, color: 'white'}}>{project.description}</Text>
-                  <Button title = 'Activities' color = '#1D2951' onPress = {() => {this.goToActivity(project)}}></Button>
+                  <Button title = 'Activities' color = '#f76c6c' onPress = {() => {this.goToActivity(project)}}></Button>
                 </View>
               </View>
             ))
@@ -100,7 +100,9 @@ export default class ProjectsScreen extends React.Component {
       marginBottom: 25
     },
     projectsView: {
-      padding:10
+      padding:10,
+      backgroundColor: '#a8d0e6',
+      flex: 1
     },
     projectCard: {
       display: 'flex',
@@ -111,10 +113,10 @@ export default class ProjectsScreen extends React.Component {
       borderColor: 'lightgray',
       borderWidth: 1,
       borderRadius: 10,
-      backgroundColor: '#0e4d92'
+      backgroundColor: '#374785'
     },
     cardImage: {
-      height: 100,
+      height: 150,
       width: '100%',
       backgroundColor: 'white'
     },

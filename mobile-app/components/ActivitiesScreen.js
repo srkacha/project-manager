@@ -20,7 +20,7 @@ export default class ActivitiesScreen extends React.Component{
         return {
           title: 'Activities',
           headerRight: (
-            <View style = {{paddingRight: 20}}><Button title="Logout" color="#1A1A1A"
+            <View style = {{paddingRight: 20}}><Button title="Logout" color="#f76c6c"
               onPress={() => navigation.popToTop()}
             /></View>)
         }
@@ -55,17 +55,17 @@ export default class ActivitiesScreen extends React.Component{
     componentDidMount(){
     }
 
-    updateProgress(){
-      this.props.navigation.navigate('Progress', {});
+    updateProgress(activity){
+      this.props.navigation.navigate('Progress', {user: this.state.user, activity: activity});
     }
 
     render(){
       if(this.state.loadingDone == false){
-        return (<View></View>);
+        return (<View style = {{backgroundColor: '#a8d0e6', flex: 1}}></View>);
       }
       else if(this.state.activities.length == 0){
         return (
-          <View style = {{alignItems: 'center', paddingTop: 25}}>
+          <View style = {{alignItems: 'center', paddingTop: 25, backgroundColor: '#a8d0e6', flex: 1}}>
               <Image style = {{width: 250, height: 250}} source = {require('../assets/list.png')}></Image>
               <Text style = {{width: 250, fontSize: 25, marginTop: 25, textAlign: 'center'}}>{'No activities for you on the selected project.'}</Text>
           </View>
@@ -80,7 +80,7 @@ export default class ActivitiesScreen extends React.Component{
                 </View>
                 <View style = {styles.cardInfo}>
                   <Text style = {{fontSize: 25, marginBottom: 10, color: 'white'}}>{activity.description}</Text>
-                  <Button title = 'Update progress' color = '#1D2951' onPress = {() => {this.updateProgress()}}></Button>
+                  <Button title = 'Update progress' color = '#f76c6c' onPress = {() => {this.updateProgress(activity)}}></Button>
                 </View>
               </View>
             ))
@@ -99,7 +99,9 @@ const styles = StyleSheet.create({
     marginBottom: 25
   },
   projectsView: {
-    padding:10
+    padding:10,
+    backgroundColor: '#a8d0e6',
+    flex: 1
   },
   projectCard: {
     display: 'flex',
