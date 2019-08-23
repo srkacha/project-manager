@@ -61,19 +61,18 @@ export default class ProgressScreen extends React.Component{
           },
           body: formData
         }).then((response) => {
-          alert(response.status);
           if(response.status === 200){
                return response.json();
           }else{
               return Promise.reject();
           }
         }).then(responseJson => {
-              //Alert.alert('Success', 'Activity progress updated successfully.');
+              Alert.alert('Success', 'Activity progress updated successfully.');
               this.setState({
                 hoursWorked: '',
                 comment: '' 
               })
-        }).catch((error) => {});//Alert.alert('Update failed', 'There was a problem updating progress data.'));
+        }).catch((error) => Alert.alert('Update failed', 'There was a problem updating progress data.'));
 
       }else{
         Alert.alert('Data format problem', 'Hours worked has to be a positive integer.')
