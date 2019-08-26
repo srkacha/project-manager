@@ -75,7 +75,7 @@ export default class ProjectsScreen extends React.Component {
         <ScrollView style = {styles.projectsView}>
           {
             this.state.projects.map(project => (
-              <View style = {styles.projectCard}>
+              <View key = {project.id} style = {styles.projectCard}>
                 <View style = {{padding: 10, backgroundColor: 'white', borderRadius: 5, width: '40%'}}>
                   <Image style = {styles.cardImage} source = {require('../assets/planning.png')}></Image>
                 </View>
