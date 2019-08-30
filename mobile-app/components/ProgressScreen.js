@@ -50,6 +50,7 @@ export default class ProgressScreen extends React.Component{
       if(this.validateInput()){
         let formData = new FormData();
         formData.append('user_id', this.state.user.id);
+        formData.append('auth_key', this.state.user.auth_key);
         formData.append('activity_id', this.state.activity.id);
         formData.append('hours_done', this.state.hoursWorked);
         formData.append('comment', this.state.comment);

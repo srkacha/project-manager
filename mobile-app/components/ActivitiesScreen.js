@@ -30,6 +30,7 @@ export default class ActivitiesScreen extends React.Component{
       let formData = new FormData();
       formData.append('user_id', this.state.user.id);
       formData.append('project_id', this.state.project.id);
+      formData.append('auth_key', this.state.user.auth_key);
 
       fetch(activitiesURL, {
           method: 'POST',

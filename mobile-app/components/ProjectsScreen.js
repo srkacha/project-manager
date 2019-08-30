@@ -31,6 +31,7 @@ export default class ProjectsScreen extends React.Component {
     componentWillMount(){
       let formData = new FormData();
       formData.append('user_id', this.state.user.id);
+      formData.append('auth_key', this.state.user.auth_key);
 
       fetch(projectsURL, {
           method: 'POST',
